@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/12/2017 13:34:33" ReportInfo.Modified="01/10/2019 17:37:16" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhuU1jTG/OvHLiC9Qv4EJFKz">
+      <TableDataSource Name="Table" Alias="Tb_Gua" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	inhospital. NAME AS sickname,&#13;&#10;	inhospital.sex,&#13;&#10;	inhospital.age,&#13;&#10;	inhospital.ihspcode,&#13;&#10;	ihspdepart. NAME AS ihspdep,&#13;&#10;	guadepart. NAME AS guadep,&#13;&#10;	doctor. NAME AS doctorname,&#13;&#10;	createdby.name AS createdname,&#13;&#10;	ihsp_guaranfee.enddate,&#13;&#10;	ihsp_guaranfee.amt,&#13;&#10;	ihsp_guaranfee.memo&#13;&#10;FROM&#13;&#10;	ihsp_guaranfee&#13;&#10;LEFT JOIN inhospital ON ihsp_guaranfee.ihsp_id = inhospital.id&#13;&#10;LEFT JOIN bas_depart AS ihspdepart ON inhospital.depart_id = ihspdepart.id&#13;&#10;LEFT JOIN bas_depart AS guadepart ON ihsp_guaranfee.depart_id = guadepart.id&#13;&#10;LEFT JOIN bas_doctor AS doctor ON ihsp_guaranfee.doctor_id = doctor.id&#13;&#10;LEFT JOIN bas_doctor AS createdby ON ihsp_guaranfee.doctor_id = createdby.id">
+        <Column Name="sickname" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="age" DataType="System.Int32"/>
+        <Column Name="ihspcode" DataType="System.String"/>
+        <Column Name="ihspdep" DataType="System.String"/>
+        <Column Name="guadep" DataType="System.String"/>
+        <Column Name="doctorname" DataType="System.String"/>
+        <Column Name="createdname" DataType="System.String"/>
+        <Column Name="enddate" DataType="System.DateTime"/>
+        <Column Name="amt" DataType="System.Decimal"/>
+        <Column Name="memo" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8" CanGrow="true">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Border.Lines="All" CanGrow="true" Text="担保凭证" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35" Border.Lines="All" CanGrow="true">
+      <TextObject Name="Text8" Left="103.95" Width="132.3" Height="28.35" Border.Lines="Right" Text="[Tb_Gua.guadep]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text32" Left="18.9" Width="94.5" Height="28.35" Text="担保人科室:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text33" Left="245.7" Width="66.15" Height="28.35" Text="担保人:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text9" Left="302.4" Width="132.3" Height="28.35" Border.Lines="Right" Text="[Tb_Gua.doctorname]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text34" Left="444.15" Width="85.05" Height="28.35" Text="担保期限:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text10" Left="519.75" Width="170.1" Height="28.35" Text="[Tb_Gua.enddate]" Format="Date" Format.Format="d" VertAlign="Center" Font="宋体, 11.25pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="236.25" CanGrow="true" DataSource="Table">
+      <TextObject Name="Text23" Left="94.5" Top="56.7" Width="623.7" Height="132.3" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.memo]" Font="宋体, 11pt"/>
+      <TextObject Name="Text35" Top="28.35" Width="75.6" Height="28.35" Border.Lines="Left, Top, Bottom" Text="记录人:" HorzAlign="Right" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text11" Left="75.6" Top="28.35" Width="179.55" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.createdname]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text36" Left="255.15" Top="28.35" Width="94.5" Height="28.35" Border.Lines="Top, Bottom" Text="担保金额:" HorzAlign="Center" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text12" Left="340.2" Top="28.35" Width="189" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.amt]" Format="Currency" Format.UseLocale="true" VertAlign="Center" WordWrap="false" Font="宋体, 11.25pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text37" Top="66.15" Width="94.5" Height="47.25" Text="担保说明:" HorzAlign="Right" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text3" Left="66.15" Width="75.6" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.sickname]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text2" Width="75.6" Height="28.35" Border.Lines="Left, Top, Bottom" Text="姓名:" HorzAlign="Center" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text28" Left="132.3" Width="85.05" Height="28.35" Border.Lines="Top, Bottom" Text="性别:" HorzAlign="Center" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text4" Left="198.45" Width="56.7" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.sex]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text29" Left="255.15" Width="56.7" Height="28.35" Border.Lines="Top, Bottom" Text="年龄:" HorzAlign="Right" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text5" Left="311.85" Width="56.7" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.age]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text30" Left="368.55" Width="66.15" Height="28.35" Border.Lines="Top, Bottom" Text="住院号:" HorzAlign="Right" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text6" Left="434.7" Width="94.5" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.ihspcode]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text31" Left="529.2" Width="56.7" Height="28.35" Border.Lines="Top, Bottom" Text="科室:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text7" Left="576.45" Width="141.75" Height="28.35" Border.Lines="Right, Top, Bottom" Text="[Tb_Gua.ihspdep]" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text41" Left="529.2" Top="28.35" Width="189" Height="28.35" Border.Lines="Right, Top, Bottom" Format="Currency" Format.UseLocale="true" VertAlign="Center" WordWrap="false" Font="宋体, 11.25pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text42" Top="56.7" Width="94.5" Height="132.3" Border.Lines="Left, Top, Bottom" Format="Currency" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="宋体, 11.25pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text38" Left="9.45" Top="198.45" Width="103.95" Height="18.9" Text="记录人签字:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text39" Left="207.9" Top="198.45" Width="94.5" Height="18.9" Text="担保人签字:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text40" Left="396.9" Top="198.45" Width="85.05" Height="18.9" Text="担保时间:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text43" Left="472.5" Top="198.45" Width="245.7" Height="18.9" Text="[Tb_Gua.createdate]" VertAlign="Center" Font="宋体, 11.25pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="314.4" Width="718.2" Height="28.35" CanGrow="true"/>
+  </ReportPage>
+</Report>

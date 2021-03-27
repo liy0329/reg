@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/10/2016 09:57:05" ReportInfo.Modified="09/10/2016 18:06:56" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhsoxn8e9kIKi0RjawpyeMlA">
+      <TableDataSource Name="Table" Alias="Table_PayType" DataType="System.Int32" Enabled="true" SelectCommand="select sys_dict.name as paytypename,clinictab_detail.fee as receive,clinictab_detail.retfee as refund,clinictab_detail.realfee as  realfee from clinictab_detail left join sys_dict   on sys_dict.dicttype = 'bas_paytype' and sys_dict.father_id&lt;&gt;0 and clinictab_detail.bas_paytype_id = sys_dict.sn where 1!=1;">
+        <Column Name="paytypename" DataType="System.String"/>
+        <Column Name="receive" DataType="System.Decimal"/>
+        <Column Name="refund" DataType="System.Decimal"/>
+        <Column Name="realfee" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Table_Time" DataType="System.Int32" Enabled="true" SelectCommand="select chargedate as starTime ,chargedate as endTime,billcode as depart,billcode as type from clinic_invoice limit 1;">
+        <Column Name="starTime" DataType="System.DateTime"/>
+        <Column Name="endTime" DataType="System.DateTime"/>
+        <Column Name="depart" DataType="System.String"/>
+        <Column Name="type" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+      <TextObject Name="Text8" Left="926.1" Top="37.8" Width="122.85" Height="18.9" Text="（全部科室）" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text7" Left="255.15" Top="9.45" Width="226.8" Height="28.35" Text="门诊结算后项目汇总" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text14" Left="481.95" Top="18.9" Width="122.85" Height="18.9" Text="（全部科室）" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text15" Left="481.95" Top="28.35" Width="122.85" Height="18.9" Text="（全部类型）" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Top="47.25" Width="37.8" Height="18.9" Text="从：" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text11" Left="9.45" Top="47.25" Width="160.65" Height="18.9" Text="[Table_Time.starTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text12" Left="170.1" Top="47.25" Width="28.35" Height="18.9" Text="至" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="189" Top="47.25" Width="170.1" Height="18.9" Text="[Table_Time.endTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="28.35">
+      <TextObject Name="Text9" Left="926.1" Width="122.85" Height="18.9" Text="（全部类型）" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TableObject Name="Table2" Width="710.59" Height="28.35">
+        <TableColumn Name="Column5" Width="195.13"/>
+        <TableColumn Name="Column6" Width="176.23"/>
+        <TableColumn Name="Column7" Width="166.78"/>
+        <TableColumn Name="Column8" Width="172.45"/>
+        <TableRow Name="Row2" Height="28.35">
+          <TableCell Name="Cell5" Border.Lines="All" Text="支付类型" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell6" Border.Lines="All" Text="收款金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell7" Border.Lines="All" Text="退费金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Text="实收金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="28.35" DataSource="Table">
+      <TableObject Name="Table2" Width="710.59" Height="28.35">
+        <TableColumn Name="Column1" Width="195.13"/>
+        <TableColumn Name="Column2" Width="176.23"/>
+        <TableColumn Name="Column3" Width="166.78"/>
+        <TableColumn Name="Column4" Width="172.45"/>
+        <TableRow Name="Row1" Height="28.35">
+          <TableCell Name="Cell1" Border.Lines="All" Text="[Table_PayType.paytypename]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell2" Border.Lines="All" Text="[Table_PayType.receive]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell3" Border.Lines="All" Text="[Table_PayType.refund]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell4" Border.Lines="All" Text="[Table_PayType.realfee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="144.3" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

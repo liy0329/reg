@@ -1,0 +1,357 @@
+2020-07-21 8:06:09:[SELECT clinic_costdet.id AS cfh,	clinic_invoice.invoice AS fph,DATE_FORMAT(clinic_costdet.rcpdate, '%Y-%m-%d') AS cfsj,
+                                  '1' AS cfts,bas_item.gsbm AS xmbm,bas_item.`name` AS xmmc,gsxmlb.`name` AS sflb,'' AS sfdj,
+                                  CASE WHEN (bas_item.itemtype_id = 10) OR (bas_item.itemtype_id = 11) OR (	bas_item.itemtype_id = 12) THEN	'0' ELSE	'1' END AS zl,
+                                   clinic_costdet.prc,clinic_costdet.num AS num,clinic_costdet.realfee as amt,
+                                   clinic_costdet.spec AS guige, prodjixing. NAME AS jixing, bas_item.id AS prodid
+                           FROM clinic_costdet left join bas_item on clinic_costdet.item_id = bas_item.id
+                                left join gsxmlb on gsxmlb.hisid = clinic_costdet.itemtype_id 
+                                left join clinic_invoice on clinic_invoice.id = clinic_costdet.clinic_invoice_id 
+	                            left join (select sn as id,name from sys_dict where father_id=40) prodjixing on bas_item.dosageform_id = prodjixing.id
+                           WHERE clinic_costdet.clinic_cost_id=]System.Data.Odbc.OdbcException (0x80131937): ERROR [42000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 10
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-21 8:17:05:[SELECT clinic_costdet.id AS cfh,	clinic_invoice.invoice AS fph,DATE_FORMAT(clinic_costdet.rcpdate, '%Y-%m-%d') AS cfsj,
+                                  '1' AS cfts,bas_item.gsbm AS xmbm,bas_item.`name` AS xmmc,gsxmlb.`name` AS sflb,'' AS sfdj,
+                                  CASE WHEN (bas_item.itemtype_id = 10) OR (bas_item.itemtype_id = 11) OR (	bas_item.itemtype_id = 12) THEN	'0' ELSE	'1' END AS zl,
+                                   clinic_costdet.prc,clinic_costdet.num AS num,clinic_costdet.realfee as amt,
+                                   clinic_costdet.spec AS guige, prodjixing. NAME AS jixing, bas_item.id AS prodid
+                           FROM clinic_costdet left join bas_item on clinic_costdet.item_id = bas_item.id
+                                left join gsxmlb on gsxmlb.hisid = clinic_costdet.itemtype_id 
+                                left join clinic_invoice on clinic_invoice.id = clinic_costdet.clinic_invoice_id 
+	                            left join (select sn as id,name from sys_dict where father_id=40) prodjixing on bas_item.dosageform_id = prodjixing.id
+                           WHERE clinic_costdet.clinic_cost_id=]System.Data.Odbc.OdbcException (0x80131937): ERROR [42000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 10
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 9:09:07:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join ihsp_invoice on ihsp_invoice.ihsp_id=inhospital.id  left join bas_doctor sfy on ihsp_invoice.chargedby=sfy.id   left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.ihsp_invoice' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-21 9:09:15:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join ihsp_invoice on ihsp_invoice.ihsp_id=inhospital.id  left join bas_doctor sfy on ihsp_invoice.chargedby=sfy.id   left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.ihsp_invoice' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-21 9:14:27:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join ihsp_account on ihsp_account.ihsp_id=inhospital.id  left join bas_doctor sfy on ihsp_account.chargedby=sfy.id   left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_account.chargedby' in 'on clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 10:08:58:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join ihsp_account on ihsp_account.ihsp_id=inhospital.id  left join bas_doctor sfy on ihsp_account.chargedby=sfy.id   left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_account.chargedby' in 'on clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 12:10:46:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate,'' as chargedate,'' as sfyname from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_invoice.charged' in 'on clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-21 12:10:49:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,'-1' as ihsp_account_id,'N' as neonate,'' as chargedate,'' as sfyname from inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' and ihsp_invoice.charged='CHAR'  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and inhospital.outdate is not null  and inhospital.status=  'SIGN' and inhospital.outdate >= '2020-04-21 00:00:00' and inhospital.outdate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_invoice.charged' in 'on clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-21 12:14:15:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,ihsp_account.id as ihsp_account_id,ihsp_account.neonate as neonate,ihsp_account.chargedate,sfy.name as sfyname from ihsp_account,inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  LEFT JOIN ihsp_account ON ihsp_account.ihsp_id = inhospital.id AND ihsp_account.status = 'SETT' LEFT JOIN bas_doctor sfy ON ihsp_account.chargedby_id = sfy.id left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and  ihsp_account.status='SETT' and ihsp_account.ihsp_id = inhospital.id and ihsp_account.chargedate >= '2020-04-21 00:00:00' and ihsp_account.chargedate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Not unique table/alias: 'ihsp_account'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 12:16:19:[select inhospital.ihspcode,inhospital.name as ihspname,bas_depart.name as deparname,inhospital.indate,inhospital.outdate,inhospital.prepamt,inhospital.feeamt,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,bas_patienttype.displaycolor as displaycolor,ihsp_info.companyname,ihsp_info.homeaddress,ihsp_info.homephone,inhospital.status,inhospital.id,inhospital.bas_patienttype_id,ihsp_account.id as ihsp_account_id,ihsp_account.neonate as neonate,ihsp_account.chargedate,sfy.name as sfyname from ihsp_account,inhospital  left join bas_depart on inhospital.depart_id=bas_depart.id  left join bas_doctor on inhospital.doctor_id=bas_doctor.id  LEFT JOIN bas_doctor sfy ON ihsp_account.chargedby_id = sfy.id left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP' LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode where 1=1 and  ihsp_account.status='SETT' and ihsp_account.ihsp_id = inhospital.id and ihsp_account.chargedate >= '2020-04-21 00:00:00' and ihsp_account.chargedate<='2020-07-21 23:59:59']System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_account.chargedby_id' in 'on clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 16:52:28:[ select jbbm as code,jbmc as name,zjm as jm from gsjblx  where 1=1 and jbbm like '%外%' or jbmc like '%外%' or zjm like '%外%' order by jbmc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 16:54:05:[ select jbbm as code,jbmc as name,zjm as jm from gsjblx  where 1=1 and jbbm like '%M77.100%' or jbmc like '%M77.100%' or zjm like '%M77.100%' order by jbmc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 16:54:12:[ select jbbm as code,jbmc as name,zjm as jm from gsjblx  where 1=1 and jbbm like '%M77.100%' or jbmc like '%M77.100%' or zjm like '%M77.100%' order by jbmc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 16:56:24:[ select jbbm as code,jbmc as name,zjm as jm from gsjblx  where 1=1 and jbbm like '%M77.100%' or jbmc like '%M77.100%' or zjm like '%M77.100%' order by jbmc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 17:19:09:[select name from gsgslb where id='01']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 17:19:24:[select name from gsscdj where id='']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 17:25:16:[INSERT INTO gsryinfo(id, grbh, name, dwmc, scdj, shbw, yllb)VALUES (25009,'2177014753','霍会军','08548403','','全身多处','住院');]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'dwmc' in 'field list'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-21 17:30:39:[INSERT INTO gsryinfo(id, grbh, name, dwmc, scdj, shbw, yllb)VALUES (25009,'2177014753','霍会军','08548403','','全身多处','住院');]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'shbw' in 'field list'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-21 17:32:57:[select nhflag,ihspcode as zyjlzyh,rdsh  from inhospital where iid =  25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'iid' in 'where clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 17:36:36:[select cost_insurtype.keyname as keyname  from bas_patienttype  left join cost_insurtype on cost_insurtype.id=bas_patienttype.cost_insurtype_id where bas_patienttype.id= '38']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 17:54:39:[select cost_insurtype.keyname as keyname  from bas_patienttype  left join cost_insurtype on cost_insurtype.id=bas_patienttype.cost_insurtype_id where bas_patienttype.id= '38']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:00:25:[select inhospital.ihspcode,inhospital.name as ihspname,sexList.name as sex,bas_depart.id as bas_depart_id,bas_depart.name as departname,bas_doctor.id as bas_doctor_id,bas_doctor.name as doctorname,member.mobile AS mobile,inhospital.indate,inhospital.healthcard,sybzyjl.AKC140 AS AKC140,bas_patienttype.keyname,(CONCAT(bas_patienttype. NAME ,(CASE inhospital.poverty	WHEN '1' THEN	'(低保)'	WHEN '2' THEN	'(农村低保)'	WHEN '3' THEN	'(分散五保)'	WHEN '4' THEN	'(集中五保)'  WHEN '5' THEN		'(建档立卡)'	ELSE	'(非贫困)'	END) )) AS patienttype,(case sybzyjl.AKA130 WHEN '21' THEN '普通住院' WHEN '25' THEN '转入住院' WHEN '27' THEN '意外伤害住院' WHEN '52' THEN '生育住院' ELSE '非医保入院' END) AS AKA130,inhospital.id,inhospital.bas_patienttype_id,bas_patienttype.displaycolor,bas_sickroom.name as sickroomname,bas_sickbed.name as sickbedname from inhospital  left join sys_dict as sexList on inhospital.sex=sexList.keyname and sexList.dicttype='bas_sex' and sexList.father_id<>0 left join bas_doctor on inhospital.doctor_id=bas_doctor.id  left join bas_depart on inhospital.depart_id=bas_depart.id  LEFT JOIN sybzyjl ON sybzyjl.AKC190 = inhospital.ihspcode  left join bas_patienttype on inhospital.bas_patienttype_id=bas_patienttype.id  left join bas_sickroom on inhospital.sickroom_id=bas_sickroom.id  left join bas_sickbed on inhospital.sickbed_id=bas_sickbed.id  LEFT JOIN member ON member.id = inhospital.member_id  where 1=1  and inhospital.status in ('REG','BREG','SETT') and  inhospital.name like '%杜%' order by id desc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:05:52:[select name from gsgslb where id='01']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:06:08:[select name from gsscdj where id='']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:08:03:[ select jbbm as code,jbmc as name,zjm as jm from gsjblx  where 1=1 and jbbm like '%咬伤%' or jbmc like '%咬伤%' or zjm like '%咬伤%' order by jbmc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:13:29:[SELECT
+                        	inhospital.ybgrbh,
+                        	inhospital.invoicecode as fph,
+                        	inhospital.rdsh,inhospital.member_id,
+                        	inhospital.`name` AS brxm,
+                        	bas_doctor.`name` AS ysname,
+                        	bas_depart.`name` AS ryks,
+                        	case when inhospital.sex='F' then 2 else 1 end  AS brxb,
+                        	bas_sickroom.`name` AS bfh,
+                        	bas_sickbed.`name` AS bch,
+                        	ihsp_info.idcard AS sfzh,
+                        	DATE_FORMAT (inhospital.indate,'%Y-%m-%d') AS zyjlrysj,
+                        	DATE_FORMAT (inhospital.outdate,'%Y-%m-%d') AS zyjlcysj
+                        	FRO  inhospital left join bas_sickroom on inhospital.sickroom_id=bas_sickroom.id 
+                                 left join bas_sickbed on inhospital.sickbed_id=bas_sickbed.id
+                                 left join bas_doctor on inhospital.doctor_id = bas_doctor.id left join bas_depart on bas_depart.id = inhospital.depart_id 
+                                 LEFT JOIN ihsp_info on ihsp_info.ihsp_id=inhospital.id and ihsp_info.registkind='IHSP'
+                            WHERE inhospital.id =25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FRO  inhospital left join bas_sickroom on inhospital.sickroom_id=bas_sickroom.id' at line 14
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:41:18:[ SELECT ihsp_advdet.id AS aae080,
+	                                  DATE_FORMAT (ihsp_advice.begindate,'%Y-%m-%d') AS alk007,
+	                                  DATE_FORMAT (ihsp_advice.stopdate,'%Y-%m-%d') AS alk008,
+	                                  ihsp_advdet.`name` AS alk009,
+ 	                                  '' AS alk011,
+	                                   '' AS alk012,
+	                                   CONCAT(ihsp_advdet.dosagenum,ihsp_advdet.dosageuom) as alk013,
+	                                   CONCAT(mtusage.name,mtfrequency.`name`) AS alk014,
+	                                   ihsp_advdet.memo AS alk015,
+ 	                                  ysqm.`name` AS alk016,
+ 	                                  '' AS alk017,
+ 	                                  '' AS alk020,
+ 	                                  CASE ihsp_advice.advflag WHEN 'LONG' THEN	1 WHEN 'TEMP' THEN	2END AS alk022,
+	                                   bas_depart.`name` AS alk023,
+ 	                                  bas_sickbed.`name` AS alk024
+	                             FROM inhospital left join ihsp_advice on inhospital.id = ihsp_advice.ihsp_id
+	                                  left join bas_depart on ihsp_advice.depart_id = bas_depart.id
+	                                  LEFT JOIN bas_doctor ysqm ON ihsp_advice.doctor_id = ysqm.id
+	                                  LEFT JOIN ihsp_advdet on ihsp_advice.id=ihsp_advdet.ihsp_advice_id
+	                                  LEFT JOIN (select * from sys_dict where father_id=30) mtusage ON ihsp_advdet.drug_usage_id = mtusage.sn
+	                                  LEFT JOIN drug_freq mtfrequency ON ihsp_advdet.drug_freq_id= mtfrequency.id
+	                                  LEFT JOIN bas_sickbed ON inhospital.sickbed_id= bas_sickbed.id
+	                                  WHERE inhospital.id=25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS alk022,
+	                                   bas_depart.`name` AS alk023,
+ 	' at line 13
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-21 18:47:40:[select gssfdj from gsml where bm='11060000100']System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)

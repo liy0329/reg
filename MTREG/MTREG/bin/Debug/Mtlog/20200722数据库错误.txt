@@ -1,0 +1,133 @@
+2020-07-22 9:44:22:[update ihsp_costdet set insursync=1 where iid in (71088127,71088128,71088129,71088130,71088131,71088164,71088165,71088166,71088167,71088168,71088169,71088170,71088171,71088172,71088173,71088174,71088175,71088176,71088177,71088178,71088179,71088180,71088181,71088182,71088183,71088184,71088185,71088186,71088187,71088188,71088189,71088190,71088191,71088192,71088193,71088194,71088195,71088196,71088197,71088202,71088232,71088233,71088234,71088235,71088236,71088237,71088238,71088239,71088240,71088241);  update ihsp_advdet set sfsc=1 where id in (3515995,3515996,3515997,3516001,3518809,3518811,3518839,3518867,3518917,3518950,3526125,3526135,3526212,3529042,3539101,3515792,3515793,3518797,3518799,3518854,3518856,3516991,3536397,3525716,3535495,3542363,3547189,3521908,3521914,3521922,3521926,3526247,3535132,3515836,3527767,3527768,3515874,3515875,3526308,3530735,3515794,3515795,3515796,3515797,3515877,3515967,3515968,3518820,3526378,3530734,3541151,3515748,3515749,3515750,3515753,3515754,3515759,3515760,3515763,3515766,3515773,3515774,3515775,3515776,3515777,3515884,3515885,3515883,3515882,3515810,3515811,3515812,3515813,3515814,3515815,3515816,3515817,3515818,3515819,3515820,3515821,3515822,3515823,3515824,3515825,3515826,3515827,3515828,3515829,3515830,3515831,3515832,3515833,3515834,3515844,3515845,3515846,3515876,3515880,3515881,3515970,3515994,3516009,3516010,3516013,3516014,3516016,3516022,3516023,3516037,3516041,3516432,3516433,3516695,3516993,3516994,3516995,3516997,3517118,3517391,3518828,3518829,3518803,3518826,3518865,3518866,3519761,3521936,3521937,3521946,3521991,3521992,3521993,3526214,3526215,3526216,3526217,3526218,3526219,3526220,3526221,3526222,3526223,3526224,3526225,3526226,3526227,3526228,3526229,3526243,3526248,3526249,3526250,3526251,3526252,3526253,3526254,3526255,3526256,3526257,3526298,3526299,3526300,3526302,3526319,3526320,3526379,3527925,3527771,3527772,3527773,3527774,3527775,3527776,3527777,3527778,3527779,3527780,3527781,3527782,3527783,3527784,3527785,3529219,3529220,3529221,3529222,3530651,3530656,3530657,3530834,3530835,3535108,3535109,3535110,3535111,3535112,3535113,3535114,3535115,3535116,3535117,3535119,3535120,3535121,3535122,3535123,3536336,3535133,3535134,3535135,3535136,3535137,3535138,3535139,3535140,3535141,3535142,3535889,3535890,3535891,3536408,3541156,3541159,3541160,3541162,3541229,3541234); ]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'iid' in 'where clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-22 10:09:37:[update ihsp_costdet set insursync=1 where id in (71088127,71088128,71088129,71088130,71088131,71088164,71088165,71088166,71088167,71088168,71088169,71088170,71088171,71088172,71088173,71088174,71088175,71088176,71088177,71088178,71088179,71088180,71088181,71088182,71088183,71088184,71088185,71088186,71088187,71088188,71088189,71088190,71088191,71088192,71088193,71088194,71088195,71088196,71088197,71088202,71088232,71088233,71088234,71088235,71088236,71088237,71088238,71088239,71088240,71088241);  update ihsp_advdet set sfsc=1 where id in (3515995,3515996,3515997,3516001,3518809,3518811,3518839,3518867,3518917,3518950,3526125,3526135,3526212,3529042,3539101,3515792,3515793,3518797,3518799,3518854,3518856,3516991,3536397,3525716,3535495,3542363,3547189,3521908,3521914,3521922,3521926,3526247,3535132,3515836,3527767,3527768,3515874,3515875,3526308,3530735,3515794,3515795,3515796,3515797,3515877,3515967,3515968,3518820,3526378,3530734,3541151,3515748,3515749,3515750,3515753,3515754,3515759,3515760,3515763,3515766,3515773,3515774,3515775,3515776,3515777,3515884,3515885,3515883,3515882,3515810,3515811,3515812,3515813,3515814,3515815,3515816,3515817,3515818,3515819,3515820,3515821,3515822,3515823,3515824,3515825,3515826,3515827,3515828,3515829,3515830,3515831,3515832,3515833,3515834,3515844,3515845,3515846,3515876,3515880,3515881,3515970,3515994,3516009,3516010,3516013,3516014,3516016,3516022,3516023,3516037,3516041,3516432,3516433,3516695,3516993,3516994,3516995,3516997,3517118,3517391,3518828,3518829,3518803,3518826,3518865,3518866,3519761,3521936,3521937,3521946,3521991,3521992,3521993,3526214,3526215,3526216,3526217,3526218,3526219,3526220,3526221,3526222,3526223,3526224,3526225,3526226,3526227,3526228,3526229,3526243,3526248,3526249,3526250,3526251,3526252,3526253,3526254,3526255,3526256,3526257,3526298,3526299,3526300,3526302,3526319,3526320,3526379,3527925,3527771,3527772,3527773,3527774,3527775,3527776,3527777,3527778,3527779,3527780,3527781,3527782,3527783,3527784,3527785,3529219,3529220,3529221,3529222,3530651,3530656,3530657,3530834,3530835,3535108,3535109,3535110,3535111,3535112,3535113,3535114,3535115,3535116,3535117,3535119,3535120,3535121,3535122,3535123,3536336,3535133,3535134,3535135,3535136,3535137,3535138,3535139,3535140,3535141,3535142,3535889,3535890,3535891,3536408,3541156,3541159,3541160,3541162,3541229,3541234); ]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]unhandled error from mysql_next_result()
+   在 System.Data.Odbc.OdbcDataReader.NextResult(Boolean disposing, Boolean allresults)
+   在 System.Data.Odbc.OdbcDataReader.NextResult()
+   在 System.Data.Odbc.OdbcDataReader.FirstResult()
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-22 10:25:29:[ SELECT ihsp_advdet.id AS aae080,
+	                                  DATE_FORMAT (ihsp_advice.begindate,'%Y-%m-%d') AS alk007,
+	                                  DATE_FORMAT (ihsp_advice.stopdate,'%Y-%m-%d') AS alk008,
+	                                  ihsp_advdet.`name` AS alk009,
+ 	                                  '' AS alk011,
+	                                   '' AS alk012,
+	                                   CONCAT(ihsp_advdet.dosagenum,ihsp_advdet.dosageuom) as alk013,
+	                                   CONCAT(mtusage.name,mtfrequency.`name`) AS alk014,
+	                                   ihsp_advdet.memo AS alk015,
+ 	                                  ysqm.`name` AS alk016,
+ 	                                  '' AS alk017,
+ 	                                  '' AS alk020,
+ 	                                  CASE ihsp_advice.advflag WHEN 'LONG' THEN	1 WHEN 'TEMP' THEN	2 END AS alk022,
+	                                   bas_depart.`name` AS alk023,
+ 	                                  bas_sickbed.`name` AS alk024
+	                             FROM inhospital left join ihsp_advice on inhospital.id = ihsp_advice.ihsp_id
+	                                  left join bas_depart on ihsp_advice.depart_id = bas_depart.id
+	                                  LEFT JOIN bas_doctor ysqm ON ihsp_advice.doctor_id = ysqm.id
+	                                  LEFT JOIN ihsp_advdet on ihsp_advice.id=ihsp_advdet.ihsp_advice_id
+	                                  LEFT JOIN (select * from sys_dict where father_id=30) mtusage ON ihsp_advdet.drug_usage_id = mtusage.sn
+	                                  LEFT JOIN drug_freq mtfrequency ON ihsp_advdet.drug_freq_id= mtfrequency.id
+	                                  LEFT JOIN bas_sickbed ON inhospital.sickbed_id= bas_sickbed.id
+	                                  WHERE ihsp_advdet.ybsc=0 and ihsp_advdetinhospital.id=25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_advdetinhospital.id' in 'where clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-22 10:26:50:[ SELECT ihsp_advdet.id AS aae080,
+	                                  DATE_FORMAT (ihsp_advice.begindate,'%Y-%m-%d') AS alk007,
+	                                  DATE_FORMAT (ihsp_advice.stopdate,'%Y-%m-%d') AS alk008,
+	                                  ihsp_advdet.`name` AS alk009,
+ 	                                  '' AS alk011,
+	                                   '' AS alk012,
+	                                   CONCAT(ihsp_advdet.dosagenum,ihsp_advdet.dosageuom) as alk013,
+	                                   CONCAT(mtusage.name,mtfrequency.`name`) AS alk014,
+	                                   ihsp_advdet.memo AS alk015,
+ 	                                  ysqm.`name` AS alk016,
+ 	                                  '' AS alk017,
+ 	                                  '' AS alk020,
+ 	                                  CASE ihsp_advice.advflag WHEN 'LONG' THEN	1 WHEN 'TEMP' THEN	2 END AS alk022,
+	                                   bas_depart.`name` AS alk023,
+ 	                                  bas_sickbed.`name` AS alk024
+	                             FROM inhospital left join ihsp_advice on inhospital.id = ihsp_advice.ihsp_id
+	                                  left join bas_depart on ihsp_advice.depart_id = bas_depart.id
+	                                  LEFT JOIN bas_doctor ysqm ON ihsp_advice.doctor_id = ysqm.id
+	                                  LEFT JOIN ihsp_advdet on ihsp_advice.id=ihsp_advdet.ihsp_advice_id and ihsp_advdet.ybsc=0 
+	                                  LEFT JOIN (select * from sys_dict where father_id=30) mtusage ON ihsp_advdet.drug_usage_id = mtusage.sn
+	                                  LEFT JOIN drug_freq mtfrequency ON ihsp_advdet.drug_freq_id= mtfrequency.id
+	                                  LEFT JOIN bas_sickbed ON inhospital.sickbed_id= bas_sickbed.id
+	                                  WHERE  ihsp_advdetinhospital.id=25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'ihsp_advdetinhospital.id' in 'where clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-22 10:54:34:[update ihsp_costdet set insursync=0 where ihsp_id=25009;update ihsp_advdet set sfsc=0 where ihsp_advdet.ihsp_advice_id in (select id from ihsp_advice where ihsp_id=25009);]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]unhandled error from mysql_next_result()
+   在 System.Data.Odbc.OdbcDataReader.NextResult(Boolean disposing, Boolean allresults)
+   在 System.Data.Odbc.OdbcDataReader.NextResult()
+   在 System.Data.Odbc.OdbcDataReader.FirstResult()
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-22 11:16:43:[ select  mtzyjlstuff.iid as idx,mtzyjlstuff.iid as cfh,to_char(mtzyjlstuff.createdat,'yyyy-MM-dd') as cfsj,'1' as cfts,mtprod.gszf,mtprod.gsbm as xmbm,mtzyjlstuff.xmmc as xmmc,mtzyjlstuff.xmmc as tym, gsxmlb.id as sflb,'' as sfdj,case  when (mtzyjlstuff.projecttype='2') or (mtzyjlstuff.projecttype='3' ) or (mtzyjlstuff.projecttype='4') then '0' else '1' end as zl,mtzyjlstuff.prc,mtzyjlstuff.qty as num,mtzyjlstuff.amt,mtzyjlstuff.guige,prodjixing.name as jixing  from mtzyjlstuff,mtprod,prodjixing,gsxmlb where mtzyjlstuff.mtprod=mtprod.iid and gsxmlb.hisid=mtzyjlstuff.projecttype and prodjixing.iid=mtprod.prodjixing and mtzyjlstuff.ybsc=0 and mtzyjlstuff.issc!=1  and mtzyjlstuff.mtzyjl= 25009 union  select  mtzyjlstuff.iid as idx,mtzyjlstuff.iid as cfh,to_char(mtzyjlstuff.createdat,'yyyy-MM-dd') as cfsj,'1' as cfts,mtjcxm.gszf,mtjcxm.gsbm as xmbm,mtzyjlstuff.xmmc as xmmc,mtzyjlstuff.xmmc as tym, gsxmlb.id as sflb,'' as sfdj,case  when (mtzyjlstuff.projecttype='2') or (mtzyjlstuff.projecttype='3' ) or (mtzyjlstuff.projecttype='4') then '0' else '1' end as zl,mtzyjlstuff.prc,mtzyjlstuff.qty as num,mtzyjlstuff.amt,mtzyjlstuff.guige,'' as jixing  from mtzyjlstuff,mtjcxm,prodjixing,gsxmlb where mtzyjlstuff.mtprod=mtjcxm.iid and gsxmlb.hisid=mtzyjlstuff.projecttype and mtzyjlstuff.ybsc=0 and mtzyjlstuff.issc!=1  and mtzyjlstuff.mtzyjl= 25009 order by idx limit 50]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.mtzyjlstuff' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-22 11:43:09:[ select  mtzyjlstuff.iid as idx,mtzyjlstuff.iid as cfh,to_char(mtzyjlstuff.createdat,'yyyy-MM-dd') as cfsj,'1' as cfts,mtprod.gszf,mtprod.gsbm as xmbm,mtzyjlstuff.xmmc as xmmc,mtzyjlstuff.xmmc as tym, gsxmlb.id as sflb,'' as sfdj,case  when (mtzyjlstuff.projecttype='2') or (mtzyjlstuff.projecttype='3' ) or (mtzyjlstuff.projecttype='4') then '0' else '1' end as zl,mtzyjlstuff.prc,mtzyjlstuff.qty as num,mtzyjlstuff.amt,mtzyjlstuff.guige,prodjixing.name as jixing  from mtzyjlstuff,mtprod,prodjixing,gsxmlb where mtzyjlstuff.mtprod=mtprod.iid and gsxmlb.hisid=mtzyjlstuff.projecttype and prodjixing.iid=mtprod.prodjixing and mtzyjlstuff.ybsc=0 and mtzyjlstuff.issc!=1  and mtzyjlstuff.mtzyjl= 25009 union  select  mtzyjlstuff.iid as idx,mtzyjlstuff.iid as cfh,to_char(mtzyjlstuff.createdat,'yyyy-MM-dd') as cfsj,'1' as cfts,mtjcxm.gszf,mtjcxm.gsbm as xmbm,mtzyjlstuff.xmmc as xmmc,mtzyjlstuff.xmmc as tym, gsxmlb.id as sflb,'' as sfdj,case  when (mtzyjlstuff.projecttype='2') or (mtzyjlstuff.projecttype='3' ) or (mtzyjlstuff.projecttype='4') then '0' else '1' end as zl,mtzyjlstuff.prc,mtzyjlstuff.qty as num,mtzyjlstuff.amt,mtzyjlstuff.guige,'' as jixing  from mtzyjlstuff,mtjcxm,prodjixing,gsxmlb where mtzyjlstuff.mtprod=mtjcxm.iid and gsxmlb.hisid=mtzyjlstuff.projecttype and mtzyjlstuff.ybsc=0 and mtzyjlstuff.issc!=1  and mtzyjlstuff.mtzyjl= 25009 order by idx limit 50]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.mtzyjlstuff' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-22 11:45:53:[select iid as idx,xmmc,createdat as sfsj,prc ,amt ,qty,tcsl,tcje,tcyy from mtzyjlstuff where ybsc=0 and mtzyjl=25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.mtzyjlstuff' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-22 20:00:09:[ update inhospital set nhflag=502 where iid=25009; update gsryinfo set jssj='2020-07-22' where iid=25009;]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S22] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Unknown column 'iid' in 'where clause'
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)
+2020-07-22 20:01:02:[update mtzyjl set nhflag=501 where iid=25009]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.mtzyjl' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteNonQuery()
+   在 MTHIS.db.DBMySQLODBC.Update(String sql)

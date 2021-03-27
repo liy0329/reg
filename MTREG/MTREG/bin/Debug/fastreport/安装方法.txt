@@ -1,0 +1,16 @@
+
+1.首先安装FastReport.Net+V2013.2.5 For Net 4.0  的原始安装文件[FRNetDemo2010.msi]
+
+2.将pro.zip解压覆盖到Fastreport安装目录
+   如：【C:\Program Files\FastReports\FastReport.Net Demo】
+
+3.将FastReport.Net+V2013.2.5+For+.Net4.0文件夹中的各DLL文件对应覆盖到系统程序集目录
+   如：
+   	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport
+	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport.Bars
+	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport.Editor
+	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport.Install
+	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport.VSDesign
+	C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\FastReport.Web
+
+4.完成后就可在vs2010,vs2012中使用WinForm或Asp.Net网页报表了。

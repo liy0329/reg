@@ -1,0 +1,1 @@
+2020-07-23 12:24:33:sql=update clinic_invoice set bas_patienttype=1,rdsh='',spbh='' where id in('443225') ;  delete from gsryinfo where id=1000001 ;

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimerTask_DLL</name>
+    </assembly>
+    <members>
+        <member name="T:TimerTask.TimerTaskDelegate">
+            <summary>
+            定时任务委托方法
+            </summary>
+        </member>
+        <member name="T:TimerTask.ParmTimerTaskDelegate">
+            <summary>
+            有参数的定时任务委托方法
+            </summary>
+        </member>
+        <member name="T:TimerTask.ITimerTask">
+            <summary>
+            定时任务接口类
+            </summary>
+        </member>
+        <member name="T:TimerTask.TimerTaskService">
+             <summary>
+             定时任务服务类
+             作者：我亦留此地
+             编写日期：2020-8-17
+            </summary> 
+        </member>
+        <member name="M:TimerTask.TimerTaskService.#ctor(TimerTask.TimerInfo)">
+            <summary>
+            根据定时信息构造定时任务服务
+            </summary>
+            <param name="_timer"></param>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.#ctor(TimerTask.TimerInfo,TimerTask.ITimerTask)">
+            <summary>
+            根据定时信息和执行具体任务的实例构造定时任务服务
+            </summary>
+            <param name="_timer">定时信息</param>
+            <param name="_interface">执行具体任务的实例</param>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.#ctor(TimerTask.TimerInfo,TimerTask.TimerTaskDelegate)">
+            <summary>
+            根据定时信息和执行具体任务的委托方法构造定时任务服务
+            </summary>
+            <param name="_timer">定时信息</param>
+            <param name="trd">执行具体任务的委托方法</param>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.#ctor(TimerTask.TimerInfo,TimerTask.ParmTimerTaskDelegate)">
+            <summary>
+            根据定时信息和执行具体任务的委托方法构造定时任务服务
+            </summary>
+            <param name="_timer">定时信息</param>
+            <param name="ptrd">带参数执行具体任务的委托方法</param>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.setParm(System.Object[])">
+            <summary>
+            设置参数
+            </summary>
+            <param name="_parm"></param>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.Start">
+            <summary>
+            启动定时任务
+            </summary>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.CheckTimer(TimerTask.TimerInfo)">
+            <summary>
+            检查定时器
+            </summary>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.Run">
+            <summary>
+            执行方法
+            </summary>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.getNextRunTime">
+            <summary>
+            计算下一次执行时间
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:TimerTask.TimerTaskService.CreateTimerTaskService(TimerTask.TimerInfo,TimerTask.TimerTaskDelegate)”忽略有格式错误的 XML 注释 -->
+        <member name="M:TimerTask.TimerTaskService.CreateTimerTaskService(TimerTask.TimerInfo,TimerTask.ParmTimerTaskDelegate,System.Object[])">
+            <summary>
+             使用带参数的委托方法创建定时任务
+            </summary>
+            <param name="info">定时信息</param>
+            <param name="_ptrd">委托方法</param>
+            <param name="parm">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimerTask.TimerTaskService.CreateTimerTaskService(TimerTask.TimerInfo,TimerTask.ITimerTask)">
+            <summary>
+            使用实现定时接口ITimerTask的实例创建定时任务
+            </summary>
+            <param name="info">定时信息</param>
+            <param name="_ins"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TimerTask.TimerInfo">
+            <summary>
+            定时信息类
+            TimerType   类型：EveryDay(每天),DayOfWeek(每周),DayOfMonth(每月),DesDate(指定日期),LoopDays(循环天数)
+            DateValue 日期值：TimerType="DayOfWeek"时,值为1-7表示周一到周日;TimerType="DayOfMonth"时,值为1-31表示1号到31号,
+                              TimerType="LoopDays"时,值为要循环的天数,TimerType为其它值时,此值无效
+            Year   年：TimerType="DesDate"时,此值有效
+            Month  月：TimerType="DesDate"时,此值有效
+            Day    日：TimerType="DesDate"时,此值有效
+            Hour   时：]
+            Minute 分： > 设置的执行时间
+            Second 秒：]
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.TimerType">
+            <summary>
+            TimerType   类型：EveryDay(每天),DayOfWeek(每周),DayOfMonth(每月),DesDate(指定日期),LoopDays(循环天数)
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.DateValue">
+            <summary>
+             DateValue 日期值：TimerType="DayOfWeek"时,值为1-7表示周一到周日;TimerType="DayOfMonth"时,值为1-31表示1号到31号,
+                              TimerType="LoopDays"时,值为要循环的天数,TimerType为其它值时,此值无效
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Year">
+            <summary>
+            Year   年：TimerType="DesDate"时,此值有效
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Month">
+            <summary>
+             Month  月：TimerType="DesDate"时,此值有效
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Day">
+            <summary>
+            Day    日：TimerType="DesDate"时,此值有效
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Hour">
+            <summary>
+            Hour   时：]
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Minute">
+            <summary>
+            Minute 分： >
+            </summary>
+        </member>
+        <member name="F:TimerTask.TimerInfo.Second">
+            <summary>
+             Second 秒：]
+            </summary>
+        </member>
+    </members>
+</doc>

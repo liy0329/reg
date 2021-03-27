@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/02/2016 16:19:17" ReportInfo.Modified="11/29/2016 16:53:03" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhse+YPjA6dXtBb6gl7chX2s">
+      <TableDataSource Name="Table" Alias="CostDet" DataType="System.Int32" Enabled="true" SelectCommand="select &#13;&#10;bas_item.name,&#13;&#10;clinic_costdet.num,&#13;&#10;clinic_costdet.fee,&#13;&#10;bas_depart.name as exedepname &#13;&#10;from clinic_costdet left join bas_item &#13;&#10;on clinic_costdet.item_id = bas_item.id&#13;&#10;left join bas_depart on clinic_costdet.exedep_id = bas_depart.id&#13;&#10;limit 1&#13;&#10;">
+        <Column Name="num" DataType="System.Decimal"/>
+        <Column Name="fee" DataType="System.Decimal"/>
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="exedepname" DataType="System.String"/>
+        <CommandParameter Name="startTime" DataType="22"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Info" DataType="System.Int32" Enabled="true" SelectCommand="select &#13;&#10;&#13;&#10;billcode as billcode,&#13;&#10;billcode as meditype,&#13;&#10;billcode as busino,&#13;&#10;billcode as patientname,&#13;&#10;billcode as sex,&#13;&#10;billcode as patienttype,&#13;&#10;billcode as departname, &#13;&#10;billcode as capamt,&#13;&#10;billcode as amt,&#13;&#10;billcode as insur,&#13;&#10;billcode as selfacc,&#13;&#10;billcode as other,&#13;&#10;billcode as insuraccountfee,&#13;&#10;billcode as hspname,&#13;&#10;billcode as chargeby,&#13;&#10;chargedate as chargedate&#13;&#10;from clinic_invoice limit 1;">
+        <Column Name="billcode" DataType="System.String"/>
+        <Column Name="meditype" DataType="System.String"/>
+        <Column Name="patientname" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="patienttype" DataType="System.String"/>
+        <Column Name="departname" DataType="System.String"/>
+        <Column Name="capamt" DataType="System.String"/>
+        <Column Name="amt" DataType="System.String"/>
+        <Column Name="insur" DataType="System.String"/>
+        <Column Name="selfacc" DataType="System.String"/>
+        <Column Name="other" DataType="System.String"/>
+        <Column Name="hspname" DataType="System.String"/>
+        <Column Name="chargeby" DataType="System.String"/>
+        <Column Name="chargedate" DataType="System.DateTime"/>
+        <Column Name="busino" DataType="System.String"/>
+        <Column Name="insuraccountfee" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table4" Alias="Insur" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	selffee AS Insurefee,&#13;&#10;	selffee AS insuraccountfee,&#13;&#10;	selffee AS selffee,&#13;&#10;        selffee AS Self,&#13;&#10;	selffee AS accountbalance,&#13;&#10;	selffee AS sumori,&#13;&#10;	selffee AS sumInsurefee,&#13;&#10;	selffee AS cashfee&#13;&#10;FROM&#13;&#10;	clinic_costdet&#13;&#10;WHERE&#13;&#10;	1 != 1">
+        <Column Name="Insurefee" DataType="System.Decimal"/>
+        <Column Name="insuraccountfee" DataType="System.Decimal"/>
+        <Column Name="selffee" DataType="System.Decimal"/>
+        <Column Name="Self" DataType="System.Decimal"/>
+        <Column Name="accountbalance" DataType="System.Decimal"/>
+        <Column Name="sumori" DataType="System.Decimal"/>
+        <Column Name="sumInsurefee" DataType="System.Decimal"/>
+        <Column Name="cashfee" DataType="System.Decimal"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperHeight="117" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5" Guides="56.7">
+      <TextObject Name="Text7" Left="264.6" Top="9.45" Width="226.8" Height="28.35" Text="[Info.hspname]" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text9" Left="576.45" Top="28.35" Width="113.4" Height="18.9" Text="[Info.billcode]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Left="453.6" Top="37.8" Width="132.3" Height="18.9" Text="[Info.busino]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="141.75" Top="37.8" Width="170.1" Height="18.9" Text="[Info.meditype]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text15" Left="37.8" Top="56.7" Width="132.3" Height="18.9" Text="[Info.patientname]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text16" Left="207.9" Top="56.7" Width="56.7" Height="18.9" Text="[Info.sex]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text17" Left="274.05" Top="56.7" Width="160.65" Height="18.9" Text="[Info.patienttype]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text19" Left="321.3" Top="37.8" Width="141.75" Height="18.9" Text="[Info.departname]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text38" Left="56.7" Top="37.8" Width="103.95" Height="18.9" Text="[Info.hspname]" HorzAlign="Center" Font="宋体, 10pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="98.5" Width="359.1" Height="28.35" Guides="28.35,0,9.45,9.45" DataSource="Table" RowCount="0" MaxRows="12" Columns.Count="2" Columns.Layout="DownThenAcross">
+      <TableObject Name="Table2" Width="355.26" Height="28.35">
+        <TableColumn Name="Column12" Width="1"/>
+        <TableColumn Name="Column1" Width="212.36"/>
+        <TableColumn Name="Column2" Width="32.81"/>
+        <TableColumn Name="Column3" Width="51.71"/>
+        <TableColumn Name="Column11" Width="57.38"/>
+        <TableRow Name="Row1" Height="28.35">
+          <TableCell Name="Cell12" Text="[Row#]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell1" Text="[CostDet.name]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell2" Text="[CostDet.num]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell3" Text="[CostDet.fee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell11" Text="[CostDet.exedepname]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="163.2" Width="718.2">
+      <ChildBand Name="Child1" Top="130.85" Width="718.2" Height="28.35" FillUnusedSpace="true">
+        <TableObject Name="Table5" Width="355.26" Height="28.35">
+          <TableColumn Name="Column13" Width="1"/>
+          <TableColumn Name="Column14" Width="212.36"/>
+          <TableColumn Name="Column15" Width="32.81"/>
+          <TableColumn Name="Column16" Width="51.71"/>
+          <TableColumn Name="Column17" Width="57.38"/>
+          <TableRow Name="Row2" Height="28.35">
+            <TableCell Name="Cell13" Text="[Row#]" Font="宋体, 9pt"/>
+            <TableCell Name="Cell14" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell15" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell16" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell17" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </ChildBand>
+    </ColumnFooterBand>
+    <PageFooterBand Name="PageFooter1" Top="167.2" Width="718.2" Height="85.05">
+      <TextObject Name="Text29" Left="37.8" Width="274.05" Height="18.9" Text="[Info.capamt]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text30" Left="434.7" Width="94.5" Height="18.9" Text="[Info.amt]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text31" Left="56.7" Top="18.9" Width="94.5" Height="18.9" Text="[Info.insur]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text32" Left="198.45" Top="18.9" Width="94.5" Height="18.9" Text="[Info.selfacc]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text33" Left="330.75" Top="18.9" Width="94.5" Height="18.9" Text="[Info.other]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text34" Left="529.2" Top="18.9" Width="94.5" Height="18.9" Text="[Info.self]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text35" Left="56.7" Top="37.8" Width="151.2" Height="18.9" Text="[Info.hspname]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text36" Left="330.75" Top="37.8" Width="122.85" Height="18.9" Text="[Info.chargeby]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text37" Left="548.1" Top="37.8" Width="160.65" Height="18.9" Text="[Info.chargedate]" HorzAlign="Center" Font="宋体, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

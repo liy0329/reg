@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/12/2016 11:03:08" ReportInfo.Modified="09/17/2016 08:57:43" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhtujyhjOyVCZRb+/4/05Hjp">
+      <TableDataSource Name="Table" Alias="Tb_DepAcc" DataType="System.Int32" Enabled="true" SelectCommand="select &#13;&#10;	id as depart,&#13;&#10;	id as itemtype1,&#13;&#10;	id as realfee&#13;&#10; from inhospital">
+        <Column Name="depart" DataType="System.String"/>
+        <Column Name="realfee" DataType="System.Int32"/>
+        <Column Name="itemtype1" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Tb_LblText" DataType="System.Int32" Enabled="true" SelectCommand="select id as starttime,&#13;&#10;id as endtime,&#13;&#10;id as depart,&#13;&#10;id as itemtype,&#13;&#10;id as patienttype&#13;&#10;from inhospital">
+        <Column Name="starttime" DataType="System.Int32"/>
+        <Column Name="endtime" DataType="System.Int32"/>
+        <Column Name="depart" DataType="System.Int32"/>
+        <Column Name="itemtype" DataType="System.Int32"/>
+        <Column Name="patienttype" DataType="System.Int32"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="257.4">
+      <TextObject Name="Text1" Top="18.9" Width="718.2" Height="47.25" Text="住院科室核算" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text2" Left="434.7" Top="18.9" Width="94.5" Height="18.9" Text="[Tb_LblText.depart]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text3" Left="434.7" Top="37.8" Width="94.5" Height="18.9" Text="[Tb_LblText.itemtype]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="434.7" Top="56.7" Width="94.5" Height="18.9" Text="[Tb_LblText.patienttype]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text5" Left="85.05" Top="85.05" Width="28.35" Height="18.9" Text="从:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text6" Left="113.4" Top="85.05" Width="75.6" Height="18.9" Text="[Tb_LblText.starttime]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="189" Top="85.05" Width="28.35" Height="18.9" Text="至" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text8" Left="217.35" Top="85.05" Width="75.6" Height="18.9" Text="[Tb_LblText.endtime]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <MatrixObject Name="Matrix1" Left="75.6" Top="122.85" Width="169.27" Height="52.88" Border.Lines="All" FixedRows="1" FixedColumns="1" DataSource="Table">
+        <MatrixColumns>
+          <Header Expression="[Tb_DepAcc.itemtype1]"/>
+        </MatrixColumns>
+        <MatrixRows>
+          <Header Expression="[Tb_DepAcc.depart]"/>
+        </MatrixRows>
+        <MatrixCells>
+          <Cell Expression="[Tb_DepAcc.realfee]"/>
+        </MatrixCells>
+        <TableColumn Name="Column1" Width="58.5" AutoSize="true"/>
+        <TableColumn Name="Column2" Width="77.06" AutoSize="true"/>
+        <TableColumn Name="Column3" Width="33.71" AutoSize="true"/>
+        <TableRow Name="Row1" Height="18.19" AutoSize="true">
+          <TableCell Name="Cell1" Border.Lines="All" Text="科室" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell2" Border.Lines="All" Text="[itemtype1]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell7" Border.Lines="All" Text="合计" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="16.5" AutoSize="true">
+          <TableCell Name="Cell3" Border.Lines="All" Text="[depart]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell4" Border.Lines="All" Text="[realfee]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="18.19" AutoSize="true">
+          <TableCell Name="Cell5" Border.Lines="All" Text="合计" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell6" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell9" Border.Lines="All" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </MatrixObject>
+    </ReportTitleBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/11/2015 15:07:25" ReportInfo.Modified="12/03/2015 15:44:39" ReportInfo.CreatorVersion="2013.3.9.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqHwzMSgwTFaHpjtG3vsOj8egbuvt9Fas9JJcPSToGvAMtAzZhmA0+NznTqPo+bLM/7wXQSWU3bEqP4Gopedh2xDnSvSKq+s3w3rZFssAqBaqnLIkcZL6CeXDDJMHlv+gpydGme/E5FGzWXYixS9WopsJoc+yOdiEBNSe9GX3z3ZcLPjapOUQ1Vc1899TaCihk">
+      <TableDataSource Name="Table" Alias="Tb_PersionInfo" DataType="System.Int32" Enabled="true" SelectCommand="select lis_ihsp.name&#13;&#10;              ,lis_ihsp.sex &#13;&#10;               ,lis_ihsp.age &#13;&#10;               ,lis_ihsp.ageunit&#13;&#10;               ,(select top 1 name from lis_dict where sn=lis_app.apptype_id and dicttype='apptype' )as apptype&#13;&#10;               ,lis_ihsp.ihsp_id &#13;&#10;               ,lis_depart.name as depart &#13;&#10;               ,lis_doctor.name as doctor&#13;&#10;               ,lis_ihsp.bednum &#13;&#10;               ,(select top 1 name from lis_dict where id=lis_app.sampletype_id) as sampletype &#13;&#10;               ,lis_app.id &#13;&#10;               ,lis_app.diagndesc&#13;&#10;               ,lis_app.opdate&#13;&#10;               ,lis_app.chkdate &#13;&#10;               ,(select top 1 nickname from lis_account where id=lis_app.operator_id)as operators &#13;&#10;               ,lis_account.nickname as checkleader &#13;&#10;               ,lis_app.app_sn &#13;&#10;               ,lis_print.printcode &#13;&#10;               ,lis_app.appdate &#13;&#10;               ,lis_app.registat &#13;&#10;               ,lis_app.docwritemeno &#13;&#10;		,lis_dev.memo&#13;&#10;               ,case lis_app.urgentstate when 1 then '急诊' else '' END as urgentstate&#13;&#10;               from lis_app left join lis_ihsp on lis_app.ihsp_id=lis_ihsp.id&#13;&#10;               left join lis_doctor on lis_doctor.id = lis_app.doctor_id&#13;&#10;               left join lis_depart on lis_app.depart_id=lis_depart.id  &#13;&#10;               left join lis_account on lis_app.checkleader_id = lis_account.id&#13;&#10;               left join lis_dev on lis_app.dev_id = lis_dev.id&#13;&#10;               left join lis_print on lis_dev.printtemp1 = lis_print.printcode&#13;&#10;               where  lis_app.id=2 and lis_app.dev_id= '344' and lis_app.opdate='2015-02-01'">
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="age" DataType="System.Int32"/>
+        <Column Name="ageunit" DataType="System.String"/>
+        <Column Name="apptype" DataType="System.String"/>
+        <Column Name="ihsp_id" DataType="System.String"/>
+        <Column Name="depart" DataType="System.String"/>
+        <Column Name="doctor" DataType="System.String"/>
+        <Column Name="bednum" DataType="System.String"/>
+        <Column Name="sampletype" DataType="System.String"/>
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="diagndesc" DataType="System.String"/>
+        <Column Name="opdate" DataType="System.DateTime"/>
+        <Column Name="chkdate" DataType="System.DateTime"/>
+        <Column Name="operators" DataType="System.String"/>
+        <Column Name="checkleader" DataType="System.String"/>
+        <Column Name="app_sn" DataType="System.Int32"/>
+        <Column Name="printcode" DataType="System.String"/>
+        <Column Name="appdate" DataType="System.DateTime"/>
+        <Column Name="registat" DataType="System.DateTime"/>
+        <Column Name="docwritemeno" DataType="System.String"/>
+        <Column Name="urgentstate" DataType="System.String"/>
+        <Column Name="memo" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Tb_HspName" DataType="System.Int32" Enabled="true" SelectCommand="select lis_sysconfig.hspname from lis_sysconfig where id =1">
+        <Column Name="hspname" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table3" Alias="Tb_Result" DataType="System.Int32" Enabled="true" SelectCommand="select ''as C0,''as C1,''as C2,''as C3,''as C4,''as C5,''as C6,''as C7,''as C8,''as C9,''as C10,''as C11,''as C12,''as C13,''as C14,''as C15,''as image, '' as operator,'' as checker ,'' as director">
+        <Column Name="C0" DataType="System.String"/>
+        <Column Name="C1" DataType="System.String"/>
+        <Column Name="C2" DataType="System.String"/>
+        <Column Name="C3" DataType="System.String"/>
+        <Column Name="C4" DataType="System.String"/>
+        <Column Name="C5" DataType="System.String"/>
+        <Column Name="C6" DataType="System.String"/>
+        <Column Name="C7" DataType="System.String"/>
+        <Column Name="C8" DataType="System.String"/>
+        <Column Name="C9" DataType="System.String"/>
+        <Column Name="C10" DataType="System.String"/>
+        <Column Name="C11" DataType="System.String"/>
+        <Column Name="C12" DataType="System.String"/>
+        <Column Name="C13" DataType="System.String"/>
+        <Column Name="C14" DataType="System.String"/>
+        <Column Name="C15" DataType="System.String"/>
+        <Column Name="image" DataType="System.String"/>
+        <Column Name="operator" DataType="System.String"/>
+        <Column Name="checker" DataType="System.String"/>
+        <Column Name="director" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table4" Alias="Tb_ResultS" DataType="System.Int32" Enabled="true" SelectCommand="select ''as C0,''as C1,''as C2,''as C3,''as C4,''as C5,''as C6,''as C7,''as C8,''as C9,''as C10,''as C11,''as C12,''as C13,''as C14,''as C15,''as image, '' as operator,'' as checker ,'' as director">
+        <Column Name="C0" DataType="System.String"/>
+        <Column Name="C1" DataType="System.String"/>
+        <Column Name="C2" DataType="System.String"/>
+        <Column Name="C3" DataType="System.String"/>
+        <Column Name="C4" DataType="System.String"/>
+        <Column Name="C5" DataType="System.String"/>
+        <Column Name="C6" DataType="System.String"/>
+        <Column Name="C7" DataType="System.String"/>
+        <Column Name="C8" DataType="System.String"/>
+        <Column Name="C9" DataType="System.String"/>
+        <Column Name="C10" DataType="System.String"/>
+        <Column Name="C11" DataType="System.String"/>
+        <Column Name="C12" DataType="System.String"/>
+        <Column Name="C13" DataType="System.String"/>
+        <Column Name="C14" DataType="System.String"/>
+        <Column Name="C15" DataType="System.String"/>
+        <Column Name="image" DataType="System.String"/>
+        <Column Name="operator" DataType="System.String"/>
+        <Column Name="checker" DataType="System.String"/>
+        <Column Name="director" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="756" Height="340.2">
+      <TextObject Name="Text10" Left="-9450" Top="-9450" Width="56.7" Height="20.79" Text="姓名:" VertAlign="Bottom" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text11" Left="-9450" Top="-9450" Width="56.7" Height="20.79" Text="姓名:" VertAlign="Bottom" Font="宋体, 11.25pt"/>
+      <PictureObject Name="Picture1" Left="-47.25" Width="841.05" Height="340.2" SizeMode="StretchImage"/>
+    </ReportTitleBand>
+    <DataBand Name="Data2" Top="344.2" Width="756" Height="18.9" DataSource="Table4">
+      <TextObject Name="Text3" Left="18.9" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C0]" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="66.15" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C1]" Font="宋体, 9pt"/>
+      <TextObject Name="Text5" Left="113.4" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C2]" Font="宋体, 9pt"/>
+      <TextObject Name="Text6" Left="160.65" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C3]" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="207.9" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C4]" Font="宋体, 9pt"/>
+      <TextObject Name="Text8" Left="255.15" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C5]" Font="宋体, 9pt"/>
+      <TextObject Name="Text9" Left="302.4" Width="47.25" Height="18.9" Border.Lines="All" Text="[Tb_ResultS.C6]" Font="宋体, 9pt"/>
+      <DataFooterBand Name="DataFooter2" Top="367.1" Width="756" Height="9.45"/>
+    </DataBand>
+    <DataBand Name="Data1" Restrictions="HideAllProperties" Top="380.55" Width="756" Height="18.9" DataSource="Table3">
+      <TableObject Name="Table2" Left="18.9" Width="718.2" Height="18.9">
+        <TableColumn Name="Column1" Width="47.88"/>
+        <TableColumn Name="Column2" Width="47.88"/>
+        <TableColumn Name="Column3" Width="47.88"/>
+        <TableColumn Name="Column4" Width="47.88"/>
+        <TableColumn Name="Column5" Width="47.88"/>
+        <TableColumn Name="Column6" Width="47.88"/>
+        <TableColumn Name="Column7" Width="47.88"/>
+        <TableColumn Name="Column8" Width="47.88"/>
+        <TableColumn Name="Column9" Width="47.88"/>
+        <TableColumn Name="Column10" Width="47.88"/>
+        <TableColumn Name="Column11" Width="47.88"/>
+        <TableColumn Name="Column12" Width="47.88"/>
+        <TableColumn Name="Column13" Width="47.88"/>
+        <TableColumn Name="Column14" Width="47.88"/>
+        <TableColumn Name="Column15" Width="47.88"/>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell1" Border.Lines="All" Text="[Tb_Result.C0]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell2" Border.Lines="All" Text="[Tb_Result.C1]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell3" Border.Lines="All" Text="[Tb_Result.C2]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell4" Border.Lines="All" Text="[Tb_Result.C3]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell5" Border.Lines="All" Text="[Tb_Result.C4]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell26" Border.Lines="All" Text="[Tb_Result.C5]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell27" Border.Lines="All" Text="[Tb_Result.C6]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell28" Border.Lines="All" Text="[Tb_Result.C7]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="[Tb_Result.C8]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell30" Border.Lines="All" Text="[Tb_Result.C9]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell31" Border.Lines="All" Text="[Tb_Result.C10]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell32" Border.Lines="All" Text="[Tb_Result.C11]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell33" Border.Lines="All" Text="[Tb_Result.C12]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell34" Border.Lines="All" Text="[Tb_Result.C13]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell35" Border.Lines="All" Text="[Tb_Result.C14]" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="DataFooter1" Top="403.45" Width="756" Height="217.35">
+        <TextObject Name="Text1" Left="28.35" Top="18.9" Width="85.05" Height="18.9" Text="失控点备注：" Font="宋体, 9pt"/>
+        <TextObject Name="Text2" Left="28.35" Top="122.85" Width="94.5" Height="18.9" Text="本月质控评价：" Font="宋体, 9pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="624.8" Width="756" Height="20.9">
+      <TextObject Name="Text41" Left="28.35" Top="-1" Width="75.6" Height="18.9" Text="操作员:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text42" Left="107.4" Top="-1" Width="85.05" Height="18.9" Text="[Tb_Result.operator]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text43" Left="245.7" Width="56.7" Height="18.9" Text="核对者:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text44" Left="309.85" Top="-1" Width="75.6" Height="18.9" Text="[Tb_Result.checker]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text45" Left="453.6" Top="1.45" Width="75.6" Height="18.9" Text="主任签名:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text46" Left="534.65" Top="2" Width="94.5" Height="18.9" Text="[Tb_Result.director]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,1 @@
+2020-07-22 20:00:09:sql= update inhospital set nhflag=502 where iid=25009; update gsryinfo set jssj='2020-07-22' where iid=25009;

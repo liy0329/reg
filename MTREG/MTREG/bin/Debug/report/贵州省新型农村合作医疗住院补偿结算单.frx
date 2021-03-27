@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/17/2017 13:47:23" ReportInfo.Modified="05/24/2017 15:46:39" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhuNvxXSsiWA1DoozeKSgXJq">
+      <TableDataSource Name="Table" Alias="Tb_dt" DataType="System.Int32" Enabled="true" SelectCommand="select &#13;&#10;ihspcode as memberNo,&#13;&#10;ihspcode as name,&#13;&#10;ihspcode as bookNo,&#13;&#10;ihspcode as sexName,&#13;&#10;ihspcode as birthday,&#13;&#10;ihspcode as masterName,&#13;&#10;ihspcode as relationName,&#13;&#10;ihspcode as identityName,&#13;&#10;ihspcode as currYearRedeemCount,&#13;&#10;ihspcode as currYearTotal,&#13;&#10;ihspcode as currYearEnableMoney,&#13;&#10;ihspcode as currYearReddemMoney,&#13;&#10;ihspcode as familyNo,&#13;&#10;ihspcode as address,&#13;&#10;ihspcode as joinPropName,&#13;&#10;ihspcode as currFamilyRedeemCount,&#13;&#10;ihspcode as currFamilyTotal,&#13;&#10;ihspcode as currFamilyEnableMoney,&#13;&#10;ihspcode as currFamilyReddemMoney,&#13;&#10;ihspcode as totalCosts,&#13;&#10;ihspcode as enableMoney,&#13;&#10;ihspcode as essentialMedicineMoney,&#13;&#10;ihspcode as provinceMedicineMoney,&#13;&#10;ihspcode as startMoney,&#13;&#10;ihspcode as calculateMoney,&#13;&#10;ihspcode as redeemTypeName,&#13;&#10;ihspcode as isSpecial,&#13;&#10;ihspcode as isPaul,&#13;&#10;ihspcode as anlagernMoney,&#13;&#10;ihspcode as fundPayMoney,&#13;&#10;ihspcode as hospAssumeMoney,&#13;&#10;ihspcode as personalPayMoney,&#13;&#10;ihspcode as YFmedicalAid,&#13;&#10;ihspcode as CXmedicalAid,&#13;&#10;ihspcode as materialMoney,&#13;&#10;ihspcode as calculationMethod,&#13;&#10;ihspcode as ChinaCharityPay,&#13;&#10;ihspcode as isLongPeriod,&#13;&#10;ihspcode as isCII,&#13;&#10;ihspcode as CIIEligibleCosts,&#13;&#10;ihspcode as CIIStartMoney,&#13;&#10;ihspcode as CIICalculateMoney,&#13;&#10;ihspcode as CIICumulativePay,&#13;&#10;ihspcode as CIICumulativeStart,&#13;&#10;ihspcode as CIICumulativeEligible,&#13;&#10;ihspcode as FamilyPlanningWaiver&#13;&#10;from inhospital">
+        <Column Name="memberNo" DataType="System.String"/>
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="bookNo" DataType="System.String"/>
+        <Column Name="sexName" DataType="System.String"/>
+        <Column Name="birthday" DataType="System.String"/>
+        <Column Name="relationName" DataType="System.String"/>
+        <Column Name="identityName" DataType="System.String"/>
+        <Column Name="currYearRedeemCount" DataType="System.String"/>
+        <Column Name="currYearTotal" DataType="System.String"/>
+        <Column Name="currYearEnableMoney" DataType="System.String"/>
+        <Column Name="currYearReddemMoney" DataType="System.String"/>
+        <Column Name="familyNo" DataType="System.String"/>
+        <Column Name="address" DataType="System.String"/>
+        <Column Name="joinPropName" DataType="System.String"/>
+        <Column Name="currFamilyRedeemCount" DataType="System.String"/>
+        <Column Name="currFamilyTotal" DataType="System.String"/>
+        <Column Name="currFamilyEnableMoney" DataType="System.String"/>
+        <Column Name="currFamilyReddemMoney" DataType="System.String"/>
+        <Column Name="totalCosts" DataType="System.String"/>
+        <Column Name="enableMoney" DataType="System.String"/>
+        <Column Name="essentialMedicineMoney" DataType="System.String"/>
+        <Column Name="provinceMedicineMoney" DataType="System.String"/>
+        <Column Name="startMoney" DataType="System.String"/>
+        <Column Name="calculateMoney" DataType="System.String"/>
+        <Column Name="redeemTypeName" DataType="System.String"/>
+        <Column Name="isSpecial" DataType="System.String"/>
+        <Column Name="isPaul" DataType="System.String"/>
+        <Column Name="anlagernMoney" DataType="System.String"/>
+        <Column Name="fundPayMoney" DataType="System.String"/>
+        <Column Name="hospAssumeMoney" DataType="System.String"/>
+        <Column Name="personalPayMoney" DataType="System.String"/>
+        <Column Name="YFmedicalAid" DataType="System.String"/>
+        <Column Name="CXmedicalAid" DataType="System.String"/>
+        <Column Name="materialMoney" DataType="System.String"/>
+        <Column Name="calculationMethod" DataType="System.String"/>
+        <Column Name="ChinaCharityPay" DataType="System.String"/>
+        <Column Name="isLongPeriod" DataType="System.String"/>
+        <Column Name="isCII" DataType="System.String"/>
+        <Column Name="CIIEligibleCosts" DataType="System.String"/>
+        <Column Name="CIIStartMoney" DataType="System.String"/>
+        <Column Name="CIICalculateMoney" DataType="System.String"/>
+        <Column Name="CIICumulativePay" DataType="System.String"/>
+        <Column Name="CIICumulativeStart" DataType="System.String"/>
+        <Column Name="CIICumulativeEligible" DataType="System.String"/>
+        <Column Name="FamilyPlanningWaiver" DataType="System.String"/>
+        <Column Name="Column" Alias="ihspcode" DataType="System.String" Calculated="true" Expression=""/>
+        <Column Name="masterName" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="28.35">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="贵州省新型农村合作医疗住院补偿结算单" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 16pt"/>
+      <TextObject Name="Text9" Left="-9450" Top="-9450" Width="113.4" Height="18.9" Text="经办人(签字):" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <LineObject Name="Line2" Left="-9346.05" Top="-9431.1" Width="132.3"/>
+      <TextObject Name="Text10" Left="-9667.35" Top="-9450" Width="217.35" Text="经办人(签字):" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <LineObject Name="Line3" Left="-9563.4" Top="-9431.1" Width="217.35"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="32.35" Width="718.2" Height="18.9">
+      <TextObject Name="Text2" Left="37.8" Width="94.5" Height="18.9" Text="补偿机构:" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text3" Left="132.3" Width="122.85" Height="18.9" Text="贵州省骨科医院" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text4" Left="274.05" Width="56.7" Height="18.9" Text="盖章:" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text5" Left="415.8" Width="113.4" Height="18.9" Text="补偿金额单位:" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <TextObject Name="Text6" Left="529.2" Width="151.2" Height="18.9" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="55.25" Width="718.2" Height="434.91">
+      <TableObject Name="Table1" Left="28.35" Width="661.37" Height="378.42">
+        <TableColumn Name="Column1" Width="24.79"/>
+        <TableColumn Name="Column2" Width="128.74"/>
+        <TableColumn Name="Column3" Width="100.39"/>
+        <TableColumn Name="Column4" Width="100.39"/>
+        <TableColumn Name="Column5" Width="100.39"/>
+        <TableColumn Name="Column6" Width="24.79"/>
+        <TableColumn Name="Column7" Width="81.49"/>
+        <TableColumn Name="Column8" Width="100.39"/>
+        <TableRow Name="Row1" Height="22.26">
+          <TableCell Name="Cell1" Border.Lines="All" Text="患者姓名" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell2" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell3" Border.Lines="All" Text="[Tb_dt.name]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell4" Border.Lines="All" Text="性别" Font="宋体, 9pt"/>
+          <TableCell Name="Cell5" Border.Lines="All" Text="[Tb_dt.sexName]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell26" Border.Lines="All" Text="年龄" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell31" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell36" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="22.26">
+          <TableCell Name="Cell6" Border.Lines="All" Text="户主姓名" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell7" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Text="[Tb_dt.masterName]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell9" Border.Lines="All" Text="家庭住址" Font="宋体, 9pt"/>
+          <TableCell Name="Cell10" Border.Lines="All" Text="[Tb_dt.address]" Font="宋体, 9pt" ColSpan="4"/>
+          <TableCell Name="Cell27" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell32" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell37" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.26">
+          <TableCell Name="Cell11" Border.Lines="All" Text="医疗证卡号" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell12" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell13" Border.Lines="All" Text="[Tb_dt.bookNo]" VertAlign="Bottom" Font="宋体, 9pt" ColSpan="3"/>
+          <TableCell Name="Cell14" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell15" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell28" Border.Lines="All" Text="联系电话" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell33" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell38" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.26">
+          <TableCell Name="Cell16" Border.Lines="All" Text="就医机构" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell17" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell18" Border.Lines="All" Text="贵州省骨科医院" VertAlign="Bottom" Font="宋体, 9pt" ColSpan="3"/>
+          <TableCell Name="Cell19" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell20" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="发票号" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell34" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell39" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.26">
+          <TableCell Name="Cell21" Border.Lines="All" Text="个人属性" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell22" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell23" Border.Lines="All" Text="[Tb_dt.identityName]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="精准扶贫属性" Font="宋体, 9pt"/>
+          <TableCell Name="Cell25" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell30" Border.Lines="All" Text="住院号" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell35" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell40" Border.Lines="All" Text="[Tb_dt.ihspcode]" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.26">
+          <TableCell Name="Cell41" Border.Lines="All" Text="本次住院" VertAlign="Center" Font="宋体, 9pt" RowSpan="12">
+            <TextObject Name="Text7" Top="264.6" Width="642.6" Height="18.9" Text="注:&quot;特别提高补偿额&quot;指中药或基药等提高补偿额;&quot;材料超限自付&quot;指按病种补偿超出耗材最高限额的个人自付费用" HorzAlign="Justify" VertAlign="Bottom" Font="宋体, 9pt" TextFill.Color="Red"/>
+          </TableCell>
+          <TableCell Name="Cell42" Border.Lines="All" Text="入院日期" Font="宋体, 9pt"/>
+          <TableCell Name="Cell43" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell44" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell45" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell46" Border.Lines="All" Text="补偿类型" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell47" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell48" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="22.26">
+          <TableCell Name="Cell49" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell50" Border.Lines="All" Text="出院日期" Font="宋体, 9pt"/>
+          <TableCell Name="Cell51" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell52" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell53" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell54" Border.Lines="All" Text="治疗方式" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell55" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell56" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="22.26">
+          <TableCell Name="Cell57" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell58" Border.Lines="All" Text="补偿日期" Font="宋体, 9pt"/>
+          <TableCell Name="Cell59" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell60" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell61" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell62" Border.Lines="All" Text="出院诊断" Font="宋体, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell63" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell64" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="22.26">
+          <TableCell Name="Cell65" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell66" Border.Lines="All" Text="住院总费用" Font="宋体, 9pt"/>
+          <TableCell Name="Cell67" Border.Lines="All" Text="可报费用" Font="宋体, 9pt"/>
+          <TableCell Name="Cell68" Border.Lines="All" Text="不可报费用" Font="宋体, 9pt"/>
+          <TableCell Name="Cell69" Border.Lines="All" Text="个人支付金额" Font="宋体, 9pt"/>
+          <TableCell Name="Cell70" Border.Lines="All" Text="年累计" Font="宋体, 9pt" RowSpan="3"/>
+          <TableCell Name="Cell71" Border.Lines="All" Text="住院次数" Font="宋体, 9pt"/>
+          <TableCell Name="Cell72" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="22.26">
+          <TableCell Name="Cell73" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell74" Border.Lines="All" Text="[Tb_dt.totalCosts]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell75" Border.Lines="All" Text="[Tb_dt.enableMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell76" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell77" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell78" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell79" Border.Lines="All" Text="住院费用" Font="宋体, 9pt"/>
+          <TableCell Name="Cell80" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row11" Height="22.26">
+          <TableCell Name="Cell81" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell82" Border.Lines="All" Text="起付线" Font="宋体, 9pt"/>
+          <TableCell Name="Cell83" Border.Lines="All" Text="农合补偿" Font="宋体, 9pt"/>
+          <TableCell Name="Cell84" Border.Lines="All" Text="民政优抚补助" Font="宋体, 9pt"/>
+          <TableCell Name="Cell85" Border.Lines="All" Text="民政城乡救助" Font="宋体, 9pt"/>
+          <TableCell Name="Cell86" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell87" Border.Lines="All" Text="补偿金额" Font="宋体, 9pt"/>
+          <TableCell Name="Cell88" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row12" Height="22.26">
+          <TableCell Name="Cell89" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell90" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell91" Border.Lines="All" Text="[Tb_dt.calculateMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell92" Border.Lines="All" Text="[Tb_dt.YFmedicalAid]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell93" Border.Lines="All" Text="[Tb_dt.CXmedicalAid]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell94" Border.Lines="All" Text="合计" VertAlign="Center" Font="宋体, 9pt" RowSpan="5"/>
+          <TableCell Name="Cell95" Border.Lines="All" Text="补偿合计" Font="宋体, 9pt"/>
+          <TableCell Name="Cell96" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="22.26">
+          <TableCell Name="Cell97" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell98" Border.Lines="All" Text="大病保险合规费用" Font="宋体, 9pt"/>
+          <TableCell Name="Cell99" Border.Lines="All" Text="大病保险起付线" Font="宋体, 9pt"/>
+          <TableCell Name="Cell100" Border.Lines="All" Text="大病医保补偿" Font="宋体, 9pt"/>
+          <TableCell Name="Cell101" Border.Lines="All" Text="特别提高补偿额" Font="宋体, 9pt"/>
+          <TableCell Name="Cell102" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell103" Border.Lines="All" Text="大写" VertAlign="Center" Font="宋体, 9pt" RowSpan="2"/>
+          <TableCell Name="Cell104" Border.Lines="All" Font="宋体, 9pt" RowSpan="2"/>
+        </TableRow>
+        <TableRow Name="Row14" Height="22.26">
+          <TableCell Name="Cell105" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell106" Border.Lines="All" Text="[Tb_dt.hospAssumeMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell107" Border.Lines="All" Text="[Tb_dt.CIIStartMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell108" Border.Lines="All" Text="[Tb_dt.CIICalculateMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell109" Border.Lines="All" Text="[Tb_dt.anlagernMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell110" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell111" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell112" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row16" Height="22.26">
+          <TableCell Name="Cell121" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell122" Border.Lines="All" Text="计生补偿" Font="宋体, 9pt"/>
+          <TableCell Name="Cell123" Border.Lines="All" Text="慈善补偿" Font="宋体, 9pt"/>
+          <TableCell Name="Cell124" Border.Lines="All" Text="扶贫补偿" Font="宋体, 9pt"/>
+          <TableCell Name="Cell125" Border.Lines="All" Text="材料超限金额" Font="宋体, 9pt"/>
+          <TableCell Name="Cell126" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell127" Border.Lines="All" Text="实际自付" Font="宋体, 9pt"/>
+          <TableCell Name="Cell128" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row17" Height="22.26">
+          <TableCell Name="Cell129" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell130" Border.Lines="All" Text="[Tb_dt.FamilyPlanningWaiver]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell131" Border.Lines="All" Text="[Tb_dt.ChinaCharityPay]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell132" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell133" Border.Lines="All" Text="[Tb_dt.materialMoney]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell134" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell135" Border.Lines="All" Text="医院承担" Font="宋体, 9pt"/>
+          <TableCell Name="Cell136" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="22.26">
+          <TableCell Name="Cell113" Border.Lines="All" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell114" Border.Lines="All" Text="计算公式" Font="宋体, 9pt"/>
+          <TableCell Name="Cell115" Border.Lines="All" Font="宋体, 9pt" ColSpan="6"/>
+          <TableCell Name="Cell116" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell117" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell118" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell119" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell120" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text13" Left="37.8" Top="406.35" Width="113.4" Height="18.9" Text="经办人(签字):" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <LineObject Name="Line6" Left="141.75" Top="425.25" Width="103.95"/>
+      <LineObject Name="Line7" Left="349.65" Top="425.25" Width="103.95"/>
+      <TextObject Name="Text14" Left="245.7" Top="406.35" Width="113.4" Height="18.9" Text="审核人(签字):" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+      <LineObject Name="Line8" Left="567" Top="425.25" Width="103.95"/>
+      <TextObject Name="Text15" Left="463.05" Top="406.35" Width="113.4" Height="18.9" Text="领款人(签字):" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 11pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="494.16" Width="718.2" Height="28.35"/>
+  </ReportPage>
+</Report>

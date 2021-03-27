@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/03/2016 08:20:45" ReportInfo.Modified="09/10/2016 14:59:10" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhtD31Ccnr4e0lxy69KYX8mg">
+      <TableDataSource Name="Table" Alias="Tb_ChargeRpt" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	'序号' AS number,&#13;&#10;	'预付款' AS itemkind,&#13;&#10;	bas_doctor. NAME AS chargedby,&#13;&#10;	inhospital. NAME,&#13;&#10;	bas_depart. NAME AS departname,&#13;&#10;	inhospital.ihspcode,&#13;&#10;	ihsp_payinadv.payfee AS fee,&#13;&#10;	sys_dict. NAME AS paytype,&#13;&#10;	ihsp_payinadv.chargedate&#13;&#10;FROM&#13;&#10;	ihsp_payinadv&#13;&#10;LEFT JOIN inhospital ON inhospital.id = ihsp_payinadv.ihsp_id&#13;&#10;LEFT JOIN bas_doctor ON ihsp_payinadv.chargedby = bas_doctor.id&#13;&#10;LEFT JOIN bas_depart ON ihsp_payinadv.depart_id = bas_depart.id&#13;&#10;LEFT JOIN sys_dict ON ihsp_payinadv.bas_paytype_id = sys_dict.id&#13;&#10;WHERE&#13;&#10;	ihsp_payinadv.ihsptab_id = '6'&#13;&#10;UNION&#13;&#10;	SELECT&#13;&#10;		'序号' AS number,&#13;&#10;		'出院结算' AS itemkind,&#13;&#10;		bas_doctor. NAME AS chargedby,&#13;&#10;		inhospital. NAME,&#13;&#10;		bas_depart. NAME AS departname,&#13;&#10;		inhospital.ihspcode,&#13;&#10;		ihsp_account.feeamt AS fee,&#13;&#10;		sys_dict. NAME AS paytype,&#13;&#10;		ihsp_account.chargedate&#13;&#10;	FROM&#13;&#10;		ihsp_account&#13;&#10;	LEFT JOIN inhospital ON inhospital.id = ihsp_account.ihsp_id&#13;&#10;	LEFT JOIN bas_doctor ON ihsp_account.chargedby_id = bas_doctor.id&#13;&#10;	LEFT JOIN bas_depart ON ihsp_account.depart_id = bas_depart.id&#13;&#10;	LEFT JOIN sys_dict ON ihsp_account.bas_paytype_id = sys_dict.id&#13;&#10;	WHERE&#13;&#10;		ihsp_account.ihsptab_id = '6'">
+        <Column Name="itemkind" DataType="System.String"/>
+        <Column Name="chargedby" DataType="System.String"/>
+        <Column Name="NAME" DataType="System.String"/>
+        <Column Name="departname" DataType="System.String"/>
+        <Column Name="ihspcode" DataType="System.String"/>
+        <Column Name="fee" DataType="System.Decimal"/>
+        <Column Name="paytype" DataType="System.String"/>
+        <Column Name="chargedate" DataType="System.DateTime"/>
+        <Column Name="number" Enabled="false" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table5" Alias="Tb_PayType" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	bas_paytype_id  ,&#13;&#10;	fee,&#13;&#10;	bas_paytype_id as bas_paytype_id1,&#13;&#10;	fee as fee1&#13;&#10;FROM&#13;&#10;	ihsptab_payinadv&#13;&#10;LEFT JOIN ihsptab ON ihsptab.id = ihsptab_payinadv.ihsptab_id&#13;&#10;WHERE&#13;&#10;	ihsptab.id = '6'&#13;&#10;GROUP BY&#13;&#10;	bas_paytype_id">
+        <Column Name="bas_paytype_id" DataType="System.Int32"/>
+        <Column Name="fee" DataType="System.Decimal"/>
+        <Column Name="bas_paytype_id1" DataType="System.Int32"/>
+        <Column Name="fee1" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Table6" Alias="Tb_LblText" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	chargedate AS timeBegin,&#13;&#10;	chargedate AS timeEnd,&#13;&#10;	chargedate AS now,&#13;&#10;	id AS chker,&#13;&#10;	id AS maker,&#13;&#10;	id AS total,&#13;&#10;	id AS paytype,&#13;&#10;	id AS mark&#13;&#10;FROM&#13;&#10;	ihsp_account&#13;&#10;LIMIT 1">
+        <Column Name="timeBegin" DataType="System.DateTime"/>
+        <Column Name="timeEnd" DataType="System.DateTime"/>
+        <Column Name="now" DataType="System.DateTime"/>
+        <Column Name="chker" DataType="System.Int32"/>
+        <Column Name="maker" DataType="System.Int32"/>
+        <Column Name="total" DataType="System.Int32"/>
+        <Column Name="paytype" DataType="System.Int32"/>
+        <Column Name="mark" DataType="System.Int32"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="28.35" Text="住院收费员日结明细" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text2" Left="66.15" Top="37.8" Width="94.5" Height="18.9" Text="结账日期:从" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text40" Left="141.75" Top="37.8" Width="94.5" Height="18.9" Text="[Tb_LblText.timeBegin]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text41" Left="236.25" Top="37.8" Width="18.9" Height="18.9" Text="至" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text42" Left="255.15" Top="37.8" Width="94.5" Height="18.9" Text="[Tb_LblText.timeEnd]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text43" Left="349.65" Top="37.8" Width="66.15" Height="18.9" Text="结算类型:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text44" Left="406.35" Top="37.8" Width="94.5" Height="18.9" Text="[Tb_LblText.paytype]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text45" Left="529.2" Top="37.8" Width="66.15" Height="18.9" Text="标示名称:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text46" Left="585.9" Top="37.8" Width="66.15" Height="18.9" Text="[Tb_LblText.mark]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <LineObject Name="Line1" Top="66.15" Width="727.65" Border.Width="2"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="112.95" Width="718.2" Height="19.9" DataSource="Table">
+      <TableObject Name="Table3" Left="25.1" Top="1" Width="680.4" Height="18.9">
+        <TableColumn Name="Column19"/>
+        <TableColumn Name="Column20"/>
+        <TableColumn Name="Column21"/>
+        <TableColumn Name="Column22"/>
+        <TableColumn Name="Column23" Width="85.05"/>
+        <TableColumn Name="Column24"/>
+        <TableColumn Name="Column25"/>
+        <TableColumn Name="Column26"/>
+        <TableColumn Name="Column27" Width="132.3"/>
+        <TableRow Name="Row3">
+          <TableCell Name="Cell19" Border.Lines="Left, Right, Bottom" Text="[Tb_ChargeRpt.number]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell20" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.itemkind]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell21" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.chargedby]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell22" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.NAME]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell23" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.departname]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell24" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.ihspcode]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell25" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.fee]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell26" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.paytype]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell27" Border.Lines="Right, Bottom" Text="[Tb_ChargeRpt.chargedate]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="89.05" Width="718.2" Height="19.9">
+        <TableObject Name="Table1" Left="25.1" Top="1" Width="680.4" Height="18.9">
+          <TableColumn Name="Column1"/>
+          <TableColumn Name="Column2"/>
+          <TableColumn Name="Column3"/>
+          <TableColumn Name="Column4"/>
+          <TableColumn Name="Column5" Width="85.05"/>
+          <TableColumn Name="Column6"/>
+          <TableColumn Name="Column7"/>
+          <TableColumn Name="Column8"/>
+          <TableColumn Name="Column32" Width="132.3"/>
+          <TableRow Name="Row1">
+            <TableCell Name="Cell1" Border.Lines="All" Text="序号" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell2" Border.Lines="Right, Top, Bottom" Text="类型" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell3" Border.Lines="Right, Top, Bottom" Text="收费员" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell4" Border.Lines="Right, Top, Bottom" Text="患者姓名" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell5" Border.Lines="Right, Top, Bottom" Text="科室" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell6" Border.Lines="Right, Top, Bottom" Text="住院号" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell7" Border.Lines="Right, Top, Bottom" Text="费用金额" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell8" Border.Lines="Right, Top, Bottom" Text="付款方式" HorzAlign="Center" Font="宋体, 9pt"/>
+            <TableCell Name="Cell36" Border.Lines="Right, Top, Bottom" Text="付款时间" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="136.85" Width="718.2" Height="18.9">
+        <TextObject Name="Text32" Left="47.25" Width="47.25" Height="18.9" Text="合计:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text33" Left="85.05" Width="94.5" Height="18.9" Text="[Tb_LblText.total]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data2" Top="183.65" Width="718.2" Height="19.9" DataSource="Table5">
+      <TableObject Name="Table7" Left="365.3" Top="1" Width="264.6" Height="18.9">
+        <TableColumn Name="Column37"/>
+        <TableColumn Name="Column38"/>
+        <TableColumn Name="Column39"/>
+        <TableColumn Name="Column40"/>
+        <TableRow Name="Row9">
+          <TableCell Name="Cell49" Border.Lines="Left, Right, Bottom" Text="[Tb_PayType.bas_paytype_id]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell50" Border.Lines="Right, Bottom" Text="[Tb_PayType.fee]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell51" Border.Lines="Right, Bottom" Text="[Tb_PayType.bas_paytype_id1]" Font="宋体, 9pt"/>
+          <TableCell Name="Cell52" Border.Lines="Right, Bottom" Text="[Tb_PayType.fee1]" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader2" Top="159.75" Width="718.2" Height="19.9">
+        <TableObject Name="Table4" Left="365.3" Top="1" Width="264.6" Height="18.9">
+          <TableColumn Name="Column28"/>
+          <TableColumn Name="Column29"/>
+          <TableColumn Name="Column30"/>
+          <TableColumn Name="Column31"/>
+          <TableRow Name="Row4">
+            <TableCell Name="Cell28" Border.Lines="All" Text="收款类型" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell29" Border.Lines="Right, Top, Bottom" Text="金额" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell30" Border.Lines="Right, Top, Bottom" Text="收款类型" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell31" Border.Lines="Right, Top, Bottom" Text="金额" VertAlign="Bottom" Font="宋体, 9pt"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text47" Left="264.6" Width="94.5" Height="18.9" Text="付款方式汇总:" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter2" Top="207.55" Width="718.2" Height="37.8">
+        <TextObject Name="Text34" Left="56.7" Top="9.45" Width="66.15" Height="18.9" Text="制表人:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text35" Left="103.95" Top="9.45" Width="66.15" Height="18.9" Text="[Tb_LblText.maker]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text36" Left="245.7" Top="9.45" Width="94.5" Height="18.9" Text="审核人:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text37" Left="292.95" Top="9.45" Width="94.5" Height="18.9" Text="[Tb_LblText.chker]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text38" Left="463.05" Top="9.45" Width="66.15" Height="18.9" Text="打印时间:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text39" Left="519.75" Top="9.45" Width="94.5" Height="18.9" Text="[Tb_LblText.now]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="249.35" Width="718.2" Height="47.25"/>
+  </ReportPage>
+</Report>

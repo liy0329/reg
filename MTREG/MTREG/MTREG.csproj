@@ -1,0 +1,3578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80A8C6CF-723E-48E1-80E3-408E58C6127F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MTREG</RootNamespace>
+    <AssemblyName>MTREG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Apache.NMS">
+      <HintPath>D:\vs\挂号传json数据\Desktop\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ">
+      <HintPath>D:\vs\挂号传json数据\Desktop\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Barcodes">
+      <HintPath>bin\Debug\dll\Barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=2013.3.9.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\fastreport\dll\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2013.3.9.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\fastreport\dll\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.ExcelLite, Version=25.1.5000.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GemBox.ExcelLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" />
+    <Reference Include="Interop.HISDECDRYTO">
+      <HintPath>obj\Debug\Interop.HISDECDRYTO.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.HospCS">
+      <HintPath>obj\Debug\Interop.HospCS.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Midas">
+      <HintPath>obj\Debug\Interop.Midas.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.yh_interface, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>obj\Debug\Interop.yh_interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.3.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>bin\Debug\dll\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TimerTask_DLL">
+      <HintPath>bin\Debug\dll\TimerTask_DLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clictab\bll\BllMemberTab.cs" />
+    <Compile Include="clictab\FrmclicDuty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmclicDuty.Designer.cs">
+      <DependentUpon>FrmclicDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicDutyManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicDutyManage.Designer.cs">
+      <DependentUpon>FrmClicDutyManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClinTabInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClinTabInit.Designer.cs">
+      <DependentUpon>FrmClinTabInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\bll\Billjc.cs" />
+    <Compile Include="clinic\bll\BillMember.cs" />
+    <Compile Include="clinic\bll\BillClinicRcpCost.cs" />
+    <Compile Include="clinic\bll\BillRegSearch.cs" />
+    <Compile Include="clictab\bll\BllClicAfterinfo.cs" />
+    <Compile Include="clinic\bll\BllBasDepart.cs" />
+    <Compile Include="clinic\bll\BllBasDoctor.cs" />
+    <Compile Include="clinic\bll\BllClinicCostManage.cs" />
+    <Compile Include="clinic\bll\BllClinicCost.cs" />
+    <Compile Include="clictab\bll\BllClicTab.cs" />
+    <Compile Include="clictab\bll\BllClicTabManage.cs" />
+    <Compile Include="clictab\bll\BllClicTabReport.cs" />
+    <Compile Include="clictab\bll\BllFrxOper.cs" />
+    <Compile Include="clinic\bll\BllCmbList.cs" />
+    <Compile Include="clinic\bll\BllFrxPrintInvoice.cs" />
+    <Compile Include="clinic\bll\BllMemberReg.cs" />
+    <Compile Include="clinic\bll\BllMemberSett.cs" />
+    <Compile Include="clinic\bll\BllRefund.cs" />
+    <Compile Include="clinic\bll\BllRefundInvoice.cs" />
+    <Compile Include="clinic\bll\BllClinicReg.cs" />
+    <Compile Include="clinic\bll\BllSearchRegister.cs" />
+    <Compile Include="clinic\bll\BllUnlockRcp.cs" />
+    <Compile Include="clinic\bll\BllUnlockRcpdetail.cs" />
+    <Compile Include="clinic\bll\BllUnlockRcpManage.cs" />
+    <Compile Include="clinic\bll\sfbx.cs" />
+    <Compile Include="clinic\bo\BasDepart.cs" />
+    <Compile Include="clinic\bo\BasDoctor.cs" />
+    <Compile Include="clinic\bo\InsurInfoParam.cs" />
+    <Compile Include="clinic\ExcelFile.cs" />
+    <Compile Include="clinic\FrmClinicCostManage_cw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicCostManage_cw.designer.cs">
+      <DependentUpon>FrmClinicCostManage_cw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmViewCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmViewCard.Designer.cs">
+      <DependentUpon>FrmViewCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmCliniCostRetFeeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmCliniCostRetFeeManage.Designer.cs">
+      <DependentUpon>FrmCliniCostRetFeeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmGysybInsurRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmGysybInsurRefund.Designer.cs">
+      <DependentUpon>FrmGysybInsurRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmGzsybInsurRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmGzsybInsurRefund.designer.cs">
+      <DependentUpon>FrmGzsybInsurRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRetHspCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRetHspCard.Designer.cs">
+      <DependentUpon>FrmRetHspCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmprintWristband.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmprintWristband.Designer.cs">
+      <DependentUpon>FrmprintWristband.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\Frm_mainDbcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\Frm_mainDbcx.Designer.cs">
+      <DependentUpon>Frm_mainDbcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\bll\listitem.cs" />
+    <Compile Include="common\CardMsgs.cs" />
+    <Compile Include="clinic\bo\ChargeManage.cs" />
+    <Compile Include="clinic\bo\ChargeManagePatientInfo.cs" />
+    <Compile Include="clinic\bo\ChkApp.cs" />
+    <Compile Include="clinic\bo\ChkAppcost.cs" />
+    <Compile Include="clinic\bo\ClinicAccount.cs" />
+    <Compile Include="clinic\bo\ClinicCost.cs" />
+    <Compile Include="clinic\bo\ClinicCostdet.cs" />
+    <Compile Include="clinic\bo\ClinicInvoice.cs" />
+    <Compile Include="clinic\bo\ClinicInvoiceDet.cs" />
+    <Compile Include="clinic\bo\CliniCostdet.cs" />
+    <Compile Include="clinic\bo\ClinicRcp.cs" />
+    <Compile Include="clinic\bo\ClinicRcpdetail.cs" />
+    <Compile Include="clictab\bo\Clinictab.cs" />
+    <Compile Include="clictab\bo\ClinicTabCostGather.cs" />
+    <Compile Include="clictab\bo\ClinicTabDetail.cs" />
+    <Compile Include="clictab\bo\ClinicTabReport.cs" />
+    <Compile Include="clinic\bo\DrugIo.cs" />
+    <Compile Include="clinic\bo\DrugIodetail.cs" />
+    <Compile Include="clictab\bo\FrxPrintView.cs" />
+    <Compile Include="clinic\bo\FrxPrintView.cs" />
+    <Compile Include="clinic\bo\IhspInfo.cs" />
+    <Compile Include="clinic\bo\JsonStr.cs" />
+    <Compile Include="clinic\FrmMemberReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemberReg.Designer.cs">
+      <DependentUpon>FrmMemberReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMemberSett.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemberSett.Designer.cs">
+      <DependentUpon>FrmMemberSett.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMemCardstatLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemCardstatLock.Designer.cs">
+      <DependentUpon>FrmMemCardstatLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMemCardstatYes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemCardstatYes.Designer.cs">
+      <DependentUpon>FrmMemCardstatYes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\CardMsgsByStruct.cs" />
+    <Compile Include="Entity\ZfRydj.cs" />
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="global\ListItem.cs" />
+    <Compile Include="gsbx\bll\DlDC.cs" />
+    <Compile Include="gsbx\bll\GSBXinterface.cs" />
+    <Compile Include="gsbx\bll\GSBX_IN.cs" />
+    <Compile Include="gsbx\bll\GSBX_OUT.cs" />
+    <Compile Include="gsbx\CrystalReport11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gsbx\FrmgsCy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\FrmgsCy.Designer.cs">
+      <DependentUpon>FrmgsCy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\Frmgsjsd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\Frmgsjsd.Designer.cs">
+      <DependentUpon>Frmgsjsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\Frmgsmldz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\Frmgsmldz.designer.cs">
+      <DependentUpon>Frmgsmldz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\Frmgsmz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\Frmgsmz.Designer.cs">
+      <DependentUpon>Frmgsmz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\Frmgsplhq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\Frmgsplhq.Designer.cs">
+      <DependentUpon>Frmgsplhq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\FrmgsRy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\FrmgsRy.Designer.cs">
+      <DependentUpon>FrmgsRy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\FrmGsxmdz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\FrmGsxmdz.Designer.cs">
+      <DependentUpon>FrmGsxmdz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\Frmgszf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\Frmgszf.Designer.cs">
+      <DependentUpon>Frmgszf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\FrmJxzl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gsbx\FrmJxzl.Designer.cs">
+      <DependentUpon>FrmJxzl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsbx\gszdsc.cs" />
+    <Compile Include="gsbx\Reportgsjsd.cs" />
+    <Compile Include="httpserver\SimpleHttpServer.cs" />
+    <Compile Include="ihsptab\bll\BllFrxOper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ihsptab\bll\BllIhsptab.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ihsptab\bo\DepDocAcc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ihsptab\bo\FrxPrintView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ihsptab\bo\Ihsptab.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmDutyRetAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmDutyRetAcc.Designer.cs">
+      <DependentUpon>FrmDutyRetAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAdjustByDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAdjustByDepart.designer.cs">
+      <DependentUpon>FrmHspAdjustByDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAdjustByDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAdjustByDoctor.designer.cs">
+      <DependentUpon>FrmHspAdjustByDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAfterinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspAfterinfo.designer.cs">
+      <DependentUpon>FrmHspAfterinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspTab.Designer.cs">
+      <DependentUpon>FrmHspTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspTabManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmHspTabManage.Designer.cs">
+      <DependentUpon>FrmHspTabManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspDuty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspDuty.Designer.cs">
+      <DependentUpon>FrmIhspDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspDutyManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspDutyManage.Designer.cs">
+      <DependentUpon>FrmIhspDutyManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspTabInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmIhspTabInit.Designer.cs">
+      <DependentUpon>FrmIhspTabInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmPreView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmPreView.Designer.cs">
+      <DependentUpon>FrmPreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsptab\FrmTabRetAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsptab\FrmTabRetAcc.Designer.cs">
+      <DependentUpon>FrmTabRetAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\bo\IhspInfo.cs" />
+    <Compile Include="ihsp\bo\IhspInvoicedet.cs" />
+    <Compile Include="ihsp\FrmDiagn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmDiagn.Designer.cs">
+      <DependentUpon>FrmDiagn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmDywd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmDywd.designer.cs">
+      <DependentUpon>FrmDywd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspInfoEdit.Designer.cs">
+      <DependentUpon>FrmIhspInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspOuthsp_cw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspOuthsp_cw.designer.cs">
+      <DependentUpon>FrmIhspOuthsp_cw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmSyRy.cs" />
+    <Compile Include="ihsp\Frm_Ybzxfy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\Frm_Ybzxfy.designer.cs">
+      <DependentUpon>Frm_Ybzxfy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\CrystalReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Fpdy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy_fj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Fpdy_fj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy_fj1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy_ybfj.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_Fpdy_ybfj1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Fpdy_ybfj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_sybbbd.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\CrystalReport_sybbbd1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_sybbbd.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="kls\Czzgjbylbxzyfyqd.cs" />
+    <Compile Include="kls\frmnhjsddy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\frmnhjsddy.designer.cs">
+      <DependentUpon>frmnhjsddy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\frmnhzy.cs" />
+    <Compile Include="kls\frmnhzy_fj.cs" />
+    <Compile Include="kls\FrmSybbbddcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\FrmSybbbddcx.designer.cs">
+      <DependentUpon>FrmSybbbddcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frmxzybml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frmxzybml.Designer.cs">
+      <DependentUpon>Frmxzybml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Form2.designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\FrmMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\FrmMain2.designer.cs">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\FrmSybMzJxCx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\FrmSybMzJxCx.designer.cs">
+      <DependentUpon>FrmSybMzJxCx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\FrmSybTsMzJsCx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\FrmSybTsMzJsCx.designer.cs">
+      <DependentUpon>FrmSybTsMzJsCx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frmxzyp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frmxzyp.designer.cs">
+      <DependentUpon>Frmxzyp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_JSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_JSD.designer.cs">
+      <DependentUpon>Frm_JSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_Qssqcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_Qssqcx.designer.cs">
+      <DependentUpon>Frm_Qssqcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_Sybqssq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_Sybqssq.designer.cs">
+      <DependentUpon>Frm_Sybqssq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_sybwscyinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_sybwscyinfo.designer.cs">
+      <DependentUpon>Frm_sybwscyinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_wscyinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_wscyinfo.designer.cs">
+      <DependentUpon>Frm_wscyinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\Frm_wsryinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kls\Frm_wsryinfo.designer.cs">
+      <DependentUpon>Frm_wsryinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kls\JSD_Entity.cs" />
+    <Compile Include="kls\listitem\ListItem.cs" />
+    <Compile Include="kls\money.cs" />
+    <Compile Include="medinsur\ahsjk\bll\BllAhsjnhXml.cs" />
+    <Compile Include="medinsur\ahsjk\bll\BllAhsnhMethod.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_CancelTransfer.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_ConnectTest.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownCalcuList.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownCalType.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownHospitals.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownICD.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownItemList.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownloadTransfer.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_DownTreat.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_GetPersonInfo.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatDiagnosisUpdate.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientCalculate.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientCalculateCancel.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientFeeCancel.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientFeeCancelAll.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientFeeUpLoad.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientOutRegister.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientOutRegisterCancel.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientRegister.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientRegisterCancel.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientRegisterModify.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_InpatientTryCalculate.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_ItemContrastDown.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_ItemContrastUp.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_SubmitApply.cs" />
+    <Compile Include="medinsur\ahsjk\bo\inp\In_UploadTransfer.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownCalType.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownHospitals.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownICD.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownItemList.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownloadTransfer.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_DownTreat.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_GetPersonInfo.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_InpatientCalculate.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_InpatientFeeUpLoad.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_InpatientTryCalculate.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\Out_ItemContrastDown.cs" />
+    <Compile Include="medinsur\ahsjk\bo\outp\retMesage.cs" />
+    <Compile Include="medinsur\ahsjk\bo\RegInfo.cs" />
+    <Compile Include="medinsur\ahsjk\bo\TopIn.cs" />
+    <Compile Include="medinsur\ahsjk\bo\ValidAttribute.cs" />
+    <Compile Include="medinsur\ahsjk\FrmAhsnhIhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmAhsnhIhsp.Designer.cs">
+      <DependentUpon>FrmAhsnhIhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmAhsnhOhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmAhsnhOhsp.Designer.cs">
+      <DependentUpon>FrmAhsnhOhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownHospitals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownHospitals.Designer.cs">
+      <DependentUpon>FrmDownHospitals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownIcd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownIcd.Designer.cs">
+      <DependentUpon>FrmDownIcd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownItemList.Designer.cs">
+      <DependentUpon>FrmDownItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownTreat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmDownTreat.Designer.cs">
+      <DependentUpon>FrmDownTreat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmInpatDiagnosisUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmInpatDiagnosisUpdate.Designer.cs">
+      <DependentUpon>FrmInpatDiagnosisUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmItemcrossAhsjnh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmItemcrossAhsjnh.Designer.cs">
+      <DependentUpon>FrmItemcrossAhsjnh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmOutHspReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmOutHspReg.Designer.cs">
+      <DependentUpon>FrmOutHspReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmTruncode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ahsjk\FrmTruncode.Designer.cs">
+      <DependentUpon>FrmTruncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\bll\BllInsurMethod.cs" />
+    <Compile Include="medinsur\FrmRyht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmRyht.Designer.cs">
+      <DependentUpon>FrmRyht.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\frmZyybfysc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\frmZyybfysc.Designer.cs">
+      <DependentUpon>frmZyybfysc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gsbx\bll\DlDC.cs" />
+    <Compile Include="medinsur\gsbx\bll\GSBXinterface.cs" />
+    <Compile Include="medinsur\gsbx\bll\GSBX_IN.cs" />
+    <Compile Include="medinsur\gsbx\bll\GSBX_OUT.cs" />
+    <Compile Include="medinsur\gsbx\CrystalReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\CrystalReport11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgsmldz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgsmldz.designer.cs">
+      <DependentUpon>Frmgsmldz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgsmz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgsmz.Designer.cs">
+      <DependentUpon>Frmgsmz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgszf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Frmgszf.Designer.cs">
+      <DependentUpon>Frmgszf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gsbx\FrmJxzl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gsbx\FrmJxzl.Designer.cs">
+      <DependentUpon>FrmJxzl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gsbx\Reportgsjsd.cs" />
+    <Compile Include="medinsur\gysyb\bll\Bjq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\BllInsurGYSYB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\GysybInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\Gysybservice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\GyybDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\Judge_Visitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\ReadCardYb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\SysWriteLogsxml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bll\SzybDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjkptmzjssj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjkptmzmx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjkrysj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjktsmzfymx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjktsmzjssj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjkzyjsfymx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxjkzyjssj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxybypzlfwml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cxyydbzbgjsml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cydj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Cydjsjht.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Gsrdxx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Gysybdk.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\GysYbRydj_Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Hqgrxx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Hqgsqrxx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Lxtp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Ptmzgh.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Ptmzjs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\ReadYbCard_entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Rydj_Syb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Sybdk_Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\SybMzjs_Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\SybMzjs_ret_fy_Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Szjsfs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Szqsfs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Tp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Tsmzjs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Zyjs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Zyjs_ret.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Zyjs_rets.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\bo\Zytsjs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmClinicMedinsrGYSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmClinicMedinsrGYSYB.Designer.cs">
+      <DependentUpon>FrmClinicMedinsrGYSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxtsxmml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxtsxmml.designer.cs">
+      <DependentUpon>FrmCxtsxmml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxtsxmyl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxtsxmyl.designer.cs">
+      <DependentUpon>FrmCxtsxmyl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxwdzg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmCxwdzg.designer.cs">
+      <DependentUpon>FrmCxwdzg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmGysybAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmGysybAccount.Designer.cs">
+      <DependentUpon>FrmGysybAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmGysybRetAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmGysybRetAccount.designer.cs">
+      <DependentUpon>FrmGysybRetAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmIhspMedinsrGYSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmIhspMedinsrGYSYB.Designer.cs">
+      <DependentUpon>FrmIhspMedinsrGYSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmWdzgcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmWdzgcx.designer.cs">
+      <DependentUpon>FrmWdzgcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmWdzgrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gysyb\FrmWdzgrd.designer.cs">
+      <DependentUpon>FrmWdzgrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bll\Base64.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bll\BllGzsnhMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bo\Disease.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bo\GzsnhAccInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bo\GzsnhGlobal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bo\GzsnhRegInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\bo\Yjs_data.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmAudit.designer.cs">
+      <DependentUpon>FrmAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmdoAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmdoAccount.designer.cs">
+      <DependentUpon>FrmdoAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGetTopLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGetTopLine.designer.cs">
+      <DependentUpon>FrmGetTopLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhAcc.designer.cs">
+      <DependentUpon>FrmGzsnhAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhAccount.designer.cs">
+      <DependentUpon>FrmGzsnhAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhdj.designer.cs">
+      <DependentUpon>FrmGzsnhdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhIhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhIhsp.designer.cs">
+      <DependentUpon>FrmGzsnhIhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhInsurMag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhInsurMag.designer.cs">
+      <DependentUpon>FrmGzsnhInsurMag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhOhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhOhsp.designer.cs">
+      <DependentUpon>FrmGzsnhOhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhRetAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhRetAccount.Designer.cs">
+      <DependentUpon>FrmGzsnhRetAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhSelectCross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmGzsnhSelectCross.designer.cs">
+      <DependentUpon>FrmGzsnhSelectCross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmTreatment.designer.cs">
+      <DependentUpon>FrmTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmUpDateDisease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsnh\FrmUpDateDisease.designer.cs">
+      <DependentUpon>FrmUpDateDisease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\bll\BllItemcrossGZS.cs" />
+    <Compile Include="medinsur\gzsyb\bll\GzsybInterface.cs" />
+    <Compile Include="medinsur\gzsyb\bll\Gzsybservice.cs" />
+    <Compile Include="medinsur\gzsyb\bo\BatchFeeDel.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Call_in.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Call_out.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Cancel_in.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Cancel_out.cs" />
+    <Compile Include="medinsur\gzsyb\bo\ClearApply.cs" />
+    <Compile Include="medinsur\gzsyb\bo\ClearApplyBack.cs" />
+    <Compile Include="medinsur\gzsyb\bo\ClearApplySearch.cs" />
+    <Compile Include="medinsur\gzsyb\bo\ClearApplySearchPrint.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Confirm_in.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Confirm_out.cs" />
+    <Compile Include="medinsur\gzsyb\bo\CostInsurcrossGZS.cs" />
+    <Compile Include="medinsur\gzsyb\bo\DownICD10Data.cs" />
+    <Compile Include="medinsur\gzsyb\bo\FeeSettle.cs" />
+    <Compile Include="medinsur\gzsyb\bo\FeeWriteIn.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GetCodeContrast.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GetHisInfo.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GetJsAll.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GetServiceItem.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Getuncertaintytrade_in.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Getuncertaintytrade_out.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GetYiBaoDate.cs" />
+    <Compile Include="medinsur\gzsyb\bo\GzsGlobal.cs" />
+    <Compile Include="medinsur\gzsyb\bo\HisSimulateSettle.cs" />
+    <Compile Include="medinsur\gzsyb\bo\IdentityRecognition.cs" />
+    <Compile Include="medinsur\gzsyb\bo\InHospitalHandle.cs" />
+    <Compile Include="medinsur\gzsyb\bo\InHospitalHandleBack.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Init_out.cs" />
+    <Compile Include="medinsur\gzsyb\bo\OutHospitalHandle.cs" />
+    <Compile Include="medinsur\gzsyb\bo\OutHospitalHandleBack.cs" />
+    <Compile Include="medinsur\gzsyb\bo\PersonInfo.cs" />
+    <Compile Include="medinsur\gzsyb\bo\SettleBack.cs" />
+    <Compile Include="medinsur\gzsyb\bo\SettlePrint.cs" />
+    <Compile Include="medinsur\gzsyb\bo\UpdatePassword.cs" />
+    <Compile Include="medinsur\gzsyb\bo\WdybRydj.cs" />
+    <Compile Include="medinsur\gzsyb\bo\Yjs_retdata.cs" />
+    <Compile Include="medinsur\gzsyb\clinic\bll\BllClinicMedinsrGZS.cs" />
+    <Compile Include="medinsur\gzsyb\clinic\bo\ClinicSettle.cs" />
+    <Compile Include="medinsur\gzsyb\clinic\FrmClinMedinsurGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\clinic\FrmClinMedinsurGZS.Designer.cs">
+      <DependentUpon>FrmClinMedinsurGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmDownloadItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmDownloadItem.Designer.cs">
+      <DependentUpon>FrmDownloadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybAccount.designer.cs">
+      <DependentUpon>FrmGzsybAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybInsurMag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybInsurMag.Designer.cs">
+      <DependentUpon>FrmGzsybInsurMag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybRetAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmGzsybRetAccount.Designer.cs">
+      <DependentUpon>FrmGzsybRetAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmItemcrossGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmItemcrossGZS.Designer.cs">
+      <DependentUpon>FrmItemcrossGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmSelectCrossGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmSelectCrossGZS.Designer.cs">
+      <DependentUpon>FrmSelectCrossGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmYbBrcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\FrmYbBrcx.designer.cs">
+      <DependentUpon>FrmYbBrcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\bll\BllInsurIhspGZS.cs" />
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspMedinsurGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspMedinsurGZS.Designer.cs">
+      <DependentUpon>FrmIhspMedinsurGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspOutGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspOutGZS.Designer.cs">
+      <DependentUpon>FrmIhspOutGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspOutRetGZS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmIhspOutRetGZS.Designer.cs">
+      <DependentUpon>FrmIhspOutRetGZS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmOutHspMedinsrGZSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\gzsyb\ihsp\FrmOutHspMedinsrGZSYB.Designer.cs">
+      <DependentUpon>FrmOutHspMedinsrGZSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\dor\Zysyybfysc.cs" />
+    <Compile Include="medinsur\hdyb\frmXJHB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\frmXJHB.Designer.cs">
+      <DependentUpon>frmXJHB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\bean\ATSC.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\bzkysmfwxz_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\bzkysmfwxz_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\clinicPoint_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Correct_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\declare_fw_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\declare_yp_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\declare_zl_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Depart_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Detailedquery_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Detailedquery_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Directory_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Directory_Out_fw.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Directory_Out_yp.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Directory_Out_zl.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Disease_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Disease_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DK_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DK_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Doctor_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Doctor_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadContrast_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadContrast_Out_fw.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadContrast_Out_yp.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadContrast_Out_zl.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadCostdet_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DownloadCostdet_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DZmx_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DZmx_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DZ_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\DZ_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\fp.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\grmxbspxxcx_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\grmxbspxxcx_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\js_sql.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\KC21.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\KC22.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\KC33.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\modify_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\mzjs_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Mzyjs_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\mz_dk.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Reconciliation_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Reconciliation_In_xm.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Reconciliation_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Reconciliation_Out_xm.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\ReHospital_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\SettlementInfo_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\SettlementInfo_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\Signin_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\SJZYB_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\SJZYB_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\statementsJM_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\statementsJM_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\ybSettRpt_In.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\ybSettRpt_Out.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyjszh_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyjszh_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyjs_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyjs_OUT.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyyjs_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bean\zyfysc_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\BllItemcrossSJZ.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\ConvertDatatable.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\Mifare.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\objk.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\PrintService.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\Sjzsyb.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\Sjzsyb_IN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\bll\SjzybInterface.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\TimingTask.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\Yb_hospital.cs" />
+    <Compile Include="medinsur\sjzsyb\bll\Yb_Itme.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\bll\BllClinicMedinsr.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\bo\InsurInfo.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\bo\KC21.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\bo\KC22.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\bo\PersonInfo.cs" />
+    <Compile Include="medinsur\sjzsyb\clinic\FrmClicDaily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\clinic\FrmClicDaily.Designer.cs">
+      <DependentUpon>FrmClicDaily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\clinic\FrmMzYb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\clinic\FrmMzYb.Designer.cs">
+      <DependentUpon>FrmMzYb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\clinic\ListItem.cs" />
+    <Compile Include="medinsur\sjzsyb\dor\Mzybdk.cs" />
+    <Compile Include="medinsur\sjzsyb\dor\RetMsg.cs" />
+    <Compile Include="medinsur\sjzsyb\dor\YBCJ_IN.cs" />
+    <Compile Include="medinsur\sjzsyb\dor\ZfRydj.cs" />
+    <Compile Include="medinsur\sjzsyb\dor\zyybfysc.cs" />
+    <Compile Include="medinsur\sjzsyb\Frmactivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmactivation.Designer.cs">
+      <DependentUpon>Frmactivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmclinicPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmclinicPoint.Designer.cs">
+      <DependentUpon>FrmclinicPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmCard.Designer.cs">
+      <DependentUpon>FrmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDetailedquery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDetailedquery.Designer.cs">
+      <DependentUpon>FrmDetailedquery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmExcle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmExcle.Designer.cs">
+      <DependentUpon>FrmExcle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmgDiseases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmgDiseases.Designer.cs">
+      <DependentUpon>FrmgDiseases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmMzYbdk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmMzYbdk.designer.cs">
+      <DependentUpon>FrmMzYbdk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmSettlementInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmSettlementInfo.Designer.cs">
+      <DependentUpon>FrmSettlementInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmbzkysmfwxz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmbzkysmfwxz.Designer.cs">
+      <DependentUpon>Frmbzkysmfwxz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDepartments.Designer.cs">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDisease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDisease.Designer.cs">
+      <DependentUpon>FrmDisease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDoctor.Designer.cs">
+      <DependentUpon>FrmDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDownloadContrast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDownloadContrast.Designer.cs">
+      <DependentUpon>FrmDownloadContrast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDownloadDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmDownloadDirectory.Designer.cs">
+      <DependentUpon>FrmDownloadDirectory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\frmDuizhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\frmDuizhang.Designer.cs">
+      <DependentUpon>frmDuizhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmgrmxbspxxcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmgrmxbspxxcx.Designer.cs">
+      <DependentUpon>Frmgrmxbspxxcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmSybCy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmSybCy.designer.cs">
+      <DependentUpon>FrmSybCy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmrelationship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmrelationship.Designer.cs">
+      <DependentUpon>Frmrelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmSybRy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmSybRy.Designer.cs">
+      <DependentUpon>FrmSybRy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmxtsz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmxtsz.Designer.cs">
+      <DependentUpon>Frmxtsz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmydjyjzzysbxxcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\Frmydjyjzzysbxxcx.Designer.cs">
+      <DependentUpon>Frmydjyjzzysbxxcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmYlFyMxDz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\sjzsyb\FrmYlFyMxDz.Designer.cs">
+      <DependentUpon>FrmYlFyMxDz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="syb\RetMsg.cs" />
+    <Compile Include="tools\Base64.cs" />
+    <Compile Include="tools\ExcelIO.cs" />
+    <Compile Include="tools\Zycjfysc_button.cs" />
+    <Compile Include="medinsur\bo\AreaInfo.cs" />
+    <Compile Include="medinsur\bo\InsurItemInfo.cs" />
+    <Compile Include="medinsur\FrmAreaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmAreaInfo.Designer.cs">
+      <DependentUpon>FrmAreaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmAreaInfodet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmAreaInfodet.Designer.cs">
+      <DependentUpon>FrmAreaInfodet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmInsurItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmInsurItem.Designer.cs">
+      <DependentUpon>FrmInsurItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmItem1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmItem1Form.Designer.cs">
+      <DependentUpon>FrmItem1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmItemForm.Designer.cs">
+      <DependentUpon>FrmItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmMesg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmMesg.designer.cs">
+      <DependentUpon>FrmMesg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\frmZycjfysc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\frmZycjfysc.Designer.cs">
+      <DependentUpon>frmZycjfysc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\Frm_Xtpz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\Frm_Xtpz.Designer.cs">
+      <DependentUpon>Frm_Xtpz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\BcgsXml.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\BllHdsbhnh.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\BllInsurCrossSBH.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\BllItemcrossHDSBH.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\BllSnhMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\CydjXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\GrxxcxXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\HeaderXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\JsddyXml.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\QtzdhqXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\SczyjzXml.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\TpXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZydjscXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZydjxgXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZydjXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZyjsjlcxXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZyjsXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZyjzcxXml.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\ZyjzXml.cs" />
+    <Compile Include="medinsur\hdsbhnh\bll\ZyqkcxXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZyyjsXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bll\ZzsqdcxXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bo\BhnhReturn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bo\HdsbhInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bo\HdsbhRegInfo.cs" />
+    <Compile Include="medinsur\hdsbhnh\bo\Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\bo\InsurcrossHDSBH.cs" />
+    <Compile Include="medinsur\hdsbhnh\FrmBcgs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmBcgs.Designer.cs">
+      <DependentUpon>FrmBcgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmCostContrast .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmCostContrast .Designer.cs">
+      <DependentUpon>FrmCostContrast .cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmDrugTyprSbh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmDrugTyprSbh.Designer.cs">
+      <DependentUpon>FrmDrugTyprSbh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmInHspMedinsrHDSNH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmInHspMedinsrHDSNH.Designer.cs">
+      <DependentUpon>FrmInHspMedinsrHDSNH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemcrossHDSBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemcrossHDSBH.Designer.cs">
+      <DependentUpon>FrmItemcrossHDSBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemFromSbh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemFromSbh.Designer.cs">
+      <DependentUpon>FrmItemFromSbh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemTypeSbh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmItemTypeSbh.Designer.cs">
+      <DependentUpon>FrmItemTypeSbh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmOtherDict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmOtherDict.Designer.cs">
+      <DependentUpon>FrmOtherDict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmOutHspMedinsurHDSBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmOutHspMedinsurHDSBH.Designer.cs">
+      <DependentUpon>FrmOutHspMedinsurHDSBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmSelctcrossHDSBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmSelctcrossHDSBH.Designer.cs">
+      <DependentUpon>FrmSelctcrossHDSBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmYljg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsbhnh\FrmYljg.Designer.cs">
+      <DependentUpon>FrmYljg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemcrossXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemcrossXBH.Designer.cs">
+      <DependentUpon>FrmItemcrossXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\bll\JKDB.cs" />
+    <Compile Include="medinsur\hdyb\bll\YBCJ.cs" />
+    <Compile Include="medinsur\hdyb\clinic\bo\InsurInfo.cs" />
+    <Compile Include="medinsur\hdyb\clinic\bo\KC21.cs" />
+    <Compile Include="common\bll\SysWriteLogs.cs" />
+    <Compile Include="db\DBAccess.cs" />
+    <Compile Include="medinsur\FrmCostTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmCostTransfer.Designer.cs">
+      <DependentUpon>FrmCostTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\FrmInsurtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\FrmInsurtype.Designer.cs">
+      <DependentUpon>FrmInsurtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsch\bll\BllHdsch.cs" />
+    <Compile Include="medinsur\hdsch\bll\Hdsch.cs" />
+    <Compile Include="medinsur\hdsch\clinic\bll\BllHdschClinic.cs" />
+    <Compile Include="medinsur\hdsch\FrmHdschClinic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsch\FrmHdschClinic.Designer.cs">
+      <DependentUpon>FrmHdschClinic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsch\FrmHdschIhspReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsch\FrmHdschIhspReg.Designer.cs">
+      <DependentUpon>FrmHdschIhspReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdsch\FrmHdschOutHsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdsch\FrmHdschOutHsp.Designer.cs">
+      <DependentUpon>FrmHdschOutHsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdssy\bll\BllInHspMedinsrHDSSY.cs" />
+    <Compile Include="medinsur\hdssy\FrmInHspMedinsrHDSSY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdssy\FrmInHspMedinsrHDSSY.Designer.cs">
+      <DependentUpon>FrmInHspMedinsrHDSSY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdssy\FrmOutHspMedinsrHDSSY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdssy\FrmOutHspMedinsrHDSSY.Designer.cs">
+      <DependentUpon>FrmOutHspMedinsrHDSSY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\bll\BllInsurCrossXBH.cs" />
+    <Compile Include="medinsur\hdxbhnh\bll\BllItemcrossXBH.cs" />
+    <Compile Include="medinsur\hdxbhnh\bll\BllMedinsrXBH.cs" />
+    <Compile Include="medinsur\hdxbhnh\bll\InsurInfoXBH.cs" />
+    <Compile Include="medinsur\hdxbhnh\bo\CostInsurcross.cs" />
+    <Compile Include="medinsur\hdxbhnh\bo\T_CON1.cs" />
+    <Compile Include="medinsur\hdxbhnh\FrmDrugTypeXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmDrugTypeXBH.Designer.cs">
+      <DependentUpon>FrmDrugTypeXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemfromXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemfromXBH.Designer.cs">
+      <DependentUpon>FrmItemfromXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemTypeXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmItemTypeXBH.Designer.cs">
+      <DependentUpon>FrmItemTypeXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmMedinsrXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmMedinsrXBH.Designer.cs">
+      <DependentUpon>FrmMedinsrXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmSelectCrossXBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdxbhnh\FrmSelectCrossXBH.Designer.cs">
+      <DependentUpon>FrmSelectCrossXBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\bll\BllInsurCross.cs" />
+    <Compile Include="medinsur\hdyb\clinic\bo\KC22.cs" />
+    <Compile Include="clinic\bo\MemRechargedet.cs" />
+    <Compile Include="clictab\FrmClicAfterinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicAfterinfo.Designer.cs">
+      <DependentUpon>FrmClicAfterinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicCostManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicCostManage.Designer.cs">
+      <DependentUpon>FrmClinicCostManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicCost.Designer.cs">
+      <DependentUpon>FrmClinicCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicTab.Designer.cs">
+      <DependentUpon>FrmClicTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicTabManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicTabManage.Designer.cs">
+      <DependentUpon>FrmClicTabManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicTabReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicTabReport.Designer.cs">
+      <DependentUpon>FrmClicTabReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicAdjustbydepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicAdjustbydepart.Designer.cs">
+      <DependentUpon>FrmClicAdjustbydepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clictab\FrmClicAdjustbydoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clictab\FrmClicAdjustbydoctor.Designer.cs">
+      <DependentUpon>FrmClicAdjustbydoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicMember.Designer.cs">
+      <DependentUpon>FrmClinicMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicRegManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicRegManage.Designer.cs">
+      <DependentUpon>FrmClinicRegManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMakeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMakeCard.Designer.cs">
+      <DependentUpon>FrmMakeCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMemEn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemEn.Designer.cs">
+      <DependentUpon>FrmMemEn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMemRe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMemRe.Designer.cs">
+      <DependentUpon>FrmMemRe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmNocard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmNocard.Designer.cs">
+      <DependentUpon>FrmNocard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRechargedet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRechargedet.Designer.cs">
+      <DependentUpon>FrmRechargedet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRefund.Designer.cs">
+      <DependentUpon>FrmRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRefundInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRefundInvoice.Designer.cs">
+      <DependentUpon>FrmRefundInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRegBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRegBack.Designer.cs">
+      <DependentUpon>FrmRegBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmDepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmDepart.Designer.cs">
+      <DependentUpon>FrmDepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\bo\Member.cs" />
+    <Compile Include="clinic\bo\RecipelCharge.cs" />
+    <Compile Include="clinic\bo\Register.cs" />
+    <Compile Include="clinic\FrmChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmChangeInfo.Designer.cs">
+      <DependentUpon>FrmChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicRcpCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicRcpCost.Designer.cs">
+      <DependentUpon>FrmClinicRcpCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmRegPrt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmRegPrt.Designer.cs">
+      <DependentUpon>FrmRegPrt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmReprintInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmReprintInvoice.Designer.cs">
+      <DependentUpon>FrmReprintInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmReserve.designer.cs">
+      <DependentUpon>FrmReserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmMedinsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmMedinsr.designer.cs">
+      <DependentUpon>FrmMedinsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmClinicReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmClinicReg.designer.cs">
+      <DependentUpon>FrmClinicReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmSearchRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmSearchRegister.Designer.cs">
+      <DependentUpon>FrmSearchRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmUnlockRcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmUnlockRcp.Designer.cs">
+      <DependentUpon>FrmUnlockRcp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clinic\FrmUnlockRcpManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clinic\FrmUnlockRcpManage.Designer.cs">
+      <DependentUpon>FrmUnlockRcpManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\bll\BillSysBase.cs" />
+    <Compile Include="common\DataGridViewUtils.cs" />
+    <Compile Include="common\SysRuning.cs" />
+    <Compile Include="idcard\bll\IdCardInfo.cs" />
+    <Compile Include="idcard\FrmClinicIdCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="idcard\FrmClinicIdCard.designer.cs">
+      <DependentUpon>FrmClinicIdCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="idcard\FrmIdCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="idcard\FrmIdCard.designer.cs">
+      <DependentUpon>FrmIdCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihspqty\FrmIhspQtyInhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihspqty\FrmIhspQtyInhsp.Designer.cs">
+      <DependentUpon>FrmIhspQtyInhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\bll\BillCmbList.cs" />
+    <Compile Include="ihsp\bll\BillIhspAct.cs" />
+    <Compile Include="ihsp\bll\BillIhspcost.cs" />
+    <Compile Include="ihsp\bll\BillIhspMan.cs" />
+    <Compile Include="ihsp\bo\IhspPayinadvFrm.cs" />
+    <Compile Include="ihsp\bo\Ihspaccount.cs" />
+    <Compile Include="ihsp\bo\Ihspguaranfee.cs" />
+    <Compile Include="ihsp\bo\Ihsppayinadv.cs" />
+    <Compile Include="ihsp\bo\IhspRetapp.cs" />
+    <Compile Include="ihsp\bo\Inhospital.cs" />
+    <Compile Include="ihsp\bo\Member.cs" />
+    <Compile Include="ihsp\FrmIhspChkRetSetle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspChkRetSetle.designer.cs">
+      <DependentUpon>FrmIhspChkRetSetle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspInhsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspInhsp.designer.cs">
+      <DependentUpon>FrmIhspInhsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspOuthsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspOuthsp.designer.cs">
+      <DependentUpon>FrmIhspOuthsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspPayRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspPayRpt.designer.cs">
+      <DependentUpon>FrmIhspPayRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetappdet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetappdet.Designer.cs">
+      <DependentUpon>FrmIhspRetappdet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetfeeChk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetfeeChk.Designer.cs">
+      <DependentUpon>FrmIhspRetfeeChk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRpt.designer.cs">
+      <DependentUpon>FrmIhspRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmRetihsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmRetihsp.Designer.cs">
+      <DependentUpon>FrmRetihsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmUnlocked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmUnlocked.Designer.cs">
+      <DependentUpon>FrmUnlocked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmClickAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmClickAccount.Designer.cs">
+      <DependentUpon>FrmClickAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmCsSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmCsSign.Designer.cs">
+      <DependentUpon>FrmCsSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspAccount.Designer.cs">
+      <DependentUpon>FrmIhspAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspGua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspGua.Designer.cs">
+      <DependentUpon>FrmIhspGua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspNotice.designer.cs">
+      <DependentUpon>FrmIhspNotice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspPay.Designer.cs">
+      <DependentUpon>FrmIhspPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspReg.designer.cs">
+      <DependentUpon>FrmIhspReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetChrg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmIhspRetChrg.Designer.cs">
+      <DependentUpon>FrmIhspRetChrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ihsp\FrmRetAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ihsp\FrmRetAccount.Designer.cs">
+      <DependentUpon>FrmRetAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main\bo\AccMenu.cs" />
+    <Compile Include="medinsur\bll\InsurInfo.cs" />
+    <Compile Include="medinsur\bo\InHspData.cs" />
+    <Compile Include="medinsur\hdyb\bll\BllCostTransfer.cs" />
+    <Compile Include="medinsur\hdyb\bll\BllInsur.cs" />
+    <Compile Include="medinsur\hdyb\bll\Ybjk.cs" />
+    <Compile Include="medinsur\hdyb\bo\Djbypdzxx_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Djbypdzxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqdwfsxxsy_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqfwssxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqkcxfdhje_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqkcxfdhje_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqryfsxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqsysbxx_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqsysbxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqsyypxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqsyzlxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqypxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dqzlxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dryjbxxhzh_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dryjbxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Drymxbxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dryspxx_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dryspxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dryzhxx_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dysyjsd_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Dysyjsd_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\InsurEnum.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjsddy_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjsddy_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjsht_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjsht_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjs_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Mzjs_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\MZYBDY.cs" />
+    <Compile Include="medinsur\hdyb\bo\MZZF_ZLYY.cs" />
+    <Compile Include="medinsur\hdyb\bo\Rydj_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Ryxx_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Sccwsj_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Sycyjs_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Sycyjs_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Sytf_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Ybsjcs_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\ZLYY_ZF.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjsddy_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjsdy_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjsht_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjsht_out.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjs_in.cs" />
+    <Compile Include="medinsur\hdyb\bo\Zyjs_out.cs" />
+    <Compile Include="medinsur\hdyb\clinic\bll\BllClinicMedinsr.cs" />
+    <Compile Include="medinsur\hdyb\clinic\ListItem.cs" />
+    <Compile Include="medinsur\hdyb\dor\MZCH.cs" />
+    <Compile Include="medinsur\hdyb\dor\MZSyb.cs" />
+    <Compile Include="medinsur\hdyb\dor\Mzybdk.cs" />
+    <Compile Include="medinsur\hdyb\dor\RetMsg.cs" />
+    <Compile Include="medinsur\hdyb\dor\YBCJ_IN.cs" />
+    <Compile Include="medinsur\hdyb\dor\ZfRydj.cs" />
+    <Compile Include="medinsur\hdyb\dor\Zycjfysc.cs" />
+    <Compile Include="medinsur\hdyb\dor\Zyybfysc.cs" />
+    <Compile Include="medinsur\hdyb\FormSyRy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FormSyRy.Designer.cs">
+      <DependentUpon>FormSyRy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FormXzxypsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FormXzxypsp.designer.cs">
+      <DependentUpon>FormXzxypsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmChCy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmChCy.designer.cs">
+      <DependentUpon>FrmChCy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmChRy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmChRy.designer.cs">
+      <DependentUpon>FrmChRy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmClinicMedinsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmClinicMedinsr.designer.cs">
+      <DependentUpon>FrmClinicMedinsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmCxcwTscl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmCxcwTscl.designer.cs">
+      <DependentUpon>FrmCxcwTscl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmDrugtype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmDrugtype.designer.cs">
+      <DependentUpon>FrmDrugtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmDy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmDy.designer.cs">
+      <DependentUpon>FrmDy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmFpdysz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmFpdysz.Designer.cs">
+      <DependentUpon>FrmFpdysz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmInHspMedinsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmInHspMedinsr.designer.cs">
+      <DependentUpon>FrmInHspMedinsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmItemcross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmItemcross.Designer.cs">
+      <DependentUpon>FrmItemcross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmItemfrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmItemfrom.designer.cs">
+      <DependentUpon>FrmItemfrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmMzCh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmMzCh.designer.cs">
+      <DependentUpon>FrmMzCh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmOutHspMedinsr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmOutHspMedinsr.designer.cs">
+      <DependentUpon>FrmOutHspMedinsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmRyHt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmRyHt.designer.cs">
+      <DependentUpon>FrmRyHt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmSelectCross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmSelectCross.Designer.cs">
+      <DependentUpon>FrmSelectCross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmSyCy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmSyCy.Designer.cs">
+      <DependentUpon>FrmSyCy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmXgjyb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmXgjyb.designer.cs">
+      <DependentUpon>FrmXgjyb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmXmbmxg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmXmbmxg.designer.cs">
+      <DependentUpon>FrmXmbmxg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmYbCy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmYbCy.designer.cs">
+      <DependentUpon>FrmYbCy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmYbRy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\FrmYbRy.designer.cs">
+      <DependentUpon>FrmYbRy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hdyb\Frm_MzCxJs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hdyb\Frm_MzCxJs.designer.cs">
+      <DependentUpon>Frm_MzCxJs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\bll\BllItemCrossHSDR.cs" />
+    <Compile Include="medinsur\hsdryb\clinic\bll\BllClinMedinsrHSDR.cs" />
+    <Compile Include="medinsur\hsdryb\bll\WYJK.cs" />
+    <Compile Include="medinsur\hsdryb\bo\InOutParameter.cs" />
+    <Compile Include="medinsur\hsdryb\bo\KC21.cs" />
+    <Compile Include="medinsur\hsdryb\bo\KC22.cs" />
+    <Compile Include="medinsur\hsdryb\bo\TopParameter.cs" />
+    <Compile Include="medinsur\hsdryb\FrmDiseaseCaseHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmDiseaseCaseHSDR.Designer.cs">
+      <DependentUpon>FrmDiseaseCaseHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmDownloadItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmDownloadItem.Designer.cs">
+      <DependentUpon>FrmDownloadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmDrugTypeHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmDrugTypeHSDR.Designer.cs">
+      <DependentUpon>FrmDrugTypeHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmItemcrossHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmItemcrossHSDR.Designer.cs">
+      <DependentUpon>FrmItemcrossHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\clinic\FrmClinMedinsrHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\clinic\FrmClinMedinsrHSDR.Designer.cs">
+      <DependentUpon>FrmClinMedinsrHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmSelectCrossHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmSelectCrossHSDR.Designer.cs">
+      <DependentUpon>FrmSelectCrossHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\FrmSign.Designer.cs">
+      <DependentUpon>FrmSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\ihsp\bll\BllIhspMedinsrHSDR.cs" />
+    <Compile Include="medinsur\hsdryb\ihsp\FrmIhspMedinsrHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\ihsp\FrmIhspMedinsrHSDR.Designer.cs">
+      <DependentUpon>FrmIhspMedinsrHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\ihsp\FrmOutHspMedinsrHSDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\hsdryb\ihsp\FrmOutHspMedinsrHSDR.Designer.cs">
+      <DependentUpon>FrmOutHspMedinsrHSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\bll\BllItemcrossYNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\bll\BllMedinsrYNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\bll\YNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Card_operate_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Cfmxlr_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Cfmxlr_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Cfmxtf_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Cfmxtf_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Connect2target_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\CostInsurcrossYNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Czjy_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Disconnect4target_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Dj_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Dj_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Dzdsc_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\GetEmpInfo_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\GetEmpInfo_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Gxjzxx_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Hdtgspxx_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Hdtgspxx_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Hqxzzw_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Hqxzzw_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Jszh_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Jszh_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Js_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Js_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Qdmxxmdj_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Qdmxxmdj_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Wfty_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Wjscfqcjy_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Xmspjgcx_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Xmspjgcx_out.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Yjs_in.cs" />
+    <Compile Include="medinsur\ynsyb\bo\Yjs_out.cs" />
+    <Compile Include="medinsur\ynsyb\clinic\bll\BllClinInsurYNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\clinic\FrmClinMedinsrYNSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\clinic\FrmClinMedinsrYNSYB.Designer.cs">
+      <DependentUpon>FrmClinMedinsrYNSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\FrmItemcrossYNSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\FrmItemcrossYNSYB.Designer.cs">
+      <DependentUpon>FrmItemcrossYNSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\FrmSelectCrossYNSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\FrmSelectCrossYNSYB.Designer.cs">
+      <DependentUpon>FrmSelectCrossYNSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\ihsp\bll\BllIhspInsurYNSYB.cs" />
+    <Compile Include="medinsur\ynsyb\ihsp\FrmIhspMedinsrYNSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\ihsp\FrmIhspMedinsrYNSYB.Designer.cs">
+      <DependentUpon>FrmIhspMedinsrYNSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\ihsp\FrmOutHspMedinsrYNSYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynsyb\ihsp\FrmOutHspMedinsrYNSYB.Designer.cs">
+      <DependentUpon>FrmOutHspMedinsrYNSYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\bll\BllYnydybMethod.cs" />
+    <Compile Include="medinsur\ynydyb\bll\YNYDYB.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Dkcx_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Dzcx_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Dzcx_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Dzjytdsrsj_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Hqfsflsh_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Jcjyzt_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Jzxxdj_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Jzxxdj_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\SIGNIN_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\SIGNOUT_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\Xgkmm_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCfmxlr_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCfmxlr_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCfmxtf_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCfmxtf_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCzjy_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdCzjy_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdGxjzdjxx_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdGxjzdjxx_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdHdtgspxx_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdHdtgspxx_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdHqxmdj_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdHqxmdj_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdJycf_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdJycf_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YDJYDLLINIT_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdMxzzplsjxz_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdMxzzplsjxz_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdWfty_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdWfty_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdWjscfplsc_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdWjscfplsc_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdXmspjgcx_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdXmspjgcx_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyfjs_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyfjs_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyjs_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyjs_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyyjs_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdYlfyyjs_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdZzplsjxz_in.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YdZzplsjxz_out.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YnydybAccInfo.cs" />
+    <Compile Include="medinsur\ynydyb\bo\ynydybGlobal.cs" />
+    <Compile Include="medinsur\ynydyb\bo\YnydybRegInfo.cs" />
+    <Compile Include="medinsur\ynydyb\FrmCostDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmCostDownload.Designer.cs">
+      <DependentUpon>FrmCostDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybClinicReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybClinicReg.Designer.cs">
+      <DependentUpon>FrmYnydybClinicReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybEdit.Designer.cs">
+      <DependentUpon>FrmYnydybEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybIhspReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybIhspReg.Designer.cs">
+      <DependentUpon>FrmYnydybIhspReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybOhspReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybOhspReg.Designer.cs">
+      <DependentUpon>FrmYnydybOhspReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybPrePay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybPrePay.Designer.cs">
+      <DependentUpon>FrmYnydybPrePay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medinsur\ynydyb\FrmYnydybSign.Designer.cs">
+      <DependentUpon>FrmYnydybSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="netpay\bo\JsonFail.cs" />
+    <Compile Include="netpay\bo\JsonSuccess.cs" />
+    <Compile Include="netpay\bo\JsonTop.cs" />
+    <Compile Include="netpay\bo\NetPayCancelIn.cs" />
+    <Compile Include="netpay\bo\NetPayData.cs" />
+    <Compile Include="netpay\bo\NetPayIn.cs" />
+    <Compile Include="netpay\bo\NetPayIniParam.cs" />
+    <Compile Include="netpay\bo\NetPayOut.cs" />
+    <Compile Include="netpay\bo\NetPayCancelOut.cs" />
+    <Compile Include="netpay\bo\NetPayTradePayPrecreateIn.cs" />
+    <Compile Include="netpay\bo\NetPayTradePayPrecreateOut.cs" />
+    <Compile Include="netpay\bo\NetPayTradeQueryIn.cs" />
+    <Compile Include="netpay\bo\NetPayTradeQueryOut.cs" />
+    <Compile Include="netpay\bo\NetPayTradeRefundIn.cs" />
+    <Compile Include="netpay\bo\NetpayRetRes.cs" />
+    <Compile Include="netpay\bo\NetPayTradeRefundOut.cs" />
+    <Compile Include="netpay\FrmQueryViewInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="netpay\FrmQueryViewInfo.Designer.cs">
+      <DependentUpon>FrmQueryViewInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="netpay\Netpay.cs" />
+    <Compile Include="netpay\bo\NetPayTradeRefundQueryIn.cs" />
+    <Compile Include="netpay\bo\NetPayTradeRefundQueryOut.cs" />
+    <Compile Include="netpay\NetpayBll.cs" />
+    <Compile Include="netpay\FrmNetPayManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="netpay\FrmNetPayManage.Designer.cs">
+      <DependentUpon>FrmNetPayManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="sys\FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmChangePwd.Designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\CardInterface.cs" />
+    <Compile Include="tools\CustomWindowsMessages.cs" />
+    <Compile Include="tools\DataTool.cs" />
+    <Compile Include="common\DictTypeConstant.cs" />
+    <Compile Include="common\GlobalParams.cs" />
+    <Compile Include="common\ProgramGlobal.cs" />
+    <Compile Include="common\LogsManage.cs" />
+    <Compile Include="common\Logs.cs" />
+    <Compile Include="common\RetRes.cs" />
+    <Compile Include="common\SysConfig.cs" />
+    <Compile Include="sys\bll\ComBoxUtils.cs" />
+    <Compile Include="common\GetData.cs" />
+    <Compile Include="common\Sickages.cs" />
+    <Compile Include="common\SysConfigInfoUtils.cs" />
+    <Compile Include="tools\Decode.cs" />
+    <Compile Include="tools\GetIdCardInfo.cs" />
+    <Compile Include="tools\imgUtils.cs" />
+    <Compile Include="tools\MyIpAddress.cs" />
+    <Compile Include="tools\RMB_DX.cs" />
+    <Compile Include="tools\Win32Api.cs" />
+    <Compile Include="db\DBbase.cs" />
+    <Compile Include="db\DBFactory.cs" />
+    <Compile Include="db\DBMySQLODBC.cs" />
+    <Compile Include="db\DBOracle.cs" />
+    <Compile Include="db\DBPostgreSQL.cs" />
+    <Compile Include="db\DBProvider.cs" />
+    <Compile Include="db\DBSQLServer.cs" />
+    <Compile Include="db\FrmDBConnectionConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="db\FrmDBConnectionConfiguration.Designer.cs">
+      <DependentUpon>FrmDBConnectionConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\Ini.cs" />
+    <Compile Include="db\Ping.cs" />
+    <Compile Include="db\ProcParma.cs" />
+    <Compile Include="help\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="help\FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main\bll\BllMain.cs" />
+    <Compile Include="main\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tools\Zycjfysc_zd.cs" />
+    <Compile Include="tools\ZySyybfysc.cs" />
+    <Compile Include="tools\ZySyybfysc_zd.cs" />
+    <Compile Include="tools\Zyybfysc_button.cs" />
+    <Compile Include="tools\Zyybfysc_zdcs.cs" />
+    <Compile Include="Util\Common_Util.cs" />
+    <Compile Include="Util\Excel.cs" />
+    <Compile Include="Web References\gsbx1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="clictab\FrmClicAfterinfo.resx">
+      <DependentUpon>FrmClicAfterinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmclicDuty.resx">
+      <DependentUpon>FrmclicDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicDutyManage.resx">
+      <DependentUpon>FrmClicDutyManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClinTabInit.resx">
+      <DependentUpon>FrmClinTabInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicCostManage_cw.resx">
+      <DependentUpon>FrmClinicCostManage_cw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmViewCard.resx">
+      <DependentUpon>FrmViewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicCostManage.resx">
+      <DependentUpon>FrmClinicCostManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicCost.resx">
+      <DependentUpon>FrmClinicCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicTab.resx">
+      <DependentUpon>FrmClicTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicTabManage.resx">
+      <DependentUpon>FrmClicTabManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicTabReport.resx">
+      <DependentUpon>FrmClicTabReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicAdjustbydepart.resx">
+      <DependentUpon>FrmClicAdjustbydepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clictab\FrmClicAdjustbydoctor.resx">
+      <DependentUpon>FrmClicAdjustbydoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicMember.resx">
+      <DependentUpon>FrmClinicMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmCliniCostRetFeeManage.resx">
+      <DependentUpon>FrmCliniCostRetFeeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicRegManage.resx">
+      <DependentUpon>FrmClinicRegManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmGysybInsurRefund.resx">
+      <DependentUpon>FrmGysybInsurRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmGzsybInsurRefund.resx">
+      <DependentUpon>FrmGzsybInsurRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMakeCard.resx">
+      <DependentUpon>FrmMakeCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemberReg.resx">
+      <DependentUpon>FrmMemberReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemberSett.resx">
+      <DependentUpon>FrmMemberSett.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemCardstatLock.resx">
+      <DependentUpon>FrmMemCardstatLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemCardstatYes.resx">
+      <DependentUpon>FrmMemCardstatYes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemEn.resx">
+      <DependentUpon>FrmMemEn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMemRe.resx">
+      <DependentUpon>FrmMemRe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmNocard.resx">
+      <DependentUpon>FrmNocard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRechargedet.resx">
+      <DependentUpon>FrmRechargedet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRefund.resx">
+      <DependentUpon>FrmRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRefundInvoice.resx">
+      <DependentUpon>FrmRefundInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRegBack.resx">
+      <DependentUpon>FrmRegBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmDepart.resx">
+      <DependentUpon>FrmDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmChangeInfo.resx">
+      <DependentUpon>FrmChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicRcpCost.resx">
+      <DependentUpon>FrmClinicRcpCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRegPrt.resx">
+      <DependentUpon>FrmRegPrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmReprintInvoice.resx">
+      <DependentUpon>FrmReprintInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmReserve.resx">
+      <DependentUpon>FrmReserve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmMedinsr.resx">
+      <DependentUpon>FrmMedinsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmClinicReg.resx">
+      <DependentUpon>FrmClinicReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmRetHspCard.resx">
+      <DependentUpon>FrmRetHspCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmSearchRegister.resx">
+      <DependentUpon>FrmSearchRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmUnlockRcp.resx">
+      <DependentUpon>FrmUnlockRcp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmUnlockRcpManage.resx">
+      <DependentUpon>FrmUnlockRcpManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\FrmprintWristband.resx">
+      <DependentUpon>FrmprintWristband.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clinic\Frm_mainDbcx.resx">
+      <DependentUpon>Frm_mainDbcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="db\FrmDBConnectionConfiguration.resx">
+      <DependentUpon>FrmDBConnectionConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport11.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\FrmgsCy.resx">
+      <DependentUpon>FrmgsCy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\Frmgsjsd.resx">
+      <DependentUpon>Frmgsjsd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\Frmgsmldz.resx">
+      <DependentUpon>Frmgsmldz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\Frmgsmz.resx">
+      <DependentUpon>Frmgsmz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\Frmgsplhq.resx">
+      <DependentUpon>Frmgsplhq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\FrmgsRy.resx">
+      <DependentUpon>FrmgsRy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\FrmGsxmdz.resx">
+      <DependentUpon>FrmGsxmdz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\Frmgszf.resx">
+      <DependentUpon>Frmgszf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsbx\FrmJxzl.resx">
+      <DependentUpon>FrmJxzl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="idcard\FrmClinicIdCard.resx">
+      <DependentUpon>FrmClinicIdCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="idcard\FrmIdCard.resx">
+      <DependentUpon>FrmIdCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihspqty\FrmIhspQtyInhsp.resx">
+      <DependentUpon>FrmIhspQtyInhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmDutyRetAcc.resx">
+      <DependentUpon>FrmDutyRetAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmHspAdjustByDepart.resx">
+      <DependentUpon>FrmHspAdjustByDepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmHspAdjustByDoctor.resx">
+      <DependentUpon>FrmHspAdjustByDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmHspAfterinfo.resx">
+      <DependentUpon>FrmHspAfterinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmHspTab.resx">
+      <DependentUpon>FrmHspTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmHspTabManage.resx">
+      <DependentUpon>FrmHspTabManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmIhspDuty.resx">
+      <DependentUpon>FrmIhspDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmIhspDutyManage.resx">
+      <DependentUpon>FrmIhspDutyManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmIhspTabInit.resx">
+      <DependentUpon>FrmIhspTabInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmPreView.resx">
+      <DependentUpon>FrmPreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsptab\FrmTabRetAcc.resx">
+      <DependentUpon>FrmTabRetAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmDiagn.resx">
+      <DependentUpon>FrmDiagn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmDywd.resx">
+      <DependentUpon>FrmDywd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspChkRetSetle.resx">
+      <DependentUpon>FrmIhspChkRetSetle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspInfoEdit.resx">
+      <DependentUpon>FrmIhspInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspInhsp.resx">
+      <DependentUpon>FrmIhspInhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspOuthsp.resx">
+      <DependentUpon>FrmIhspOuthsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspOuthsp_cw.resx">
+      <DependentUpon>FrmIhspOuthsp_cw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspPayRpt.resx">
+      <DependentUpon>FrmIhspPayRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspRetappdet.resx">
+      <DependentUpon>FrmIhspRetappdet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspRetfeeChk.resx">
+      <DependentUpon>FrmIhspRetfeeChk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspRpt.resx">
+      <DependentUpon>FrmIhspRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmRetihsp.resx">
+      <DependentUpon>FrmRetihsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmUnlocked.resx">
+      <DependentUpon>FrmUnlocked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmClickAccount.resx">
+      <DependentUpon>FrmClickAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmCsSign.resx">
+      <DependentUpon>FrmCsSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspAccount.resx">
+      <DependentUpon>FrmIhspAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspGua.resx">
+      <DependentUpon>FrmIhspGua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspNotice.resx">
+      <DependentUpon>FrmIhspNotice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspPay.resx">
+      <DependentUpon>FrmIhspPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspReg.resx">
+      <DependentUpon>FrmIhspReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmIhspRetChrg.resx">
+      <DependentUpon>FrmIhspRetChrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\FrmRetAccount.resx">
+      <DependentUpon>FrmRetAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ihsp\Frm_Ybzxfy.resx">
+      <DependentUpon>Frm_Ybzxfy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport11.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\CrystalReport_Fpdy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Fpdy1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\CrystalReport_Fpdy_fj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Fpdy_fj.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\CrystalReport_Fpdy_ybfj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Fpdy_ybfj1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\CrystalReport_sybbbd.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_sybbbd1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\FrmMain2.resx">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\frmnhjsddy.resx">
+      <DependentUpon>frmnhjsddy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\FrmSybbbddcx.resx">
+      <DependentUpon>FrmSybbbddcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\FrmSybMzJxCx.resx">
+      <DependentUpon>FrmSybMzJxCx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\FrmSybTsMzJsCx.resx">
+      <DependentUpon>FrmSybTsMzJsCx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frmxzybml.resx">
+      <DependentUpon>Frmxzybml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frmxzyp.resx">
+      <DependentUpon>Frmxzyp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_JSD.resx">
+      <DependentUpon>Frm_JSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_Qssqcx.resx">
+      <DependentUpon>Frm_Qssqcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_Sybqssq.resx">
+      <DependentUpon>Frm_Sybqssq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_sybwscyinfo.resx">
+      <DependentUpon>Frm_sybwscyinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_wscyinfo.resx">
+      <DependentUpon>Frm_wscyinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kls\Frm_wsryinfo.resx">
+      <DependentUpon>Frm_wsryinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmAhsnhIhsp.resx">
+      <DependentUpon>FrmAhsnhIhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmAhsnhOhsp.resx">
+      <DependentUpon>FrmAhsnhOhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmDownHospitals.resx">
+      <DependentUpon>FrmDownHospitals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmDownIcd.resx">
+      <DependentUpon>FrmDownIcd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmDownItemList.resx">
+      <DependentUpon>FrmDownItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmDownTreat.resx">
+      <DependentUpon>FrmDownTreat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmInpatDiagnosisUpdate.resx">
+      <DependentUpon>FrmInpatDiagnosisUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmItemcrossAhsjnh.resx">
+      <DependentUpon>FrmItemcrossAhsjnh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmOutHspReg.resx">
+      <DependentUpon>FrmOutHspReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ahsjk\FrmTruncode.resx">
+      <DependentUpon>FrmTruncode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmAreaInfo.resx">
+      <DependentUpon>FrmAreaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmAreaInfodet.resx">
+      <DependentUpon>FrmAreaInfodet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmCostTransfer.resx">
+      <DependentUpon>FrmCostTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmInsurItem.resx">
+      <DependentUpon>FrmInsurItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmInsurtype.resx">
+      <DependentUpon>FrmInsurtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmItem1Form.resx">
+      <DependentUpon>FrmItem1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmItemForm.resx">
+      <DependentUpon>FrmItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmMesg.resx">
+      <DependentUpon>FrmMesg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmRyht.resx">
+      <DependentUpon>FrmRyht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\frmZycjfysc.resx">
+      <DependentUpon>frmZycjfysc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\frmZyybfysc.resx">
+      <DependentUpon>frmZyybfysc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\Frm_Xtpz.resx">
+      <DependentUpon>Frm_Xtpz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gsbx\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport11.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gsbx\Frmgsmldz.resx">
+      <DependentUpon>Frmgsmldz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gsbx\Frmgsmz.resx">
+      <DependentUpon>Frmgsmz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gsbx\Frmgszf.resx">
+      <DependentUpon>Frmgszf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gsbx\FrmJxzl.resx">
+      <DependentUpon>FrmJxzl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmClinicMedinsrGYSYB.resx">
+      <DependentUpon>FrmClinicMedinsrGYSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmCxtsxmml.resx">
+      <DependentUpon>FrmCxtsxmml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmCxtsxmyl.resx">
+      <DependentUpon>FrmCxtsxmyl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmCxwdzg.resx">
+      <DependentUpon>FrmCxwdzg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmGysybAccount.resx">
+      <DependentUpon>FrmGysybAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmGysybRetAccount.resx">
+      <DependentUpon>FrmGysybRetAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmIhspMedinsrGYSYB.resx">
+      <DependentUpon>FrmIhspMedinsrGYSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmWdzgcx.resx">
+      <DependentUpon>FrmWdzgcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gysyb\FrmWdzgrd.resx">
+      <DependentUpon>FrmWdzgrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmAudit.resx">
+      <DependentUpon>FrmAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmdoAccount.resx">
+      <DependentUpon>FrmdoAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGetTopLine.resx">
+      <DependentUpon>FrmGetTopLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhAcc.resx">
+      <DependentUpon>FrmGzsnhAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhAccount.resx">
+      <DependentUpon>FrmGzsnhAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhdj.resx">
+      <DependentUpon>FrmGzsnhdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhIhsp.resx">
+      <DependentUpon>FrmGzsnhIhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhInsurMag.resx">
+      <DependentUpon>FrmGzsnhInsurMag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhOhsp.resx">
+      <DependentUpon>FrmGzsnhOhsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhRetAccount.resx">
+      <DependentUpon>FrmGzsnhRetAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmGzsnhSelectCross.resx">
+      <DependentUpon>FrmGzsnhSelectCross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmTreatment.resx">
+      <DependentUpon>FrmTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsnh\FrmUpDateDisease.resx">
+      <DependentUpon>FrmUpDateDisease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\clinic\FrmClinMedinsurGZS.resx">
+      <DependentUpon>FrmClinMedinsurGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmDownloadItem.resx">
+      <DependentUpon>FrmDownloadItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmGzsybAccount.resx">
+      <DependentUpon>FrmGzsybAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmGzsybInsurMag.resx">
+      <DependentUpon>FrmGzsybInsurMag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmGzsybRetAccount.resx">
+      <DependentUpon>FrmGzsybRetAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmItemcrossGZS.resx">
+      <DependentUpon>FrmItemcrossGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmSelectCrossGZS.resx">
+      <DependentUpon>FrmSelectCrossGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\FrmYbBrcx.resx">
+      <DependentUpon>FrmYbBrcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\ihsp\FrmIhspMedinsurGZS.resx">
+      <DependentUpon>FrmIhspMedinsurGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\ihsp\FrmIhspOutGZS.resx">
+      <DependentUpon>FrmIhspOutGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\ihsp\FrmIhspOutRetGZS.resx">
+      <DependentUpon>FrmIhspOutRetGZS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\gzsyb\ihsp\FrmOutHspMedinsrGZSYB.resx">
+      <DependentUpon>FrmOutHspMedinsrGZSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmBcgs.resx">
+      <DependentUpon>FrmBcgs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmCostContrast .resx">
+      <DependentUpon>FrmCostContrast .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmDrugTyprSbh.resx">
+      <DependentUpon>FrmDrugTyprSbh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmInHspMedinsrHDSNH.resx">
+      <DependentUpon>FrmInHspMedinsrHDSNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmItemcrossHDSBH.resx">
+      <DependentUpon>FrmItemcrossHDSBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmItemFromSbh.resx">
+      <DependentUpon>FrmItemFromSbh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmItemTypeSbh.resx">
+      <DependentUpon>FrmItemTypeSbh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmOtherDict.resx">
+      <DependentUpon>FrmOtherDict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmOutHspMedinsurHDSBH.resx">
+      <DependentUpon>FrmOutHspMedinsurHDSBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmSelctcrossHDSBH.resx">
+      <DependentUpon>FrmSelctcrossHDSBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsbhnh\FrmYljg.resx">
+      <DependentUpon>FrmYljg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsch\FrmHdschClinic.resx">
+      <DependentUpon>FrmHdschClinic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsch\FrmHdschIhspReg.resx">
+      <DependentUpon>FrmHdschIhspReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdsch\FrmHdschOutHsp.resx">
+      <DependentUpon>FrmHdschOutHsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdssy\FrmInHspMedinsrHDSSY.resx">
+      <DependentUpon>FrmInHspMedinsrHDSSY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdssy\FrmOutHspMedinsrHDSSY.resx">
+      <DependentUpon>FrmOutHspMedinsrHDSSY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmDrugTypeXBH.resx">
+      <DependentUpon>FrmDrugTypeXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmItemcrossXBH.resx">
+      <DependentUpon>FrmItemcrossXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmItemfromXBH.resx">
+      <DependentUpon>FrmItemfromXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmItemTypeXBH.resx">
+      <DependentUpon>FrmItemTypeXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmMedinsrXBH.resx">
+      <DependentUpon>FrmMedinsrXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdxbhnh\FrmSelectCrossXBH.resx">
+      <DependentUpon>FrmSelectCrossXBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FormSyRy.resx">
+      <DependentUpon>FormSyRy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FormXzxypsp.resx">
+      <DependentUpon>FormXzxypsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmChCy.resx">
+      <DependentUpon>FrmChCy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmChRy.resx">
+      <DependentUpon>FrmChRy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmClinicMedinsr.resx">
+      <DependentUpon>FrmClinicMedinsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmCxcwTscl.resx">
+      <DependentUpon>FrmCxcwTscl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmDrugtype.resx">
+      <DependentUpon>FrmDrugtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmDy.resx">
+      <DependentUpon>FrmDy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmFpdysz.resx">
+      <DependentUpon>FrmFpdysz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmInHspMedinsr.resx">
+      <DependentUpon>FrmInHspMedinsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmItemcross.resx">
+      <DependentUpon>FrmItemcross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmItemfrom.resx">
+      <DependentUpon>FrmItemfrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmMzCh.resx">
+      <DependentUpon>FrmMzCh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmOutHspMedinsr.resx">
+      <DependentUpon>FrmOutHspMedinsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmRyHt.resx">
+      <DependentUpon>FrmRyHt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmSelectCross.resx">
+      <DependentUpon>FrmSelectCross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmSyCy.resx">
+      <DependentUpon>FrmSyCy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmXgjyb.resx">
+      <DependentUpon>FrmXgjyb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\frmXJHB.resx">
+      <DependentUpon>frmXJHB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmXmbmxg.resx">
+      <DependentUpon>FrmXmbmxg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmYbCy.resx">
+      <DependentUpon>FrmYbCy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\FrmYbRy.resx">
+      <DependentUpon>FrmYbRy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hdyb\Frm_MzCxJs.resx">
+      <DependentUpon>Frm_MzCxJs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmDiseaseCaseHSDR.resx">
+      <DependentUpon>FrmDiseaseCaseHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmDownloadItem.resx">
+      <DependentUpon>FrmDownloadItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmDrugTypeHSDR.resx">
+      <DependentUpon>FrmDrugTypeHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmItemcrossHSDR.resx">
+      <DependentUpon>FrmItemcrossHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\clinic\FrmClinMedinsrHSDR.resx">
+      <DependentUpon>FrmClinMedinsrHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmSelectCrossHSDR.resx">
+      <DependentUpon>FrmSelectCrossHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\FrmSign.resx">
+      <DependentUpon>FrmSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\ihsp\FrmIhspMedinsrHSDR.resx">
+      <DependentUpon>FrmIhspMedinsrHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\hsdryb\ihsp\FrmOutHspMedinsrHSDR.resx">
+      <DependentUpon>FrmOutHspMedinsrHSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\clinic\FrmClicDaily.resx">
+      <DependentUpon>FrmClicDaily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\clinic\FrmMzYb.resx">
+      <DependentUpon>FrmMzYb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmactivation.resx">
+      <DependentUpon>Frmactivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmclinicPoint.resx">
+      <DependentUpon>FrmclinicPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmCard.resx">
+      <DependentUpon>FrmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDetailedquery.resx">
+      <DependentUpon>FrmDetailedquery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmExcle.resx">
+      <DependentUpon>FrmExcle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmgDiseases.resx">
+      <DependentUpon>FrmgDiseases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmMzYbdk.resx">
+      <DependentUpon>FrmMzYbdk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmSettlementInfo.resx">
+      <DependentUpon>FrmSettlementInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmbzkysmfwxz.resx">
+      <DependentUpon>Frmbzkysmfwxz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDepartments.resx">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDisease.resx">
+      <DependentUpon>FrmDisease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDoctor.resx">
+      <DependentUpon>FrmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDownloadContrast.resx">
+      <DependentUpon>FrmDownloadContrast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmDownloadDirectory.resx">
+      <DependentUpon>FrmDownloadDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\frmDuizhang.resx">
+      <DependentUpon>frmDuizhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmgrmxbspxxcx.resx">
+      <DependentUpon>Frmgrmxbspxxcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\FrmSybCy.resx">
+      <DependentUpon>FrmSybCy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmrelationship.resx">
+      <DependentUpon>Frmrelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmSybRy.resx">
+      <DependentUpon>FrmSybRy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmxtsz.resx">
+      <DependentUpon>Frmxtsz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\Frmydjyjzzysbxxcx.resx">
+      <DependentUpon>Frmydjyjzzysbxxcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\sjzsyb\FrmYlFyMxDz.resx">
+      <DependentUpon>FrmYlFyMxDz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynsyb\clinic\FrmClinMedinsrYNSYB.resx">
+      <DependentUpon>FrmClinMedinsrYNSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynsyb\FrmItemcrossYNSYB.resx">
+      <DependentUpon>FrmItemcrossYNSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynsyb\FrmSelectCrossYNSYB.resx">
+      <DependentUpon>FrmSelectCrossYNSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynsyb\ihsp\FrmIhspMedinsrYNSYB.resx">
+      <DependentUpon>FrmIhspMedinsrYNSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynsyb\ihsp\FrmOutHspMedinsrYNSYB.resx">
+      <DependentUpon>FrmOutHspMedinsrYNSYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmCostDownload.resx">
+      <DependentUpon>FrmCostDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYNYDYBClinicReg.resx">
+      <DependentUpon>FrmYnydybClinicReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYnydybEdit.resx">
+      <DependentUpon>FrmYnydybEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYnydybIhspReg.resx">
+      <DependentUpon>FrmYnydybIhspReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYnydybOhspReg.resx">
+      <DependentUpon>FrmYnydybOhspReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYnydybPrePay.resx">
+      <DependentUpon>FrmYnydybPrePay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medinsur\ynydyb\FrmYnydybSign.resx">
+      <DependentUpon>FrmYnydybSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="netpay\FrmNetPayManage.resx">
+      <DependentUpon>FrmNetPayManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="netpay\FrmQueryViewInfo.resx">
+      <DependentUpon>FrmQueryViewInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmChanagePrinter.resx">
+      <DependentUpon>FrmChanagePrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmPrintSetting.resx">
+      <DependentUpon>FrmPrintSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmSysInit.resx">
+      <DependentUpon>FrmSysInit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmSysInitChk.resx">
+      <DependentUpon>FrmSysInitChk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\FrmSystemConfig.resx">
+      <DependentUpon>FrmSystemConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="bin\Debug\report\ClinicInvoice.frx" />
+    <None Include="bin\Debug\report\IhspAccountHdsyb.frx" />
+    <None Include="bin\Debug\report\IhspInDepartAccounting.frx" />
+    <None Include="bin\Debug\report\IhspInDoctorAccounting.frx" />
+    <None Include="bin\Debug\report\IhspOutDepartAccounting.frx" />
+    <None Include="bin\Debug\report\IhspOutDoctorAccounting.frx" />
+    <None Include="bin\Debug\report\IhspPayInadv.frx" />
+    <None Include="bin\Debug\report\IhspTabAfterCostInfo.frx" />
+    <None Include="bin\Debug\report\IhspTabCostAmt.frx" />
+    <None Include="bin\Debug\report\IhspTabForCharger.frx" />
+    <None Include="bin\Debug\report\IhspTabForChargerAmt.frx" />
+    <None Include="bin\Debug\report\bak\RptA4FullApp.frx" />
+    <None Include="bin\Debug\report\bak\RptA4FullAppImg4.frx" />
+    <None Include="bin\Debug\report\bak\RptA4HalfApp.frx" />
+    <None Include="bin\Debug\report\bak\RptA4HalfAppDouble.frx" />
+    <None Include="bin\Debug\report\bak\RptA4HalfAppDoubleImg4.frx" />
+    <None Include="bin\Debug\report\bak\RptAVE.frx" />
+    <None Include="bin\Debug\report\bak\RptQltyQuery.frx" />
+    <None Include="bin\Debug\report\bak\RptXiJun.frx" />
+    <None Include="bin\Debug\report\bak\RptXL6000.frx" />
+    <None Include="bin\Debug\report\Ihsp_HDSCHFP.frx" />
+    <None Include="bin\Debug\report\old\RptAVEPrint2.rpt" />
+    <None Include="bin\Debug\report\old\RptBX51.rpt" />
+    <None Include="bin\Debug\report\old\RptFullApp.rpt" />
+    <None Include="bin\Debug\report\old\RptFullApp2.rpt" />
+    <None Include="bin\Debug\report\old\RptFullApp3.rpt" />
+    <None Include="bin\Debug\report\old\RptFullApp4.rpt" />
+    <None Include="bin\Debug\report\old\RptHalfApp.rpt" />
+    <None Include="bin\Debug\report\old\RptHalfApp2.rpt" />
+    <None Include="bin\Debug\report\old\RptHalfApp3.rpt" />
+    <None Include="bin\Debug\report\old\RptHalfApp4.rpt" />
+    <None Include="bin\Debug\report\old\RptJingYeFenXi.rpt" />
+    <None Include="bin\Debug\report\old\RptXiJun.rpt" />
+    <None Include="bin\Debug\report\old\RptXL6000.rpt" />
+    <None Include="bin\Debug\report\RptA4FullApp.frx" />
+    <None Include="bin\Debug\report\RptA4FullAppImg4.frx" />
+    <None Include="bin\Debug\report\RptA4FullAppMoreRange.frx" />
+    <None Include="bin\Debug\report\RptA4HalfApp.frx" />
+    <None Include="bin\Debug\report\RptA4HalfAppDouble.frx" />
+    <None Include="bin\Debug\report\RptA4HalfAppDoubleImg4.frx" />
+    <None Include="bin\Debug\report\RptAVE.frx" />
+    <None Include="bin\Debug\report\RptQltyQuery.frx" />
+    <None Include="bin\Debug\report\RptXiJun.frx" />
+    <None Include="bin\Debug\report\RptXiJunDouble.frx" />
+    <None Include="bin\Debug\report\RptXiJun_old.frx" />
+    <None Include="bin\Debug\report\RptXL6000.frx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="sys\bll\BllAccount.cs" />
+    <Compile Include="sys\bll\BllDepart.cs" />
+    <Compile Include="sys\bll\BllDict.cs" />
+    <Compile Include="sys\bll\BllDoctor.cs" />
+    <Compile Include="sys\bll\BllPrint.cs" />
+    <Compile Include="sys\bll\BllResultType.cs" />
+    <Compile Include="sys\bll\BllRole.cs" />
+    <Compile Include="sys\bll\BllSystemConfig.cs" />
+    <Compile Include="sys\FrmChanagePrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmChanagePrinter.Designer.cs">
+      <DependentUpon>FrmChanagePrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\FrmPrintSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmPrintSetting.designer.cs">
+      <DependentUpon>FrmPrintSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\FrmSysInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmSysInit.Designer.cs">
+      <DependentUpon>FrmSysInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\FrmSysInitChk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmSysInitChk.Designer.cs">
+      <DependentUpon>FrmSysInitChk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\FrmSystemConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\FrmSystemConfig.Designer.cs">
+      <DependentUpon>FrmSystemConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\DataUtils.cs" />
+    <Compile Include="tools\Excel.cs" />
+    <Compile Include="tools\FileUtils.cs" />
+    <Compile Include="tools\FtpUtils.cs" />
+    <Compile Include="tools\IniUtils.cs" />
+    <Compile Include="tools\LogUtils.cs" />
+    <Compile Include="tools\ZipUtils.cs" />
+    <None Include="Web References\gsbx1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\gsbx1\SendHisControllerImplService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="hspcard\" />
+    <Folder Include="ihspqty\bo\" />
+    <Folder Include="medinsur\gysyb\clinic\" />
+    <Folder Include="medinsur\gysyb\ihsp\" />
+    <Folder Include="medinsur\gzsyb\ihsp\bo\" />
+    <Folder Include="medinsur\hdssy\bo\" />
+    <Folder Include="sys\resouce\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BgImg.jpg" />
+    <Content Include="bin\Debug\dblib.dll" />
+    <Content Include="bin\Debug\inihsp.jpg" />
+    <Content Include="bin\Debug\inputcost.jpg" />
+    <Content Include="bin\Debug\LoginImg.jpg" />
+    <Content Include="bin\Debug\OutIhsp.jpg" />
+    <Content Include="bin\Debug\payinadv.jpg" />
+    <Content Include="bin\Debug\rcpcost.jpg" />
+    <Content Include="bin\Debug\regist.jpg" />
+    <Content Include="bin\Debug\report\blank.bmp" />
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://121.28.194.180:9020/his/ws/soap/sendHis%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\gsbx1\</RelPath>
+      <UpdateFromURL>http://121.28.194.180:9020/his/ws/soap/sendHis%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MTREG_gsbx1_SendHisControllerImplService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,30 @@
+2020-08-20 15:46:00:2020-08-20
+2020-08-20 15:45:59==>【login】开始----------------------------------------------------------------------------
+		      【In-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiICBzdGFuZGFsb25lPSJ5ZXMiPz48bG9naW5SZXFEYXRhPiA8dXNlcm5hbWU+MTAwMDA3NDA8L3VzZXJuYW1lPiA8cGFzc3dvcmQ+QTg5OTBBQzE4MEZFNDlFMkFEMjE2QzQzQUFDNUFFMjY8L3Bhc3N3b3JkPiA8L2xvZ2luUmVxRGF0YT4=
+		      【In-DecodeData】
+<?xml version="1.0" encoding="UTF-8"  standalone="yes"?><loginReqData> <username>10000740</username> <password>A8990AC180FE49E2AD216C43AAC5AE26</password> </loginReqData>
+		      【Out-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pjxsb2dpblJlc3BEYXRhPjxjb2RlPjA8L2NvZGU+PG1zZz48L21zZz48c2Vzc2lvbmlkPjIwODE3NjQ8L3Nlc3Npb25pZD48L2xvZ2luUmVzcERhdGE+
+		      【Out-DecodeData】
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><loginRespData><code>0</code><msg></msg><sessionid>2081764</sessionid></loginRespData>
+2020-08-20 15:46:01:2020-08-20
+2020-08-20 15:46:01==>【getInjuryByNameAndId】开始----------------------------------------------------------------------------
+		      【In-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiICBzdGFuZGFsb25lPSJ5ZXMiPz48aW5qdXJ5UmVxRGF0YT4gPHNlc3Npb25pZD4yMDgxNzY0PC9zZXNzaW9uaWQ+IDxhYWMwMDI+MTMwMTIxMTk2NDEyMTIwNDMzPC9hYWMwMDI+IDxhYWMwMDM+5bq355Ge6ZSBPC9hYWMwMDM+IDwvaW5qdXJ5UmVxRGF0YT4=
+		      【In-DecodeData】
+<?xml version="1.0" encoding="UTF-8"  standalone="yes"?><injuryReqData> <sessionid>2081764</sessionid> <aac002>130121196412120433</aac002> <aac003>康瑞锁</aac003> </injuryReqData>
+		      【Out-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pjxpbmp1cnlSZXNwRGF0YT48Y29kZT4wPC9jb2RlPjxtc2c+5q2k5Lq65bey5Y+C5L+d77yM5L2G5rKh5pyJ5YGa5bel5Lyk6K6k5a6a5ZKM5bel5Lyk5L+h5oGv5b2V5YWl44CC6KeG5Li65paw5bel5LykITwvbXNnPjxjb3VudHM+MTwvY291bnRzPjxsYzAxcz48bGMwMT48YWFiMDAxPjwvYWFiMDAxPjxhYWIwMDk+PC9hYWIwMDk+PGFhYzAwMT4yMTc3MDM2ODk3PC9hYWMwMDE+PGFhYzAwMj4xMzAxMjExOTY0MTIxMjA0MzM8L2FhYzAwMj48YWFjMDAzPuW6t+eRnumUgTwvYWFjMDAzPjxhYWMwMDQ+MTwvYWFjMDA0PjxhYWUxMTY+PC9hYWUxMTY+PGFhZWEwNj48L2FhZWEwNj48YWtiMDIwPjwvYWtiMDIwPjxhbGEwNDA+PC9hbGEwNDA+PGFsYzAyMT48L2FsYzAyMT48YWxjMDIyPjwvYWxjMDIyPjxhbGMwMjM+PC9hbGMwMjM+PGFsYzAyND48L2FsYzAyND48YWxjMDI3PjwvYWxjMDI3PjxhbGMwNjA+PC9hbGMwNjA+PGFsYzA4ND4wPC9hbGMwODQ+PC9sYzAxPjwvbGMwMXM+PC9pbmp1cnlSZXNwRGF0YT4=
+		      【Out-DecodeData】
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><injuryRespData><code>0</code><msg>此人已参保，但没有做工伤认定和工伤信息录入。视为新工伤!</msg><counts>1</counts><lc01s><lc01><aab001></aab001><aab009></aab009><aac001>2177036897</aac001><aac002>130121196412120433</aac002><aac003>康瑞锁</aac003><aac004>1</aac004><aae116></aae116><aaea06></aaea06><akb020></akb020><ala040></ala040><alc021></alc021><alc022></alc022><alc023></alc023><alc024></alc024><alc027></alc027><alc060></alc060><alc084>0</alc084></lc01></lc01s></injuryRespData>
+2020-08-20 15:46:01:2020-08-20
+2020-08-20 15:46:01==>【logout】开始----------------------------------------------------------------------------
+		      【In-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiICBzdGFuZGFsb25lPSJ5ZXMiPz48bG9nb3V0UmVxRGF0YT4gPHNlc3Npb25pZD4yMDgxNzY0PC9zZXNzaW9uaWQ+IDx1c2VybmFtZT4xMDAwMDc0MDwvdXNlcm5hbWU+IDxwYXNzd29yZD5BODk5MEFDMTgwRkU0OUUyQUQyMTZDNDNBQUM1QUUyNjwvcGFzc3dvcmQ+IDwvbG9nb3V0UmVxRGF0YT4=
+		      【In-DecodeData】
+<?xml version="1.0" encoding="UTF-8"  standalone="yes"?><logoutReqData> <sessionid>2081764</sessionid> <username>10000740</username> <password>A8990AC180FE49E2AD216C43AAC5AE26</password> </logoutReqData>
+		      【Out-PostData】
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pjxsb2dvdXRSZXNwRGF0YT48Y29kZT4wPC9jb2RlPjxtc2c+PC9tc2c+PHNlc3Npb25pZD48L3Nlc3Npb25pZD48L2xvZ291dFJlc3BEYXRhPg==
+		      【Out-DecodeData】
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><logoutRespData><code>0</code><msg></msg><sessionid></sessionid></logoutRespData>

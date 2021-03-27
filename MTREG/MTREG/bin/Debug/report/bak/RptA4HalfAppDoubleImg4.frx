@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/11/2015 15:07:25" ReportInfo.Modified="02/13/2015 15:33:04" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqHwzMSgwTFaHpjtG3vsOj8egbuvt9Fas9JJcPSToGvAMtAzZhmA0+NznTqPo+bLM/7wXQSWU3bEqP4Gopedh2xDnSvSKq+s3w3rZFssAqBaqMYKQUgXMnCJoBaVWT2yfw+CtrbaZKyRl/8U/pNEx7+Uv+qv58rMSpobOZgxJr14BAnsmI8MFsnqeYXQP1gr3jX4W6ciGbJh7CZQlo822OmQ==">
+      <TableDataSource Name="Table" Alias="Tb_PersionInfo" DataType="System.Int32" Enabled="true" SelectCommand="select lis_ihsp.name&#13;&#10;              ,lis_ihsp.sex &#13;&#10;               ,lis_ihsp.age &#13;&#10;               ,lis_ihsp.ageunit&#13;&#10;               ,(select top 1 name from lis_dict where sn=lis_app.apptype_id and dicttype='apptype' )as apptype&#13;&#10;               ,lis_ihsp.ihsp_id &#13;&#10;               ,lis_depart.name as depart &#13;&#10;               ,lis_doctor.name as doctor&#13;&#10;               ,lis_ihsp.bednum &#13;&#10;               ,(select top 1 name from lis_dict where id=lis_app.sampletype_id) as sampletype &#13;&#10;               ,lis_app.id &#13;&#10;               ,lis_app.diagndesc&#13;&#10;               ,lis_app.opdate&#13;&#10;               ,lis_app.chkdate &#13;&#10;               ,(select top 1 nickname from lis_account where id=lis_app.operator_id)as operators &#13;&#10;               ,lis_account.nickname as checkleader &#13;&#10;               ,lis_app.app_sn &#13;&#10;               ,lis_print.printcode &#13;&#10;               ,lis_app.appdate &#13;&#10;               ,lis_app.registat &#13;&#10;               ,lis_app.docwritemeno &#13;&#10;		,lis_dev.memo&#13;&#10;               ,case lis_app.urgentstate when 1 then '急诊' else '' END as urgentstate&#13;&#10;               from lis_app left join lis_ihsp on lis_app.ihsp_id=lis_ihsp.id&#13;&#10;               left join lis_doctor on lis_doctor.id = lis_app.doctor_id&#13;&#10;               left join lis_depart on lis_app.depart_id=lis_depart.id  &#13;&#10;               left join lis_account on lis_app.checkleader_id = lis_account.id&#13;&#10;               left join lis_dev on lis_app.dev_id = lis_dev.id&#13;&#10;               left join lis_print on lis_dev.printtemp1 = lis_print.printcode&#13;&#10;               where  lis_app.id=-1 and lis_app.dev_id= '344' and lis_app.opdate='2015-02-01'">
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="age" DataType="System.Int32"/>
+        <Column Name="ageunit" DataType="System.String"/>
+        <Column Name="apptype" DataType="System.String"/>
+        <Column Name="ihsp_id" DataType="System.String"/>
+        <Column Name="depart" DataType="System.String"/>
+        <Column Name="doctor" DataType="System.String"/>
+        <Column Name="bednum" DataType="System.String"/>
+        <Column Name="sampletype" DataType="System.String"/>
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="diagndesc" DataType="System.String"/>
+        <Column Name="opdate" DataType="System.DateTime"/>
+        <Column Name="chkdate" DataType="System.DateTime"/>
+        <Column Name="operators" DataType="System.String"/>
+        <Column Name="checkleader" DataType="System.String"/>
+        <Column Name="app_sn" DataType="System.Int32"/>
+        <Column Name="printcode" DataType="System.String"/>
+        <Column Name="appdate" DataType="System.DateTime"/>
+        <Column Name="registat" DataType="System.DateTime"/>
+        <Column Name="docwritemeno" DataType="System.String"/>
+        <Column Name="urgentstate" DataType="System.String"/>
+        <Column Name="memo" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Tb_HspName" DataType="System.Int32" Enabled="true" SelectCommand="select hspname,telphone from lis_sysconfig where id=1">
+        <Column Name="hspname" DataType="System.String"/>
+        <Column Name="telphone" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table3" Alias="Tb_Result" DataType="System.Int32" Enabled="true" SelectCommand="select  &#13;&#10;appitem.name as chkname  &#13;&#10;,appitem.enname  &#13;&#10;,appitem.resstr  &#13;&#10;,appitem.resrange  &#13;&#10;,appitem.unit  &#13;&#10;,appitem.resulticon as icon  &#13;&#10;from lis_appitem as appitem  &#13;&#10;where 1=1  &#13;&#10;and (appitem.ispicture='0' or appitem.ispicture is null)&#13;&#10;and app_id='-1' &#13;&#10;and dev_id='344' &#13;&#10;and opdate='2015/2/11 0:00:00' order by appitem.diagnsn,appitem.printsn ">
+        <Column Name="chkname" DataType="System.String"/>
+        <Column Name="enname" DataType="System.String"/>
+        <Column Name="resstr" DataType="System.String"/>
+        <Column Name="resrange" DataType="System.String"/>
+        <Column Name="unit" DataType="System.String"/>
+        <Column Name="icon" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="210.1" PaperHeight="148.1" RawPaperSize="11" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="756.38" Height="9.45">
+      <TextObject Name="Text10" Left="-9450" Top="-9450" Width="56.7" Height="20.79" Text="姓名:" VertAlign="Bottom" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text11" Left="-9450" Top="-9450" Width="56.7" Height="20.79" Text="姓名:" VertAlign="Bottom" Font="宋体, 11.25pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="13.45" Width="756.38" Height="113.29">
+      <TextObject Name="Text1" Left="160.65" Width="340.2" Height="28.35" Text="[Tb_HspName.hspname]" HorzAlign="Center" VertAlign="Center" Font="宋体, 18pt, style=Bold"/>
+      <TextObject Name="Text2" Left="18.9" Top="35.8" Width="56.7" Height="20.79" Text="姓名:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text3" Left="78.6" Top="35.8" Width="85.05" Height="20.79" Text="[Tb_PersionInfo.name]" Font="宋体, 11.25pt, style=Bold"/>
+      <TextObject Name="Text4" Left="172.1" Top="35.8" Width="85.05" Height="20.79" Text="就诊类别:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text5" Left="250.15" Top="35.8" Width="94.5" Height="20.79" Text="[Tb_PersionInfo.apptype]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text6" Left="350.1" Top="35.8" Width="75.6" Height="20.79" Text="床   号:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text7" Left="425.7" Top="35.8" Width="94.5" Height="20.79" Text="[Tb_PersionInfo.bednum]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text8" Left="529.65" Top="35.8" Width="66.15" Height="20.79" Text="标本号:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text9" Left="598.8" Top="35.8" Width="141.75" Height="20.79" Text="[Tb_PersionInfo.id]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text12" Left="18.9" Top="64.15" Width="56.7" Height="20.79" Text="性别:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text13" Left="18.9" Top="92.5" Width="56.7" Height="20.79" Text="年龄:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text14" Left="78.6" Top="64.15" Width="85.05" Height="20.79" Text="[Tb_PersionInfo.sex]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text15" Left="80.05" Top="92.5" Width="85.05" Height="20.79" Text="[Tb_PersionInfo.age]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text16" Left="170.1" Top="64.15" Width="85.05" Height="20.79" Text="病 历 号:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text17" Left="170.1" Top="92.5" Width="85.05" Height="20.79" Text="科    室:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text18" Left="250.15" Top="64.15" Width="94.5" Height="20.79" Text="[Tb_PersionInfo.ihsp_id]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text19" Left="250.15" Top="92.5" Width="94.5" Height="20.79" Text="[Tb_PersionInfo.depart]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text20" Left="350.65" Top="64.15" Width="85.05" Height="20.79" Text="标本类型:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text21" Left="352.1" Top="92.5" Width="75.6" Height="20.79" Text="诊   断:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text22" Left="425.25" Top="64.15" Width="94.5" Height="20.79" Text="[Tb_PersionInfo.sampletype]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text23" Left="425.25" Top="92.5" Width="321.3" Height="20.79" Text="[Tb_PersionInfo.diagndesc]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text24" Left="529.2" Top="64.15" Width="66.15" Height="20.79" Text="仪  器:" VertAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text25" Left="598.8" Top="64.15" Width="141.75" Height="20.79" Text="[Tb_PersionInfo.memo]" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text49" Left="18.9" Width="94.5" Height="18.9" Text="[Tb_PersionInfo.urgentstate]" Font="宋体, 9pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="163.09" Width="389.34" Height="21.17" DataSource="Table3" Columns.Count="2" Columns.Width="389.34" Columns.Layout="DownThenAcross">
+      <TextObject Name="Text28" Left="14.9" Top="1" Width="160.65" Height="18.9" Text="[Tb_Result.chkname]" Font="宋体, 9pt"/>
+      <TextObject Name="Text30" Left="148.2" Top="1" Width="66.15" Height="18.9" Text="[Tb_Result.resstr]" Font="宋体, 9pt"/>
+      <TextObject Name="Text34" Left="246.7" Width="132.3" Height="18.9" Text="[Tb_Result.resrange] [Tb_Result.unit]" Font="宋体, 9pt"/>
+      <TextObject Name="Text26" Left="217.35" Width="28.35" Height="18.9" Text="[Tb_Result.icon]" Font="宋体, 9pt"/>
+      <LineObject Name="Line3" Left="386.9" Height="21.17"/>
+      <DataHeaderBand Name="DataHeader1" Top="130.74" Width="756.38" Height="28.35" RepeatOnEveryPage="true">
+        <LineObject Name="Line2" Left="10.9" Top="28.35" Width="737.1"/>
+        <TextObject Name="Text29" Left="14.9" Top="5.29" Width="75.6" Height="20.03" Text="检验项目" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <TextObject Name="Text31" Left="147.75" Top="5.29" Width="75.6" Height="20.03" Text="检验结果" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <TextObject Name="Text33" Left="245.7" Top="5.29" Width="75.6" Height="20.03" Text="参考范围" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <TextObject Name="Text51" Left="406.35" Top="5.29" Width="75.6" Height="20.03" Text="检验项目" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <TextObject Name="Text52" Left="535.2" Top="5.29" Width="75.6" Height="20.03" Text="检验结果" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <TextObject Name="Text53" Left="632.15" Top="5.29" Width="75.6" Height="20.03" Text="参考范围" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 12pt"/>
+        <LineObject Name="Line1" Left="9.45" Width="737.1"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="188.26" Width="756.38" Height="122.85" PrintOnBottom="true">
+        <PictureObject Name="Picture1" Left="56.7" Width="122.85" Height="122.85"/>
+        <PictureObject Name="Picture2" Left="226.8" Width="122.85" Height="122.85"/>
+        <PictureObject Name="Picture3" Left="396.9" Width="122.85" Height="122.85"/>
+        <PictureObject Name="Picture4" Left="567" Width="122.85" Height="122.85"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="315.11" Width="756.38" Height="94.5">
+      <TextObject Name="Text35" Left="9.45" Width="47.25" Height="18.9" Text="备注:" VertAlign="Bottom" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text36" Left="66.15" Width="661.5" Height="18.9" Text="[Tb_PersionInfo.docwritemeno]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text37" Left="207.9" Top="17.9" Width="75.6" Height="18.9" Text="送检时间:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text38" Left="285.5" Top="17.9" Width="141.75" Height="18.9" Text="[Tb_PersionInfo.registat]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text39" Left="453.6" Top="17.9" Width="75.6" Height="18.9" Text="报告时间:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text40" Left="535.65" Top="17.9" Width="141.75" Height="18.9" Text="[Tb_PersionInfo.chkdate]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text41" Left="9.45" Top="47.25" Width="75.6" Height="18.9" Text="送检医生:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text42" Left="88.5" Top="47.25" Width="83.16" Height="18.9" Text="[Tb_PersionInfo.doctor]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text43" Left="207.9" Top="47.25" Width="56.7" Height="18.9" Text="检验员:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text44" Left="272.05" Top="47.25" Width="75.6" Height="18.9" Text="[Tb_PersionInfo.operators]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text45" Left="453.6" Top="47.25" Width="56.7" Height="18.9" Text="复核员:" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text46" Left="515.75" Top="47.25" Width="75.6" Height="18.9" Text="[Tb_PersionInfo.checkleader]" VertAlign="Bottom" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text47" Left="9.45" Top="75.6" Width="670.95" Height="18.9" Text="注：此报告仅对本份标本负责，仅供医生参考，如有疑议，请三日内提出，联系电话：[Tb_HspName.telphone]" VertAlign="Bottom" Font="宋体, 9pt" TextFill.Color="Brown"/>
+      <PictureObject Name="operatorpic" Left="349.65" Top="37.8" Width="94.5" Height="37.8"/>
+      <PictureObject Name="checkleaderpic" Left="595.35" Top="37.8" Width="94.5" Height="37.8"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

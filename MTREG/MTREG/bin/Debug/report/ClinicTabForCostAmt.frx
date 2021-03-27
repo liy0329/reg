@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/02/2016 16:19:17" ReportInfo.Modified="06/08/2017 14:06:18" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhuRMBUVC9V0rijkCvyh2MTQ">
+      <TableDataSource Name="Table" Alias="CostAmt" DataType="System.Int32" Enabled="true" SelectCommand="select sys_dict.name,clinictap_costgather.realfee as receive,clinictap_costgather.realfee as refund,clinictap_costgather.realfee as realfee from sys_dict left join clinictap_costgather on sys_dict.sn = clinictap_costgather.itemtype_id where sys_dict.father_id &lt;&gt; 0 and sys_dict.dicttype = 'cost_itemtype' limit 1&#13;&#10;">
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="receive" DataType="System.Decimal"/>
+        <Column Name="refund" DataType="System.Decimal"/>
+        <Column Name="realfee" DataType="System.Decimal"/>
+        <CommandParameter Name="startTime" DataType="22"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Info" DataType="System.Int32" Enabled="true" SelectCommand="select chargedate as starTime ,chargedate as endTime,billcode as depart,billcode as type,billcode as title from clinic_invoice limit 1;">
+        <Column Name="starTime" DataType="System.DateTime"/>
+        <Column Name="endTime" DataType="System.DateTime"/>
+        <Column Name="depart" Alias="billcode" DataType="System.String"/>
+        <Column Name="type" Alias="charger" DataType="System.String"/>
+        <Column Name="title" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperHeight="105" FirstPageSource="1" OtherPagesSource="1" Columns.Count="4" Columns.Width="47.5" Columns.Positions="0,47.5,95,142.5">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text7" Left="160.65" Top="9.45" Width="387.45" Height="28.35" Text="[Info.title]" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text10" Left="9.45" Top="66.15" Width="85.05" Height="18.9" Text="结账时间：" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text11" Left="56.7" Top="66.15" Width="160.65" Height="18.9" Text="[Info.starTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text12" Left="198.45" Top="66.15" Width="28.35" Height="18.9" Text="至" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="198.45" Top="66.15" Width="170.1" Height="18.9" Text="[Info.endTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text3" Left="481.95" Top="66.15" Width="189" Height="18.9" Text="[Info.charger]" Font="宋体, 9pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="98.5" Width="179.55" Height="28.35">
+      <TableObject Name="Table2" Width="178.54" Height="28.35">
+        <TableColumn Name="Column5" Width="100.61"/>
+        <TableColumn Name="Column8" Width="77.93"/>
+        <TableRow Name="Row2" Height="28.35">
+          <TableCell Name="Cell5" Border.Lines="All" Text="收款类别" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Text="实收金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="179.55" Height="28.35" DataSource="Table">
+      <TableObject Name="Table2" Width="178.61" Height="28.35">
+        <TableColumn Name="Column9" Width="100.64"/>
+        <TableColumn Name="Column12" Width="77.97"/>
+        <TableRow Name="Row3" Height="28.35">
+          <TableCell Name="Cell9" Border.Lines="All" Text="[CostAmt.name]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="[CostAmt.realfee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="163.2" Width="718.2" Height="18.9" Guides="0">
+      <TextObject Name="Text1" Left="661.5" Width="94.5" Height="18.9" Text="[PageN]" Font="宋体, 9pt"/>
+      <TextObject Name="Text2" Left="9.45" Width="207.9" Height="18.9" Text="[Info.billcode]" Font="宋体, 9pt"/>
+      <TextObject Name="Text15" Left="283.5" Width="85.05" Height="18.9" Text="打印时间：" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text16" Left="359.1" Width="170.1" Height="18.9" Text="[Date]" HorzAlign="Center" Font="宋体, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

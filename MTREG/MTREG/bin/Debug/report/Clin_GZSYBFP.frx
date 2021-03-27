@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/02/2016 16:19:17" ReportInfo.Modified="10/31/2017 17:42:42" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqc8hR0ON9DI1yXzbOE5NWuzbUQSXMlo8Tgp1GafzxQLxj6mwjGxNGmeQ7hQdAVpoiTTYBkrqFNweAeV93ICl8zGbDcH7Dio1PbqkMoJfSQMHxStCKtmg0tSbmNG4VU0JU">
+      <TableDataSource Name="Table1" Alias="Info" DataType="System.Int32" Enabled="true" SelectCommand="select&#13;&#10;billcode as invoice,&#13;&#10;billcode as billcode,&#13;&#10;billcode as hspname,&#13;&#10;billcode as rcpdepart,&#13;&#10;billcode as exedepart,&#13;&#10;billcode as patientname,&#13;&#10;billcode as sex,&#13;&#10;billcode as insurcode,&#13;&#10;billcode as insurpaytype,&#13;&#10;billcode as patienttype,&#13;&#10;billcode as dwmc,&#13;&#10;billcode as clinicdiagn,&#13;&#10;&#13;&#10;billcode as capamt,&#13;&#10;billcode as amt,&#13;&#10;billcode as insurfee,&#13;&#10;billcode as accountfee,&#13;&#10;billcode as otherinsurfee,&#13;&#10;billcode as payfee,&#13;&#10;billcode as chargeby,&#13;&#10;&#13;&#10;billcode as mzbzqfx,&#13;&#10;billcode as mzbzljzf,&#13;&#10;billcode as xfq,&#13;&#10;billcode as xfh,&#13;&#10;&#13;&#10;billcode as sbpayfee,&#13;&#10;billcode as byxj,&#13;&#10;billcode as chargedate,&#13;&#10;billcode as paytypename&#13;&#10;from clinic_invoice limit 1;">
+        <Column Name="billcode" DataType="System.String"/>
+        <Column Name="patientname" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="patienttype" DataType="System.String"/>
+        <Column Name="capamt" DataType="System.String"/>
+        <Column Name="amt" DataType="System.String"/>
+        <Column Name="hspname" DataType="System.String"/>
+        <Column Name="chargeby" DataType="System.String"/>
+        <Column Name="chargedate" DataType="System.String"/>
+        <Column Name="byxj" DataType="System.String" PropName="Column"/>
+        <Column Name="mzbzljzf" DataType="System.String" PropName="Column"/>
+        <Column Name="xfh" DataType="System.String" PropName="Column1"/>
+        <Column Name="insurpaytype" DataType="System.String"/>
+        <Column Name="dwmc" DataType="System.String"/>
+        <Column Name="exedepart" DataType="System.String"/>
+        <Column Name="invoice" DataType="System.String"/>
+        <Column Name="rcpdepart" DataType="System.String"/>
+        <Column Name="insurfee" DataType="System.String"/>
+        <Column Name="accountfee" DataType="System.String"/>
+        <Column Name="otherinsurfee" DataType="System.String"/>
+        <Column Name="payfee" DataType="System.String"/>
+        <Column Name="mzbzqfx" DataType="System.String"/>
+        <Column Name="xfq" DataType="System.String"/>
+        <Column Name="insurcode" DataType="System.String"/>
+        <Column Name="clinicdiagn" DataType="System.String"/>
+        <Column Name="sbpayfee" DataType="System.String"/>
+        <Column Name="paytypename" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table" Alias="CostDet" DataType="System.Int32" Enabled="true" SelectCommand="select &#13;&#10;name as name ,&#13;&#10;name as fee, &#13;&#10;name as num ,&#13;&#10;name insurclass,&#13;&#10;name zxks&#13;&#10;from clinic_costdet &#13;&#10; limit 1">
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="fee" DataType="System.Decimal"/>
+        <Column Name="num" DataType="System.Decimal"/>
+        <Column Name="insurclass" DataType="System.String"/>
+        <Column Name="zxks" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="190" PaperHeight="127" LeftMargin="0" TopMargin="0" RightMargin="0">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="113.4">
+      <TextObject Name="Text7" Left="217.35" Top="47.25" Width="207.9" Height="18.9" Text="[Info.hspname]" Font="宋体, 9.75pt"/>
+      <TextObject Name="Text9" Left="481.95" Top="37.8" Width="160.65" Height="18.9" Text="[Info.invoice]" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Left="28.35" Top="56.7" Width="132.3" Height="18.9" Text="[Info.billcode]" Font="宋体, 10pt"/>
+      <TextObject Name="Text15" Left="18.9" Top="75.6" Width="103.95" Height="18.9" Text="[Info.patientname]" Font="宋体, 10pt"/>
+      <TextObject Name="Text16" Left="122.85" Top="75.6" Width="56.7" Height="18.9" Text="[Info.sex]" Font="宋体, 10pt"/>
+      <TextObject Name="Text17" Left="207.9" Top="75.6" Width="160.65" Height="18.9" Text="[Info.patienttype]" Font="宋体, 10pt"/>
+      <TextObject Name="Text19" Left="9.45" Top="94.5" Width="179.55" Height="18.9" Text="[Info.rcpdepart]" Font="宋体, 10pt"/>
+      <TextObject Name="Text38" Left="330.75" Top="94.5" Width="207.9" Height="18.9" Text="[Info.exedepart]" Font="宋体, 10pt"/>
+      <TextObject Name="Text45" Left="453.6" Top="73.6" Width="160.65" Height="18.9" Text="[Info.insurcode]" Font="宋体, 10pt"/>
+      <TextObject Name="Text46" Left="481.95" Top="18.9" Width="160.65" Height="18.9" Text="[Info.patienttype]" Font="宋体, 12pt"/>
+      <TextObject Name="Text1" Left="37.8" Top="35.8" Width="207.9" Height="18.9" Text="[Info.dwmc]" Font="宋体, 9pt"/>
+      <TextObject Name="Text2" Left="47.25" Top="12.45" Width="94.5" Height="18.9" Text="[Info.insurpaytype]" Font="宋体, 9pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="116.07" Width="359.1" Height="18.9" Guides="28.35,0,9.45,9.45" DataSource="Table" RowCount="0" MaxRows="12" Columns.Count="2" Columns.Layout="DownThenAcross" Columns.MinRowCount="10">
+      <TableObject Name="Table2" Width="328.08" Height="18.9">
+        <TableColumn Name="Column12" Width="0"/>
+        <TableColumn Name="Column1" Width="147.16"/>
+        <TableColumn Name="Column2" Width="43.21"/>
+        <TableColumn Name="Column3" Width="71.56"/>
+        <TableColumn Name="Column18"/>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell12" Font="宋体, 9pt"/>
+          <TableCell Name="Cell1" Text="[CostDet.name]" VertAlign="Center" WordWrap="false" Font="宋体, 10pt" FirstTabOffset="7.56" ParagraphOffset="7.56"/>
+          <TableCell Name="Cell2" Text="[CostDet.num]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell3" Text="[CostDet.fee]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell18" Text="[CostDet.insurclass]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="168.65" Width="718.2">
+      <ChildBand Name="Child1" Top="137.63" Width="718.2" Height="28.35" FillUnusedSpace="true">
+        <TableObject Name="Table5" Left="9.45" Width="355.26" Height="28.35">
+          <TableColumn Name="Column13" Width="1"/>
+          <TableColumn Name="Column14" Width="212.36"/>
+          <TableColumn Name="Column15" Width="32.81"/>
+          <TableColumn Name="Column16" Width="51.71"/>
+          <TableColumn Name="Column17" Width="57.38"/>
+          <TableRow Name="Row2" Height="28.35">
+            <TableCell Name="Cell13" Text="[Row#]" Font="宋体, 9pt"/>
+            <TableCell Name="Cell14" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell15" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell16" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell17" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </ChildBand>
+    </ColumnFooterBand>
+    <PageFooterBand Name="PageFooter1" Top="171.32" Width="718.2" Height="226.8">
+      <TextObject Name="Text29" Left="32.8" Top="144.4" Width="264.6" Height="18.9" Text="[Info.capamt]" Font="宋体, 10pt"/>
+      <TextObject Name="Text30" Left="373" Top="144.4" Width="75.6" Height="18.9" Text="[Info.amt]" Font="宋体, 10pt"/>
+      <TextObject Name="Text31" Left="42.25" Top="163.3" Width="94.5" Height="18.9" Text="[Info.insurfee]" Font="宋体, 10pt"/>
+      <TextObject Name="Text32" Left="155.65" Top="163.3" Width="103.95" Height="18.9" Text="[Info.accountfee]" Font="宋体, 10pt"/>
+      <TextObject Name="Text33" Left="269.05" Top="163.3" Width="103.95" Height="18.9" Text="[Info.otherinsurfee]" Font="宋体, 10pt"/>
+      <TextObject Name="Text34" Left="397.9" Top="163.3" Width="94.5" Height="18.9" Text="[Info.payfee]" Font="宋体, 10pt"/>
+      <TextObject Name="Text35" Left="42.25" Top="182.2" Width="151.2" Height="18.9" Text="[Info.hspname]" Font="宋体, 10pt"/>
+      <TextObject Name="Text36" Left="269.05" Top="182.2" Width="122.85" Height="18.9" Text="[Info.chargeby]" Font="宋体, 10pt"/>
+      <TextObject Name="Text37" Left="420.25" Top="182.2" Width="160.65" Height="18.9" Text="[Info.chargedate]" Font="宋体, 10pt"/>
+      <TextObject Name="Text40" Left="23.35" Top="97.15" Width="387.45" Height="18.9" Text="[Info.clinicdiagn]" Font="宋体, 10pt"/>
+      <TextObject Name="Text39" Left="23.35" Top="78.25" Width="207.9" Height="18.9" Text="[Info.byxj]" Font="宋体, 10pt"/>
+      <TextObject Name="Text41" Left="23.35" Top="116.05" Width="189" Height="18.9" Text="[Info.mzbzqfx]" Font="宋体, 10pt"/>
+      <TextObject Name="Text42" Left="250.15" Top="116.05" Width="226.8" Height="18.9" Text="[Info.mzbzljzf]" Font="宋体, 10pt"/>
+      <TextObject Name="Text43" Left="486.4" Top="116.05" Width="170.1" Height="18.9" Text="[Info.xfq]" Font="宋体, 10pt"/>
+      <TextObject Name="Text44" Left="486.4" Top="134.95" Width="170.1" Height="18.9" Text="[Info.xfh]" Font="宋体, 10pt"/>
+      <TextObject Name="Text3" Left="492.4" Top="163.3" Width="66.15" Height="18.9" Text="[Info.paytypename]" Font="宋体, 9pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

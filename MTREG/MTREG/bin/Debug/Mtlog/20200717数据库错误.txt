@@ -1,0 +1,52 @@
+2020-07-17 15:55:27:[SELECT clinic_costdet.id AS cfh,	'' AS fph,DATE_FORMAT(clinic_costdet.rcpdate, '%Y-%m-%d') AS cfsj,
+                                  '1' AS cfts,bas_item.gsbm AS xmbm,bas_item.`name` AS xmmc,gsxmlb.`name` AS sflb,'' AS sfdj,
+                                  CASE WHEN (bas_item.itemtype_id = 10) OR (bas_item.itemtype_id = 11) OR (	bas_item.itemtype_id = 12) THEN	'0' ELSE	'1' END AS zl,
+                                   clinic_costdet.prc,clinic_costdet.num AS num,clinic_costdet.realfee as amt,
+                                   clinic_costdet.spec AS guige, prodjixing. NAME AS jixing, bas_item.id AS prodid
+                           FROM clinic_costdet left join bas_item on clinic_costdet.item_id = bas_item.id
+                                left join gsxmlb on gsxmlb.hisid = clinic_costdet.itemtype_id 
+	                            left join (select sn as id,name from sys_dict where father_id=40) prodjixing on bas_item.dosageform_id = prodjixing.id
+                           WHERE clinic_costdet.clinic_cost_id IN in('542115','542111','542108','542096','542106','542105','542086','542112','542081','542078','542067','542045','542012','542003','541986','541981','541970','541964','541945','541922','541918','541914','541884','541840','541811','541763','541752','541744','541742','541735','541731','541722','541703','541639','541617','541566','541484','541478','541396' )]System.Data.Odbc.OdbcException (0x80131937): ERROR [42000] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'in('542115','542111','542108','542096','542106','542105','542086','542112','5420' at line 9
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql) 位置 F:\井陉中医院\工伤收费系统\MTREG\MTREG\db\DBMySQLODBC.cs:行号 301
+2020-07-17 15:57:07:[select gsjlh from clinc_cost where id in('542115','542111','542108','542096','542106','542105','542086','542112','542081','542078','542067','542045','542012','542003','541986','541981','541970','541964','541945','541922','541918','541914','541884','541840','541811','541763','541752','541744','541742','541735','541731','541722','541703','541639','541617','541566','541484','541478','541396')]System.Data.Odbc.OdbcException (0x80131937): ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.5.5-10.2.14-MariaDB-log]Table 'coruscant_do0507.clinc_cost' doesn't exist
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   在 System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-17 17:48:54:[select  register.id ,register.billcode ,register.bas_patienttype_id,register.name as regname,(CASE WHEN register.sex='M' THEN '男' WHEN register.sex='W' THEN '女'end) as sex,bas_depart.name as dptname,bas_doctor.name as dctname,bas_doctor.id as doctor_id,bas_depart.id as depart_id from register ,bas_depart,bas_doctor where   register.depart_id = bas_depart.id  and register.doctor_id = bas_doctor.id  and register.id in ( select clinic_costdet.regist_id  from clinic_costdet,clinic_cost  where clinic_costdet.charged = 'OO'  and clinic_costdet.rcpdate>= '2020-07-17 00:00:00' and clinic_costdet.rcpdate<= '2020-07-17 23:59:59' and clinic_cost.executed<>'X' and clinic_cost.id = clinic_costdet.clinic_cost_id) and status = 'REG'  order by register.regdate desc;]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10060)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)
+2020-07-17 17:48:55:[select  clinic_cost.id,clinic_cost.billcode,clinic_cost.rcptype from clinic_cost  left join clinic_costdet on clinic_cost.id=clinic_costdet.clinic_cost_id RIGHT JOIN register ON register.ID = clinic_cost.regist_id AND register.clininicpay = 'A' where (clinic_cost.ischarged = 'N' or clinic_costdet.charged='OO') and  clinic_cost.regist_id = '314899' and clinic_costdet.rcpdate>= '2020-07-17 00:00:00' and clinic_costdet.rcpdate<= '2020-07-17 23:59:59' and clinic_cost.executed <> 'X'  group by clinic_cost.id order by clinic_cost.rcpdate desc]System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+ERROR [HY000] [MySQL][ODBC 5.3(w) Driver]Can't connect to MySQL server on '172.16.100.21' (10065)
+   在 System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   在 System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   在 System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   在 System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.Odbc.OdbcConnection.Open()
+   在 MTHIS.db.DBMySQLODBC.Select(String sql)

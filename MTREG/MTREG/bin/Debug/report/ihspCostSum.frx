@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="11/07/2016 09:40:50" ReportInfo.Modified="01/09/2021 11:23:03" ReportInfo.CreatorVersion="2013.3.9.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhujKaJpwtqmDeniXpbPTGs7">
+      <TableDataSource Name="Table" Alias="Info" DataType="System.Int32" Enabled="true" SelectCommand="SELECT casecode,&#13;&#10;ihspcode,&#13;&#10;name as patientname,&#13;&#10;sex,&#13;&#10;name as days,&#13;&#10;indate,&#13;&#10;outdate,&#13;&#10;name as dptname,&#13;&#10;ihspcode as patienttypename,&#13;&#10;balanceamt,&#13;&#10;feeamt,&#13;&#10;name as companyname,&#13;&#10;name as today&#13;&#10;FROM inhospital limit 1">
+        <Column Name="casecode" DataType="System.String"/>
+        <Column Name="ihspcode" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="indate" DataType="System.DateTime"/>
+        <Column Name="outdate" DataType="System.DateTime"/>
+        <Column Name="dptname" DataType="System.String"/>
+        <Column Name="days" DataType="System.String"/>
+        <Column Name="feeamt" DataType="System.Decimal"/>
+        <Column Name="balanceamt" DataType="System.Decimal"/>
+        <Column Name="companyname" DataType="System.String"/>
+        <Column Name="patientname" DataType="System.String"/>
+        <Column Name="patienttypename" DataType="System.String"/>
+        <Column Name="today" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table2" Alias="CostDet" DataType="System.Int32" Enabled="true" SelectCommand="select itemtype_id &#13;&#10;,name as costname&#13;&#10;,name as itemname&#13;&#10;,name as spec&#13;&#10;,name as unit&#13;&#10;,num&#13;&#10;,prc&#13;&#10;,realfee&#13;&#10;,name as insurclass&#13;&#10;,selffee&#13;&#10;from ihsp_costdet limit 1">
+        <Column Name="selffee" DataType="System.Decimal"/>
+        <Column Name="itemname" DataType="System.String"/>
+        <Column Name="spec" DataType="System.String"/>
+        <Column Name="unit" DataType="System.String"/>
+        <Column Name="prc" DataType="System.Decimal"/>
+        <Column Name="num" DataType="System.Decimal"/>
+        <Column Name="realfee" DataType="System.Decimal"/>
+        <Column Name="insurclass" DataType="System.String"/>
+        <Column Name="itemtype_id" DataType="System.Int32"/>
+        <Column Name="costname" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="28.35">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="病人费用清单" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="32.35" Width="718.2" Height="160.65">
+      <TextObject Name="Text19" Left="18.9" Top="94.5" Width="66.15" Height="18.9" Text="打印日期:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text20" Left="75.6" Top="94.5" Width="160.65" Height="18.9" Text="[Info.today]" Format="Date" Format.Format="D" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text18" Left="18.9" Top="66.15" Width="66.15" Height="18.9" Text="当前页数:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text24" Left="179.55" Top="66.15" Width="66.15" Height="18.9" Text="工作单位:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text3" Left="236.25" Top="66.15" Width="368.55" Height="18.9" Text="[Info.companyname]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="tbxpageNo" Left="75.6" Top="66.15" Width="85.05" Height="18.9" Text="[Page]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text17" Left="18.9" Top="47.25" Width="66.15" Height="18.9" Text="住院天数:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text23" Left="179.55" Top="47.25" Width="47.25" Height="18.9" Text="费别:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text27" Left="340.2" Top="47.25" Width="85.05" Height="18.9" Text="预交金余额:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text30" Left="529.2" Top="47.25" Width="94.5" Height="18.9" Text="住院费用总额:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text9" Left="75.6" Top="47.25" Width="94.5" Height="18.9" Text="[Info.days]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text12" Left="604.8" Top="47.25" Width="75.6" Height="18.9" Text="[Info.feeamt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.NegativePattern="1" HorzAlign="Center" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text13" Left="406.35" Top="47.25" Width="85.05" Height="18.9" Text="[Info.balanceamt]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text14" Left="217.35" Top="47.25" Width="94.5" Height="18.9" Text="[Info.patienttypename]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text16" Left="18.9" Top="28.35" Width="56.7" Height="18.9" Text="住院号:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text22" Left="179.55" Top="28.35" Width="47.25" Height="18.9" Text="性别:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text26" Left="340.2" Top="28.35" Width="66.15" Height="18.9" Text="出院日期:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text29" Left="529.2" Top="28.35" Width="66.15" Height="18.9" Text="出院科室:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text2" Left="217.35" Top="28.35" Width="94.5" Height="18.9" Text="[Info.sex]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text6" Left="396.9" Top="28.35" Width="103.95" Height="18.9" Text="[Info.outdate]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text8" Left="66.15" Top="28.35" Width="94.5" Height="18.9" Text="[Info.ihspcode]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text11" Left="585.9" Top="28.35" Width="94.5" Height="18.9" Text="[Info.dptname]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text15" Left="18.9" Top="9.45" Width="47.25" Height="18.9" Text="病人ID" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text21" Left="179.55" Top="9.45" Width="47.25" Height="18.9" Text="姓名:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text25" Left="340.2" Top="9.45" Width="66.15" Height="18.9" Text="入院日期:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text28" Left="529.2" Top="9.45" Width="66.15" Height="18.9" Text="入院科室:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="217.35" Top="9.45" Width="94.5" Height="18.9" Text="[Info.patientname]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text5" Left="396.9" Top="9.45" Width="103.95" Height="18.9" Text="[Info.indate]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="66.15" Top="9.45" Width="94.5" Height="18.9" Text="[Info.casecode]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text10" Left="585.9" Top="9.45" Width="94.5" Height="18.9" Text="[Info.dptname]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <LineObject Name="Line1" Top="122.85" Width="718.2" Border.Width="1.5" Diagonal="true"/>
+      <TextObject Name="Text40" Left="9.45" Top="141.75" Width="66.15" Height="18.9" Text="类别" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text41" Left="75.6" Top="141.75" Width="198.45" Height="18.9" Text="项目名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text42" Left="274.05" Top="141.75" Width="85.05" Height="18.9" Text="规格" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text43" Left="359.1" Top="141.75" Width="56.7" Height="18.9" Text="单位" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text44" Left="415.8" Top="141.75" Width="47.25" Height="18.9" Text="数量" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text45" Left="472.5" Top="141.75" Width="66.15" Height="18.9" Text="单价" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text46" Left="538.65" Top="141.75" Width="85.05" Height="18.9" Text="应缴金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text47" Left="623.7" Top="141.75" Width="47.25" Height="18.9" Text="性质" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="197" Width="718.2" Height="28.35" Guides="28.35,28.35" DataSource="Table2">
+      <TextObject Name="Text31" Left="415.8" Width="47.25" Height="28.35" Text="[CostDet.num]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text32" Left="9.45" Width="66.15" Height="28.35" Text="[CostDet.costname]" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt"/>
+      <TextObject Name="Text33" Left="75.6" Width="198.45" Height="28.35" Text="[CostDet.itemname]" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt"/>
+      <TextObject Name="Text34" Left="274.05" Width="85.05" Height="28.35" Text="[CostDet.spec]" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt"/>
+      <TextObject Name="Text35" Left="359.1" Width="56.7" Height="28.35" Text="[CostDet.unit]" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt"/>
+      <TextObject Name="Text36" Left="472.5" Width="66.15" Height="28.35" Anchor="Top, Right" Text="[CostDet.prc]" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text37" Left="538.65" Width="85.05" Height="28.35" Text="[CostDet.realfee]" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text38" Left="623.7" Width="47.25" Height="28.35" Text="[CostDet.insurclass]" HorzAlign="Center" VertAlign="Bottom" WordWrap="false" Font="宋体, 9pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="229.35" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

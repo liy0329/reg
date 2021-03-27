@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/02/2016 16:19:17" ReportInfo.Modified="06/10/2017 15:55:40" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhsWUUrOnO6EfFHBrqNWD/1k">
+      <TableDataSource Name="Table" Alias="Charger" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	billcode as docname,&#13;&#10;	billcode as recivefee,&#13;&#10;	billcode as retfee,&#13;&#10;	billcode as realfee,&#13;&#10;	billcode as charinvoice,&#13;&#10;	billcode as retinvoice,&#13;&#10;	billcode as realinvoice,&#13;&#10;	billcode as pTypeFee0,&#13;&#10;	billcode as pTypeFee1,&#13;&#10;	billcode as pTypeFee2,&#13;&#10;	billcode as pTypeFee3,	&#13;&#10;	billcode as pTypeFee4,&#13;&#10;	billcode as pTypeFee5,&#13;&#10;	billcode as pTypeFee6&#13;&#10;FROM&#13;&#10;	clinictab_detail&#13;&#10;&#13;&#10;">
+        <Column Name="recivefee" DataType="System.Decimal" PropName="num"/>
+        <Column Name="retfee" DataType="System.Decimal" PropName="fee"/>
+        <Column Name="realfee" DataType="System.Decimal" PropName="retnum"/>
+        <Column Name="charinvoice" DataType="System.Decimal" PropName="retfee"/>
+        <Column Name="retinvoice" DataType="System.Decimal" PropName="realnum"/>
+        <Column Name="realinvoice" DataType="System.Decimal" PropName="realfee"/>
+        <Column Name="docname" DataType="System.String" PropName="NAME"/>
+        <Column Name="pTypeFee0" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee1" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee2" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee3" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee4" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee5" DataType="System.String" PropName="Column"/>
+        <Column Name="pTypeFee6" DataType="System.String" PropName="Column"/>
+        <CommandParameter Name="startTime" DataType="22"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="Info" DataType="System.Int32" Enabled="true" SelectCommand="select chargedate as starTime ,chargedate as endTime,billcode as depart,billcode as type ,billcode as title from clinic_invoice limit 1;">
+        <Column Name="starTime" DataType="System.DateTime"/>
+        <Column Name="endTime" DataType="System.DateTime"/>
+        <Column Name="depart" Alias="billcode" DataType="System.String"/>
+        <Column Name="type" Alias="charger" DataType="System.String"/>
+        <Column Name="title" DataType="System.String"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9" FirstPageSource="1" OtherPagesSource="1">
+    <PageHeaderBand Name="PageHeader1" Width="1047.06" Height="66.15" Border.Lines="All">
+      <TextObject Name="Text9" Left="453.6" Top="37.8" Width="85.05" Height="18.9" Text="打印时间：" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text10" Left="9.45" Top="37.8" Width="94.5" Height="18.9" Text="结账时间：从" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text11" Left="75.6" Top="37.8" Width="160.65" Height="18.9" Text="[Info.starTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text12" Left="217.35" Top="37.8" Width="28.35" Height="18.9" Text="至" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text13" Left="217.35" Top="37.8" Width="170.1" Height="18.9" Text="[Info.endTime]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text14" Left="529.2" Top="37.8" Width="170.1" Height="18.9" Text="[Date]" HorzAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text7" Left="170.1" Top="9.45" Width="368.55" Height="28.35" Text="[Info.title]" HorzAlign="Center" Font="宋体, 16pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="70.15" Width="1047.06" Height="28.35">
+      <TableObject Name="Table3" Width="1048.76" Height="28.35">
+        <TableColumn Name="Column4" Width="92.24"/>
+        <TableColumn Name="Column5" Width="92.24"/>
+        <TableColumn Name="Column6" Width="73.33"/>
+        <TableColumn Name="Column7" Width="79.63"/>
+        <TableColumn Name="Column8" Width="60.74"/>
+        <TableColumn Name="Column9" Width="51.31"/>
+        <TableColumn Name="Column10" Width="60.76"/>
+        <TableColumn Name="Column15" Width="55.33"/>
+        <TableColumn Name="Column16" Width="83.68"/>
+        <TableColumn Name="Column17" Width="64.78"/>
+        <TableColumn Name="Column18" Width="64.78"/>
+        <TableColumn Name="Column19" Width="83.68"/>
+        <TableColumn Name="Column20" Width="93.13"/>
+        <TableColumn Name="Column21" Width="93.13"/>
+        <TableRow Name="Row2" Height="28.35">
+          <TableCell Name="Cell4" Border.Lines="All" Text="收费员姓名" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell5" Border.Lines="All" Text="收款金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell6" Border.Lines="All" Text="退款金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell7" Border.Lines="All" Text="实收金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Text="省医保" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell9" Border.Lines="All" Text="省老干" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell10" Border.Lines="All" Text="市医保" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell15" Border.Lines="All" Text="商保" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell16" Border.Lines="All" Text="省内异地医保" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell17" Border.Lines="All" Text="银联卡" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell18" Border.Lines="All" Text="现金" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell19" Border.Lines="All" Text="收款发票张数" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell20" Border.Lines="All" Text="退款发票张数" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell21" Border.Lines="All" Text="实收发票张数" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="102.5" Width="1047.06" Height="28.35" Border.Lines="All" Guides="28.35,0" DataSource="Table">
+      <TableObject Name="Table5" Width="1048.76" Height="28.35">
+        <TableColumn Name="Column22" Width="92.24"/>
+        <TableColumn Name="Column23" Width="92.24"/>
+        <TableColumn Name="Column24" Width="73.33"/>
+        <TableColumn Name="Column25" Width="79.63"/>
+        <TableColumn Name="Column26" Width="60.74"/>
+        <TableColumn Name="Column27" Width="51.31"/>
+        <TableColumn Name="Column28" Width="60.76"/>
+        <TableColumn Name="Column29" Width="55.33"/>
+        <TableColumn Name="Column30" Width="83.68"/>
+        <TableColumn Name="Column31" Width="64.78"/>
+        <TableColumn Name="Column32" Width="64.78"/>
+        <TableColumn Name="Column33" Width="83.68"/>
+        <TableColumn Name="Column34" Width="93.13"/>
+        <TableColumn Name="Column35" Width="93.13"/>
+        <TableRow Name="Row3" Height="28.35">
+          <TableCell Name="Cell22" Border.Lines="All" Text="[Charger.docname]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell23" Border.Lines="All" Text="[Charger.realfee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="[Charger.retfee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell25" Border.Lines="All" Text="[Charger.recivefee]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell26" Border.Lines="All" Text="[Charger.pTypeFee0]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell27" Border.Lines="All" Text="[Charger.pTypeFee2]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell28" Border.Lines="All" Text="[Charger.pTypeFee3]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="[Charger.pTypeFee4]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell30" Border.Lines="All" Text="[Charger.pTypeFee1]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell31" Border.Lines="All" Text="[Charger.pTypeFee6]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell32" Border.Lines="All" Text="[Charger.pTypeFee5]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell33" Border.Lines="All" Text="[Charger.realinvoice]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell34" Border.Lines="All" Text="[Charger.retinvoice]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+          <TableCell Name="Cell35" Border.Lines="All" Text="[Charger.charinvoice]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="134.85" Width="1047.06" Height="132.3" Guides="0"/>
+  </ReportPage>
+</Report>

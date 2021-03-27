@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/03/2016 14:06:23" ReportInfo.Modified="09/10/2016 15:03:47" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <OdbcDataConnection Name="Connection" ConnectionString="rijcmlqS/dhERfFsUI8VskQKFHQutwpAzw8teexcs2TVgraUhuo8hCZ/WppStodpGps/MT6">
+      <TableDataSource Name="Table" Alias="Tb_LblText" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	chargedate AS timeBegin,&#13;&#10;	chargedate AS timeEnd,&#13;&#10;	chargedate AS now,&#13;&#10;	id AS chker,&#13;&#10;	id AS maker,&#13;&#10;	id AS total,&#13;&#10;	id AS paytype,&#13;&#10;	id AS mark,&#13;&#10;	id AS yesterday,&#13;&#10;	id AS increase,&#13;&#10;	id AS reduce,&#13;&#10;	id AS today&#13;&#10;FROM&#13;&#10;	ihsp_account&#13;&#10;LIMIT 1">
+        <Column Name="timeBegin" DataType="System.DateTime"/>
+        <Column Name="timeEnd" DataType="System.DateTime"/>
+        <Column Name="now" DataType="System.DateTime"/>
+        <Column Name="chker" DataType="System.Int32"/>
+        <Column Name="maker" DataType="System.Int32"/>
+        <Column Name="total" DataType="System.Int32"/>
+        <Column Name="paytype" DataType="System.Int32"/>
+        <Column Name="mark" DataType="System.Int32"/>
+        <Column Name="yesterday" DataType="System.Int32"/>
+        <Column Name="increase" DataType="System.Int32"/>
+        <Column Name="reduce" DataType="System.Int32"/>
+        <Column Name="today" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Table5" Alias="Tb_PayType" DataType="System.Int32" Enabled="true" SelectCommand="SELECT&#13;&#10;	bas_paytype_id  ,&#13;&#10;	fee,&#13;&#10;	bas_paytype_id as bas_paytype_id1,&#13;&#10;	fee as fee1&#13;&#10;FROM&#13;&#10;	ihsptab_payinadv">
+        <Column Name="bas_paytype_id" DataType="System.Int32"/>
+        <Column Name="fee" DataType="System.Decimal"/>
+        <Column Name="bas_paytype_id1" DataType="System.Int32"/>
+        <Column Name="fee1" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Table6" Alias="Tb_ChargeRpt" DataType="System.Int32" Enabled="true" SelectCommand="SELECT id as charger_id,&#13;&#10;id as payfee,&#13;&#10;id as retpayfee,&#13;&#10;id as balanceamt,&#13;&#10;id as amt,&#13;&#10;id as fee,&#13;&#10;id as bank,&#13;&#10;id as iscash,&#13;&#10;id as nocash&#13;&#10;from inhospital">
+        <Column Name="charger_id" DataType="System.Int32"/>
+        <Column Name="payfee" DataType="System.Int32"/>
+        <Column Name="retpayfee" DataType="System.Int32"/>
+        <Column Name="balanceamt" DataType="System.Int32"/>
+        <Column Name="amt" DataType="System.Int32"/>
+        <Column Name="fee" DataType="System.Int32"/>
+        <Column Name="bank" DataType="System.Int32"/>
+        <Column Name="iscash" DataType="System.Int32"/>
+        <Column Name="nocash" DataType="System.Int32"/>
+      </TableDataSource>
+    </OdbcDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="66.15">
+      <TextObject Name="Text1" Left="-9.45" Width="727.65" Height="28.35" Text="住院收费员汇总日结表" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 16pt, style=Bold"/>
+      <LineObject Name="Line1" Top="28.35" Width="718.2" Border.Width="2"/>
+      <TextObject Name="Text2" Left="37.8" Top="37.8" Width="85.05" Height="18.9" Text="结账日期:从" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text3" Left="113.4" Top="37.8" Width="85.05" Height="18.9" Text="[Tb_LblText.timeBegin]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text4" Left="207.9" Top="37.8" Width="18.9" Height="18.9" Text="至" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text5" Left="226.8" Top="37.8" Width="85.05" Height="18.9" Text="[Tb_LblText.timeEnd]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text6" Left="378" Top="37.8" Width="66.15" Height="18.9" Text="结算类型:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text7" Left="434.7" Top="37.8" Width="85.05" Height="18.9" Text="[Tb_LblText.paytype]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text8" Left="538.65" Top="37.8" Width="66.15" Height="18.9" Text="标示名称:" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text9" Left="595.35" Top="37.8" Width="85.05" Height="18.9" Text="[Tb_LblText.mark]" VertAlign="Bottom" Font="宋体, 9pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="93.05" Width="718.2" Height="18.9" DataSource="Table6">
+      <TableObject Name="Table2" Left="37.8" Width="623.7" Height="18.9">
+        <TableColumn Name="Column10" Width="71.82"/>
+        <TableColumn Name="Column11" Width="71.82"/>
+        <TableColumn Name="Column12" Width="71.82"/>
+        <TableColumn Name="Column13" Width="71.82"/>
+        <TableColumn Name="Column14" Width="71.82"/>
+        <TableColumn Name="Column15"/>
+        <TableColumn Name="Column16"/>
+        <TableColumn Name="Column17"/>
+        <TableColumn Name="Column18"/>
+        <TableRow Name="Row2">
+          <TableCell Name="Cell10" Border.Lines="All" Text="[Tb_ChargeRpt.charger_id]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell11" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.payfee]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell12" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.retpayfee]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell13" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.balanceamt]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell14" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.amt]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell15" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.fee]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell16" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.bank]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell17" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.iscash]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell18" Border.Lines="Right, Top, Bottom" Text="[Tb_ChargeRpt.nocash]" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="70.15" Width="718.2" Height="18.9">
+        <TableObject Name="Table1" Left="37.8" Width="623.7" Height="18.9">
+          <TableColumn Name="Column1" Width="71.82"/>
+          <TableColumn Name="Column2" Width="71.82"/>
+          <TableColumn Name="Column3" Width="71.82"/>
+          <TableColumn Name="Column4" Width="71.82"/>
+          <TableColumn Name="Column5" Width="71.82"/>
+          <TableColumn Name="Column6"/>
+          <TableColumn Name="Column7"/>
+          <TableColumn Name="Column8"/>
+          <TableColumn Name="Column9"/>
+          <TableRow Name="Row1">
+            <TableCell Name="Cell1" Border.Lines="All" Text="收款员姓名" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell2" Border.Lines="Right, Top, Bottom" Text="预缴款金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell3" Border.Lines="Right, Top, Bottom" Text="退预交金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell4" Border.Lines="Right, Top, Bottom" Text="结退金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell5" Border.Lines="Right, Top, Bottom" Text="结转金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell6" Border.Lines="Right, Top, Bottom" Text="费用金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell7" Border.Lines="Right, Top, Bottom" Text="应交银行" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell8" Border.Lines="Right, Top, Bottom" Text="现金汇总" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell9" Border.Lines="Right, Top, Bottom" Text="支票汇总" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="115.95" Width="718.2" Height="47.25">
+        <TextObject Name="Text10" Left="47.25" Width="66.15" Height="18.9" Text="昨日结存:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text11" Left="103.95" Width="66.15" Height="18.9" Text="[Tb_LblText.yesterday]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text12" Left="189" Width="66.15" Height="18.9" Text="本月增加:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text13" Left="245.7" Width="66.15" Height="18.9" Text="[Tb_LblText.increase]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text14" Left="349.65" Width="66.15" Height="18.9" Text="本日减少" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text15" Left="406.35" Width="66.15" Height="18.9" Text="[Tb_LblText.reduce]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text16" Left="491.4" Width="66.15" Height="18.9" Text="本日结存" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text17" Left="548.1" Width="66.15" Height="18.9" Text="[Tb_LblText.today]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text18" Left="47.25" Top="28.35" Width="47.25" Height="18.9" Text="合计:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text19" Left="85.05" Top="28.35" Width="66.15" Height="18.9" Text="[Tb_LblText.total]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data2" Top="190.1" Width="718.2" Height="18.9" DataSource="Table5">
+      <TableObject Name="Table4" Left="132.3" Width="264.6" Height="18.9">
+        <TableColumn Name="Column23"/>
+        <TableColumn Name="Column24"/>
+        <TableColumn Name="Column25"/>
+        <TableColumn Name="Column26"/>
+        <TableRow Name="Row9">
+          <TableCell Name="Cell47" Border.Lines="All" Text="[Tb_PayType.bas_paytype_id]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell48" Border.Lines="Right, Top, Bottom" Text="[Tb_PayType.fee]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell49" Border.Lines="Right, Top, Bottom" Text="[Tb_PayType.bas_paytype_id1]" VertAlign="Bottom" Font="宋体, 9pt"/>
+          <TableCell Name="Cell50" Border.Lines="Right, Top, Bottom" Text="[Tb_PayType.fee1]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader2" Top="167.2" Width="718.2" Height="18.9">
+        <TextObject Name="Text20" Left="47.25" Width="94.5" Height="18.9" Text="付款方式汇总:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TableObject Name="Table3" Left="132.3" Width="264.6" Height="18.9">
+          <TableColumn Name="Column19"/>
+          <TableColumn Name="Column20"/>
+          <TableColumn Name="Column21"/>
+          <TableColumn Name="Column22"/>
+          <TableRow Name="Row3">
+            <TableCell Name="Cell19" Border.Lines="All" Text="支付类型" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell20" Border.Lines="Right, Top, Bottom" Text="金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell21" Border.Lines="Right, Top, Bottom" Text="支付类型" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+            <TableCell Name="Cell22" Border.Lines="Right, Top, Bottom" Text="金额" HorzAlign="Center" VertAlign="Bottom" Font="宋体, 9pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter2" Top="213" Width="718.2" Height="37.8">
+        <TextObject Name="Text21" Left="47.25" Top="9.45" Width="66.15" Height="18.9" Text="制表人:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text22" Left="103.95" Top="9.45" Width="66.15" Height="18.9" Text="[Tb_LblText.maker]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text23" Left="321.3" Top="9.45" Width="66.15" Height="18.9" Text="审核人:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text24" Left="378" Top="9.45" Width="66.15" Height="18.9" Text="[Tb_LblText.chker]" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text25" Left="481.95" Top="9.45" Width="66.15" Height="18.9" Text="打印时间:" VertAlign="Bottom" Font="宋体, 9pt"/>
+        <TextObject Name="Text26" Left="538.65" Top="9.45" Width="66.15" Height="18.9" Text="[Tb_LblText.now]" VertAlign="Bottom" Font="宋体, 9pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="254.8" Width="718.2" Height="75.6"/>
+  </ReportPage>
+</Report>
